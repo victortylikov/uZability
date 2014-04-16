@@ -4,19 +4,19 @@
 <%@ page language="java" contentType="text/html; charset=windows-1251" pageEncoding="windows-1251"%>
 <html>
 <head>
+	<link href="<c:url value="/resources/css/reset.css" />" rel="stylesheet">
+	<link href="<c:url value="/resources/css/960_24_col.css" />" rel="stylesheet">
+	<link href="<c:url value="/resources/css/text.css" />" rel="stylesheet">
+	<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 
-	<link rel="stylesheet" href="css/reset.css"/>
-	<link rel="stylesheet" href="css/960_24_col.css"/>
-	<link rel="stylesheet" href="css/text.css"/>
-	<link rel="stylesheet" href="css/style.css"/>
 	<title>uZability</title>
-	<script type="text/javascript" src="js/quote.js"></script>
-	<script type="text/javascript" src="js/changeNews.js"></script>
+	<script src="<c:url value="/resources/js/quote.js" />"></script>
+	<script src="<c:url value="/resources/js/changeNews.js" />"></script>
 </head>
 <body>
 	<div class="container_24">
 	<header>
-		<h1 name="top"><a href="index.html"><img src="img/logo2.png" width="239" height="100" alt="Логотип"></a></h1>
+		<h1 name="top"><a href="index.html"><img src="<c:url value="/resources/images/logo2.png" />" width="239" height="100" alt="Логотип"></a></h1>
 		<div id="quote">
 			<blockquote id="quote_sentence">Трудность создания опыта взаимодействия состоит в необходимости понять потребности 
 пользователей лучше, чем они понимают их сами</blockquote>
@@ -85,10 +85,10 @@
 			    </div>
 				<div class="div_slide_image">
 					<a href="#"> 
-						<img src="img/ux-people3.JPG" id="img_slide_1" alt="" title=""/>
-						<img src="img/china1.jpg" id="img_slide_2" alt="" title=""/>
-						<img src="img/Flat.png" id="img_slide_3" alt="" title=""/>
-						<img src="img/22.jpg" id="img_slide_4" alt="" title=""/>
+						<img src="<c:url value="/resources/images/ux-people3.JPG" />" id="img_slide_1" alt="" title=""/>
+						<img src="<c:url value="/resources/images/china1.jpg" />" id="img_slide_2" alt="" title=""/>
+						<img src="<c:url value="/resources/images/Flat.png" />" id="img_slide_3" alt="" title=""/>
+						<img src="<c:url value="/resources/images/22.jpg" />" id="img_slide_4" alt="" title=""/>
 					</a>
 				</div>
 				
@@ -115,7 +115,7 @@
 					</li>
 				</ul>
 			</div>
-			<script type="text/javascript" src="js/temp.js"></script>
+			<script src="<c:url value="/resources/js/temp.js" />"></script>
 			<section class="section_article" id="post1">
 				<header>
 					<h2><a class="a_section_link" href="#">Конференция UXPeople 2013</a></h2>
@@ -125,7 +125,7 @@
 				</header>
 				<p class="section_figure" id="post1_image">
 					<a href="#">
-						<img src="img/ux-people.JPG" width="669" height="230" alt="Фотография">
+						<img src="<c:url value="/resources/images/ux-people.JPG" />" width="669" height="230" alt="Фотография">
 					</a>
 				</p>
 				<p class="section_new">
@@ -145,7 +145,7 @@
 				</header>
 				<p class="section_figure" id="post1_image">
 					<a href="#">
-						<img src="img/china2.jpg" width="669" height="224" alt="Фотография">
+						<img src="<c:url value="/resources/images/china2.jpg" />" width="669" height="224" alt="Фотография">
 					</a>
 				</p>
 				<p class="section_new">
@@ -166,7 +166,7 @@
 				</header>
 				<p class="section_figure" id="post1_image">
 					<a href="#">
-						<img src="img/Flat1.png" width="672" height="260" alt="Фотография">
+						<img src="<c:url value="/resources/images/Flat1.png" />" width="672" height="260" alt="Фотография">
 					</a>
 				</p>
 				<p class="section_new">
@@ -186,7 +186,7 @@
 				</header>
 				<p class="section_figure" id="post1_image">
 					<a href="#">
-						<img src="img/mint-screen.jpg" width="500" height="200" alt="Фотография">
+						<img src="<c:url value="/resources/images/mint-screen.jpg" />" width="500" height="200" alt="Фотография">
 					</a>
 				</p>
 				<p class="section_new">
@@ -198,7 +198,7 @@
 				<a class="new_read" href="#">Читать дальше</a>
 				</p>
 			</section>
-			<script type="text/javascript" src="js/cross.js"></script>
+			<script src="<c:url value="/resources/js/cross.js" />"></script>
 		</article>
 		<aside>
 			<h3>Категории</h3>
@@ -217,7 +217,7 @@
 				<li><a href="#">Текст и Типографика</a></li>
 				<li id="categories_li_last"><a href="#">Тестирование</a></li>
 			</ul>
-			<div id="advertising"><a href="#"><img src="img/advert.png" width="230" height="366" alt="Реклама"></a></div>
+			<div id="advertising"><a href="#"><img src="<c:url value="/resources/images/advert.png" />" width="230" height="366" alt="Реклама"></a></div>
 		</aside>
 	</div>
 	<footer class="footer_main">
@@ -226,7 +226,7 @@
 	<div class="bottom_nav_div">
 		<a href="#" class="bottom_nav_a">О сайте</a>
 	</div>
-	<a href="#top" id="up_button"><img id="image_up_button" src="img/arrow.png" width="70" height="70" ></a>
+	<a href="#top" id="up_button"><img id="image_up_button" src="<c:url value="/resources/images/arrow.png" />" width="70" height="70" ></a>
 	<a href="#" id="feedback">Обратная связь</a>
 	</div>
 	
