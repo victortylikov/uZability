@@ -111,7 +111,7 @@ header #quote{
     width:0px;
 }
 
-#login{
+.login{
 	float: right;
 	height: 90px;
 	width: 215px;
@@ -126,6 +126,15 @@ header #quote{
 	margin-top: 10px;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
+}
+
+.photo_user{
+	float: left;
+	height: 70px;
+	width: 70px;
+	margin-top: 10px;
+	background:red;
+	margin-right: 10px;
 }
 
 .reg{

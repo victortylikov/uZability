@@ -23,21 +23,36 @@
 			<p id="quote_author">Джесс Гарретт</p>
 			
 		</div>
-		<form action="login" id="login" class="login" enctype="text/plain">
-		<p class="reg">
-			<a class="enter" href="#">Войти</a> или <a class="enter" href="#">Зарегистрироваться</a>
-		</p>
-		<p class="field">
-			<input type="text" name="username" id="username" class="text_login" placeholder="логин" required="required" />
-		</p>
-		<p class="field">	
-			<input type="password" name="password" id="password" class="text_login"  placeholder="пароль" required="required"/>
-		</p>	
-		<p class="submit">
-			<input type="submit" value="Ok"/>
-		</p>
-		</form>
-		<nav>
+			<security:authorize access="isAnonymous()">
+				<form name="f" action="<c:url value='j_spring_security_check'/>"
+					method="POST" id="login" class="login">
+					<p class="reg">
+						<a class="enter" href="/spring/login">Войти</a> или <a
+							class="enter" href="#">Зарегистрироваться</a>
+					</p>
+					<p class="field">
+						<input type="text" name="j_username" id="username"
+							class="text_login" placeholder="логин" required="required" />
+					</p>
+					<p class="field">
+						<input type="password" name="j_password" id="password"
+							class="text_login" placeholder="пароль" required="required" />
+					</p>
+					<p class="submit">
+						<input type="submit" value="Ok" />
+					</p>
+				</form>
+			</security:authorize>
+			<security:authorize access="isAuthenticated()">
+				<div class="login">
+					<div class="photo_user">
+					</div>
+					<security:authentication property="principal.username"/>
+					<br>
+					<a href="<c:url value="j_spring_security_logout" />">Logout</a>
+				</div>
+			</security:authorize>
+			<nav>
 			<ul class="main_ul">
 				<li><a id="a_glav" href="#">Главная</a></li>
 				<li><a id="a_stat" href="#">Статьи</a></li>
