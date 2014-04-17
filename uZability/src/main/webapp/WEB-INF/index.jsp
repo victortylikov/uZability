@@ -45,11 +45,11 @@
 			</security:authorize>
 			<security:authorize access="isAuthenticated()">
 				<div class="login">
-					<div class="photo_user">
+					<div class="photo_user"></div>
+					<a href="<c:url value="j_spring_security_logout"/>" id="logout">Выйти</a>
+					<div id="username_login">
+						<security:authentication property="principal.username" />
 					</div>
-					<security:authentication property="principal.username"/>
-					<br>
-					<a href="<c:url value="j_spring_security_logout" />">Logout</a>
 				</div>
 			</security:authorize>
 			<nav>
