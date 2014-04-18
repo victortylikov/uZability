@@ -12,7 +12,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		 <intercept-url pattern="/users" access="hasRole('ROLE_USER')" /> 
 		<anonymous username="guest" granted-authority="ROLE_GUEST" />-->
 		<logout logout-success-url="/" />
-		<remember-me key="remMeKey"/>
+		<remember-me key="remKey" user-service-ref="UserDetailsServiceImpl"  token-validity-seconds="2419200"/>
 	</http>
 
 	<authentication-manager>
@@ -21,7 +21,6 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 	</authentication-manager>
 
 	<beans:import resource="/appServlet/servlet-context.xml" />
-
-
+ 	
 
 </beans:beans>
