@@ -26,6 +26,12 @@ body {
   width: 960px;
 }
 
+.container_18 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 720px;
+}
+
 /* `Grid >> Global
 ----------------------------------------------------------------------------------------------------*/
 

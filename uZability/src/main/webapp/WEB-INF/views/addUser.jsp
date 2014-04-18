@@ -2,34 +2,30 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page session="false"%>
+<%@ page language="java" contentType="text/html; charset=windows-1251" pageEncoding="windows-1251"%>
 <html>
 <head>
-<title>Home</title>
+	<link href="<c:url value="/resources/css/reset.css" />" rel="stylesheet">
+	<link href="<c:url value="/resources/css/960_24_col.css" />" rel="stylesheet">
+	<link href="<c:url value="/resources/css/text.css" />" rel="stylesheet">
+	<link href="<c:url value="/resources/css/styleregistration.css" />" rel="stylesheet">
+	<title>uZability</title>
+	<link rel="shortcut icon" href="<c:url value="/resources/images/favicon.ico" />" type="image/x-icon" > 
 </head>
 <body>
-
-	<h1>Add user</h1>
-	<form:form action="addUserPost" modelAttribute="user">
-		<table>
-			<tr>
-				<td>Login :</td>
-				<td><form:input path="login" /></td>
-			</tr>
-			<tr>
-				<td>Password :</td>
-				<td><form:password path="password" /></td>
-			</tr>
-			<tr>
-				<td>Email :</td>
-				<td><form:input path="email" /></td>
-			</tr>
-			<tr>
-				<td colspan="2"><input type="submit" value="Add"></td>
-			</tr>
-		</table>
+	<div class="container_18">
+	<div class="main_div">
+	<h1 id="reg">Регистрация</h1>
+	<div id="reg_form">
+	<form:form action="addUserPost" modelAttribute="user" class="form">
+		<p><span>Логин:</span><form:input path="login"/><span></span></p>
+		<p><span>Пароль:</span><form:input path="password"/><span></span></p>
+		<p><span>E-mail:</span><form:input path="email"/><span></span></p>		
+		<p><input type="submit" value="Отправить"></p>		
 	</form:form>
-	
-	<a href="/spring/index">back</a>
-	
+	</div>
+	<a href="/spring/">back</a>
+	</div>
+	</div>
 </body>
 </html>

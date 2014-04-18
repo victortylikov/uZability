@@ -18,7 +18,7 @@ public class UserController {
     @Autowired
     private UserService userService;
     
-    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String index(ModelMap model) {
         return "../index";
     }
@@ -32,7 +32,7 @@ public class UserController {
         return "listUsers";
     }
     
-    @RequestMapping(value = "/addUserGet", method = RequestMethod.GET)
+    @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public String addUserGet(ModelMap map)
     { 
     	map.addAttribute("user", new User());

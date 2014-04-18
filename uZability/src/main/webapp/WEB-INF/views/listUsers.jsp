@@ -35,7 +35,7 @@
 		</TABLE>
 	</c:if>
 	<p>
-		<a href="/spring/index">back</a>
+		<a href="/spring/">back</a>
 	</p>
 </body>
 </html>

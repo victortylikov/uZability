@@ -8,10 +8,10 @@
 	<link href="<c:url value="/resources/css/960_24_col.css" />" rel="stylesheet">
 	<link href="<c:url value="/resources/css/text.css" />" rel="stylesheet">
 	<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
-
 	<title>uZability</title>
 	<script src="<c:url value="/resources/js/quote.js" />"></script>
 	<script src="<c:url value="/resources/js/changeNews.js" />"></script>
+	<link rel="shortcut icon" href="<c:url value="/resources/images/favicon.ico" />" type="image/x-icon" > 
 </head>
 <body>
 	<div class="container_24">
@@ -28,7 +28,7 @@
 					method="POST" id="login" class="login">
 					<p class="reg">
 						<a class="enter" href="/spring/login">Войти</a> или <a
-							class="enter" href="#">Зарегистрироваться</a>
+							class="enter" href="/spring/registration">Зарегистрироваться</a>
 					</p>
 					<p class="field">
 						<input type="text" name="j_username" id="username"

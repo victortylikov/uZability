@@ -6,12 +6,12 @@ http://www.springframework.org/schema/security
 http://www.springframework.org/schema/security/spring-security.xsd">
 
 	<http auto-config="true" use-expressions="true">
-		<form-login login-page="/spring/j_spring_security_check" default-target-url="/users"
+		<form-login login-page="/spring/j_spring_security_check" default-target-url="/"
 			authentication-failure-url="/loginfail" />
-		<intercept-url pattern="/addUser*" access="hasRole('ROLE_USER')" />
-		<!-- <intercept-url pattern="/users" access="hasRole('ROLE_USER')" /> 
+		<!--<intercept-url pattern="/addUser*" access="hasRole('ROLE_USER')" />
+		 <intercept-url pattern="/users" access="hasRole('ROLE_USER')" /> 
 		<anonymous username="guest" granted-authority="ROLE_GUEST" />-->
-		<logout logout-success-url="/index" />
+		<logout logout-success-url="/" />
 	</http>
 
 	<authentication-manager>
