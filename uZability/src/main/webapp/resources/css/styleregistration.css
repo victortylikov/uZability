@@ -1,24 +1,124 @@
-.main_div{
-	height: 520px;
-	width: 720px;
-	
-	margin-top: 100px;	
+body {
+	font: 14px/1.5 "Helvetica Neue", Arial, "Liberation Sans", FreeSans,
+		sans-serif;
+}
+
+.main_div {
+	height: 290px;
+	width: 470px;
+	margin-top: 100px;
 	border-color: #808080;
-    border-style: solid;
-    border-width: 4px;
-    border-radius: 20px;
+	border-style: solid;
+	border-width: 4px;
+	border-radius: 20px;
 }
 
-#reg{
+h1 {
+	font-size: 36px;
+}
+
+#reg {
 	text-align: center;
-	margin-top: 30px;	
+	margin-top: 30px;
 }
 
-#reg_form{
-  margin-left: auto;
-  margin-right: auto;
-  width: 440px;
-  margin-top: 50px;	
-  background: red;
-	
+#reg_form {
+	margin-left: auto;
+	margin-right: auto;
+	width: 440px;
+	margin-top: 10px;
+}
+
+.form {
+	width: 250px;
+	margin: 0 auto;
+	font-size: 16px;
+}
+
+.form_login {
+	width: 175px;
+	margin: 0 auto;
+	font-size: 16px;
+}
+
+#form_remember_me {
+	width: 150px;
+}
+
+#remember_me {
+	float: right;
+	margin-top: 5px;
+}
+
+#Label_remember {
+	width: 120px;
+}
+
+#pre_p {
+	font-size: 16px;
+	text-align: center;
+}
+
+p.form_p {
+	margin-bottom: 10px;
+}
+
+label {
+	display: inline-block;
+	width: 70px;
+}
+
+p.submit {
+	text-align: right;
+	margin-right: -20px;
+}
+
+#submit_login {
+	margin-right: -30px;
+}
+
+.submit input {
+	background: #CB0000;
+	color: white;
+	font-weight: bold;
+	border-radius: 7px;
+	padding: 3px 7px;
+	border: 1px solid #666;
+	margin-top: 15px;
+}
+
+#Label_remember {
+	font-size: 16px;
+}
+
+.input_login {
+	width: 180px;
+	height: 27px;
+	font-size: 18px;
+}
+
+.submit input:hover {
+	cursor: pointer;
+	background: linear-gradient(to top, #CB0000, red) repeat scroll 0 0
+		rgba(0, 0, 0, 0);
+}
+
+.ref_back {
+	font-size: 16px;
+}
+
+#left_button {
+	position: fixed; /* Фиксированное положение */
+	top: 200px; /* Расстояние сверху */
+	margin-left: -150px; width : 70px;
+	height: 70px;
+	background: #003366;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	width: 70px;
+}
+
+#left_button:hover {
+	background: #CB0000;
 }

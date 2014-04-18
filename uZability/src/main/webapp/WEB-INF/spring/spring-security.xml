@@ -12,6 +12,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		 <intercept-url pattern="/users" access="hasRole('ROLE_USER')" /> 
 		<anonymous username="guest" granted-authority="ROLE_GUEST" />-->
 		<logout logout-success-url="/" />
+		<remember-me key="remMeKey"/>
 	</http>
 
 	<authentication-manager>

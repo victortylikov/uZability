@@ -2,30 +2,48 @@
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page session="false"%>
-<%@ page language="java" contentType="text/html; charset=windows-1251" pageEncoding="windows-1251"%>
+<%@ page language="java" contentType="text/html; charset=windows-1251"
+	pageEncoding="windows-1251"%>
 <html>
 <head>
-	<link href="<c:url value="/resources/css/reset.css" />" rel="stylesheet">
-	<link href="<c:url value="/resources/css/960_24_col.css" />" rel="stylesheet">
-	<link href="<c:url value="/resources/css/text.css" />" rel="stylesheet">
-	<link href="<c:url value="/resources/css/styleregistration.css" />" rel="stylesheet">
-	<title>uZability</title>
-	<link rel="shortcut icon" href="<c:url value="/resources/images/favicon.ico" />" type="image/x-icon" > 
+<link href="<c:url value="/resources/css/reset.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/960_24_col.css" />"
+	rel="stylesheet">
+<link href="<c:url value="/resources/css/text.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/styleregistration.css" />"
+	rel="stylesheet">
+<title>uZability</title>
+<link rel="shortcut icon"
+	href="<c:url value="/resources/images/favicon.ico" />"
+	type="image/x-icon">
 </head>
 <body>
 	<div class="container_18">
-	<div class="main_div">
-	<h1 id="reg">Регистрация</h1>
-	<div id="reg_form">
-	<form:form action="addUserPost" modelAttribute="user" class="form">
-		<p><span>Логин:</span><form:input path="login"/><span></span></p>
-		<p><span>Пароль:</span><form:input path="password"/><span></span></p>
-		<p><span>E-mail:</span><form:input path="email"/><span></span></p>		
-		<p><input type="submit" value="Отправить"></p>		
-	</form:form>
-	</div>
-	<a href="/spring/">back</a>
-	</div>
+		<div class="main_div">
+			<h1 id="reg">Регистрация</h1>
+			<p id="pre_p">Пожалуйста, заполните обязательные поля.</p>
+			<div id="reg_form">
+				<form:form action="addUserPost" modelAttribute="user" class="form">
+					<p class="form_p">
+						<label for="login">Логин:</label>
+						<form:input path="login" />
+					</p>
+					<p class="form_p">
+						<label for="password">Пароль:</label>
+						<form:input path="password" />
+					</p class="form_p">
+					<p>
+						<label for="email">E-mail:</label>
+						<form:input path="email" />
+						<span></span>
+					</p>
+					<p class="submit">
+						<input type="submit" value="Отправить">
+					</p>
+				</form:form>
+			</div>
+		</div>
+		<a href="/spring/" title="Назад" id="left_button"><img id="image_left_button" src="<c:url value="/resources/images/arrowLeft.png" />" width="70" height="70" ></a>
 	</div>
 </body>
 </html>
