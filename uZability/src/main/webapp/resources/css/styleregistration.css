@@ -30,13 +30,13 @@ h1 {
 }
 
 .form {
-	width: 250px;
+	width: 280px;
 	margin: 0 auto;
 	font-size: 16px;
 }
 
 .form_login {
-	width: 175px;
+	width: 245px;
 	margin: 0 auto;
 	font-size: 16px;
 }
@@ -121,4 +121,12 @@ p.submit {
 
 #left_button:hover {
 	background: #CB0000;
+}
+
+#input_st{
+	width: 190px;
+}
+
+#input_st_log{
+	width: 250px;
 }

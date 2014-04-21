@@ -32,11 +32,11 @@
 					</p>
 					<p class="field">
 						<input type="text" name="j_username" id="username"
-							class="text_login" placeholder="логин" required="required" />
+							class="text_login" placeholder="логин" required="required"  autocomplete="off"  maxlength="30" pattern="[A-Za-z0-9]{3,30}"/>
 					</p>
 					<p class="field">
 						<input type="password" name="j_password" id="password"
-							class="text_login" placeholder="пароль" required="required" />
+							class="text_login" placeholder="пароль" required="required"  maxlength="30" pattern="[A-Za-z0-9]{3,30}"/>
 					</p>
 					<p class="submit">
 						<input type="submit" value="Ok" />
@@ -62,7 +62,7 @@
 			</ul>
 			<form action="search_action" id="search" class="search" enctype="text/plain">
 						<div class="search_div">
-						<input type="text" name="search_input" id="search_input" class="search_input" placeholder="поиск" />
+						<input type="text" name="search_input" id="search_input" class="search_input" placeholder="поиск" autofocus/>
 						<input id="search_submit" type="submit" value=""/>
 						</div>
 			</form>

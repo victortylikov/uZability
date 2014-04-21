@@ -26,15 +26,15 @@
 				<form:form action="addUserPost" modelAttribute="user" class="form">
 					<p class="form_p">
 						<label for="login">Логин:</label>
-						<form:input path="login" />
+						<form:input path="login" autocomplete="off"  id="input_st" maxlength="30"/>
 					</p>
 					<p class="form_p">
 						<label for="password">Пароль:</label>
-						<form:input path="password" />
-					</p class="form_p">
-					<p>
+						<form:input path="password" id="input_st" maxlength="30" />
+					</p>
+					<p class="form_p">
 						<label for="email">E-mail:</label>
-						<form:input path="email" />
+						<form:input path="email" autocomplete="off" id="input_st" maxlength="50" />
 						<span></span>
 					</p>
 					<p class="submit">
