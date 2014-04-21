@@ -27,11 +27,11 @@
 					method="POST" class="form_login">
 					<p class="form_p">
 						<input type='text' class="input_login" name='j_username'
-							placeholder="Логин" required autofocus autocomplete="off" id="input_st_log" maxlength="30" pattern="[A-Za-z0-9]{3,30}"/>
+							placeholder="Логин" required autofocus autocomplete="off" id="input_st_log" maxlength="30" pattern="[A-Za-z0-9_.-]{3,30}"/>
 					</p>
 					<p class="form_p">
 						<input type='password' class="input_login" name='j_password'
-							placeholder="Пароль" required id="input_st_log" maxlength="30" pattern="[A-Za-z0-9]{3,30}" />
+							placeholder="Пароль" required id="input_st_log" maxlength="30" pattern="[A-Za-z0-9_.-]{3,30}" />
 					</p>
 					<p id="form_remember_me">
 						<label for="remember_me" id="Label_remember">Запомнить меня</label>

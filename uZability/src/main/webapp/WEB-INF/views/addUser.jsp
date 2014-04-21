@@ -27,15 +27,17 @@
 					<p class="form_p">
 						<label for="login">Логин:</label>
 						<form:input path="login" autocomplete="off"  id="input_st" maxlength="30"/>
+						<form:errors path="login" cssClass="error"></form:errors>
 					</p>
 					<p class="form_p">
 						<label for="password">Пароль:</label>
-						<form:input path="password" id="input_st" maxlength="30" />
+						<form:password path="password" id="input_st" autocomplete="off" maxlength="30" />
+						<form:errors path="password" cssClass="error"></form:errors>
 					</p>
 					<p class="form_p">
 						<label for="email">E-mail:</label>
 						<form:input path="email" autocomplete="off" id="input_st" maxlength="50" />
-						<span></span>
+						<form:errors path="email" cssClass="error"></form:errors>
 					</p>
 					<p class="submit">
 						<input type="submit" value="Отправить">

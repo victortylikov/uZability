@@ -11,6 +11,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.JoinColumn;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="user")
@@ -20,13 +22,17 @@ public class User {
 	@Column(name = "id_user")
 	@GeneratedValue
 	private Integer idUser;
-
+	
+	@Size(min=3,max=30,message="Логин должен быть от 3 до 30 символов")
+	@Pattern(regexp="^[a-zA-Z0-9]+$", message="Логин должен начинаться с букв или цифр")
 	@Column(name = "login")
 	private String login;
 
+	@Size(min=3,max=30,message="Пароль должен быть от 3 до 30 символов")
 	@Column(name = "password")
 	private String password;
 
+	@Pattern(regexp="[a-zA-Z0-9]+@[a-zA-Z0-9-]++(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})" , message="E-mail введен неправильно")
 	@Column(name = "email")
 	private String email;
 	

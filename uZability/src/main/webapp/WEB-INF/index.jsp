@@ -32,11 +32,11 @@
 					</p>
 					<p class="field">
 						<input type="text" name="j_username" id="username"
-							class="text_login" placeholder="логин" required="required"  autocomplete="off"  maxlength="30" pattern="[A-Za-z0-9]{3,30}"/>
+							class="text_login" placeholder="логин" required="required"  autocomplete="off"  maxlength="30" pattern="[A-Za-z0-9_.-]{3,30}"/>
 					</p>
 					<p class="field">
 						<input type="password" name="j_password" id="password"
-							class="text_login" placeholder="пароль" required="required"  maxlength="30" pattern="[A-Za-z0-9]{3,30}"/>
+							class="text_login" placeholder="пароль" required="required"  maxlength="30" pattern="[A-Za-z0-9_.-]{3,30}"/>
 					</p>
 					<p class="submit">
 						<input type="submit" value="Ok" />
