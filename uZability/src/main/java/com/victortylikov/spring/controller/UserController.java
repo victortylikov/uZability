@@ -1,8 +1,16 @@
 package com.victortylikov.spring.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.WebAuthenticationDetails;
+import org.springframework.security.web.savedrequest.RequestCache;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -16,8 +24,15 @@ import com.victortylikov.spring.service.UserService;
 
 @Controller
 public class UserController {
-
-    @Autowired
+	
+	@Autowired
+    RequestCache requestCache;
+	
+	@Autowired
+	@Qualifier("authenticationManager") 
+	private AuthenticationManager authenticationManager;
+		
+	@Autowired
     private UserService userService;
     
     @RequestMapping(value = "/", method = RequestMethod.GET)
@@ -42,14 +57,29 @@ public class UserController {
     }
  
     @RequestMapping(value = "/addUserPost", method = RequestMethod.POST)
-    public String addUser(@ModelAttribute(value="user") @Valid User user, BindingResult result)
+    public String addUser(@ModelAttribute(value="user") @Valid User user, BindingResult result, HttpServletRequest request)
     {
     	if (result.hasErrors()) {
 			return "/addUser";
 		}
-    	     	
     	userService.addUser(user);
-        return "redirect:/users";
+    	authenticateUserAndSetSession(user, request);
+        return "../index";
+    }
+    
+    	private void authenticateUserAndSetSession(User user,
+            HttpServletRequest request)
+    {
+        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
+                user.getLogin(), user.getPassword());
+
+        // generate session if one doesn't exist
+        request.getSession();
+
+        token.setDetails(new WebAuthenticationDetails(request));
+        Authentication authenticatedUser = authenticationManager.authenticate(token);
+
+        SecurityContextHolder.getContext().setAuthentication(authenticatedUser);
     }
     
     @RequestMapping(value = "/login", method = RequestMethod.GET)
