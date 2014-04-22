@@ -24,20 +24,21 @@
 			<p id="pre_p">Пожалуйста, заполните обязательные поля.</p>
 			<div id="reg_form">
 				<form:form action="addUserPost" modelAttribute="user" class="form">
+					<form:errors path="login" cssClass="error"></form:errors>
 					<p class="form_p">
 						<label for="login">Логин:</label>
-						<form:input path="login" autocomplete="off"  id="input_st" maxlength="30"/>
-						<form:errors path="login" cssClass="error"></form:errors>
+						<form:input path="login" autocomplete="off" id="input_st" />
 					</p>
+					<form:errors path="password" cssClass="error"></form:errors>
 					<p class="form_p">
 						<label for="password">Пароль:</label>
-						<form:password path="password" id="input_st" autocomplete="off" maxlength="30" />
-						<form:errors path="password" cssClass="error"></form:errors>
+						<form:password path="password" id="input_st" autocomplete="off" />
+
 					</p>
-					<p class="form_p">
+					<form:errors path="email" cssClass="error" id="err_email"></form:errors>
+					<p class="form_p">						
 						<label for="email">E-mail:</label>
-						<form:input path="email" autocomplete="off" id="input_st" maxlength="50" />
-						<form:errors path="email" cssClass="error"></form:errors>
+						<form:input path="email" autocomplete="off" id="input_st" />
 					</p>
 					<p class="submit">
 						<input type="submit" value="Отправить">
@@ -45,7 +46,10 @@
 				</form:form>
 			</div>
 		</div>
-		<a href="/spring/" title="Назад" id="left_button"><img id="image_left_button" src="<c:url value="/resources/images/arrowLeft.png" />" width="70" height="70" ></a>
+		<a href="/spring/" title="Назад" id="left_button"><img
+			id="image_left_button"
+			src="<c:url value="/resources/images/arrowLeft.png" />" width="70"
+			height="70"></a>
 	</div>
 </body>
 </html>

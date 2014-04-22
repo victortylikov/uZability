@@ -4,13 +4,14 @@ body {
 }
 
 .main_div {
-	height: 290px;
+	height: auto;
 	width: 470px;
 	margin-top: 100px;
 	border-color: #808080;
 	border-style: solid;
 	border-width: 4px;
 	border-radius: 20px;
+	padding-bottom: 30px;
 }
 
 h1 {
@@ -61,6 +62,7 @@ h1 {
 
 p.form_p {
 	margin-bottom: 10px;
+	clear: both;
 }
 
 label {
@@ -129,4 +131,9 @@ p.submit {
 
 #input_st_log{
 	width: 250px;
+}
+
+.error {
+	color: red;
+	font-size: 12px;	
 }

@@ -42,9 +42,12 @@ public class UserController {
     }
  
     @RequestMapping(value = "/addUserPost", method = RequestMethod.POST)
-    public String addUser(@ModelAttribute(value="user") User user, BindingResult result)
+    public String addUser(@ModelAttribute(value="user") @Valid User user, BindingResult result)
     {
-    	
+    	if (result.hasErrors()) {
+			return "/addUser";
+		}
+    	     	
     	userService.addUser(user);
         return "redirect:/users";
     }
