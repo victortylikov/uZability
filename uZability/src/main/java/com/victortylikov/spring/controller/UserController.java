@@ -26,9 +26,6 @@ import com.victortylikov.spring.service.UserService;
 public class UserController {
 	
 	@Autowired
-    RequestCache requestCache;
-	
-	@Autowired
 	@Qualifier("authenticationManager") 
 	private AuthenticationManager authenticationManager;
 		
@@ -57,28 +54,21 @@ public class UserController {
     }
  
     @RequestMapping(value = "/addUserPost", method = RequestMethod.POST)
-    public String addUser(@ModelAttribute(value="user") @Valid User user, BindingResult result, HttpServletRequest request)
+    public String addUser(@ModelAttribute(value="user") @Valid User user, BindingResult result)
     {
     	if (result.hasErrors()) {
 			return "/addUser";
 		}
     	userService.addUser(user);
-    	authenticateUserAndSetSession(user, request);
+    	authenticateUserAndSetSession(user);
         return "../index";
     }
     
-    	private void authenticateUserAndSetSession(User user,
-            HttpServletRequest request)
+    	private void authenticateUserAndSetSession(User user)
     {
         UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
                 user.getLogin(), user.getPassword());
-
-        // generate session if one doesn't exist
-        request.getSession();
-
-        token.setDetails(new WebAuthenticationDetails(request));
         Authentication authenticatedUser = authenticationManager.authenticate(token);
-
         SecurityContextHolder.getContext().setAuthentication(authenticatedUser);
     }
     
