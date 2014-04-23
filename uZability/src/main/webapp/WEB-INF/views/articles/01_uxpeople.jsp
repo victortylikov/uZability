@@ -133,7 +133,7 @@
 			<script src="<c:url value="/resources/js/temp.js" />"></script>
 			<section class="section_article" id="post1">
 				<header>
-					<h2><a class="a_section_link" href="/spring/articles/01_uxpeople.jsp">Конференция UXPeople 2013</a></h2>
+					<h2><a class="a_section_link" href="#">Конференция UXPeople 2013</a></h2>
 					<div class="section_time">
 						<time datetime=2013-04-15> Ноябрь 03, 2013</time> | <a class="new_read" href="#">usability</a>, <a class="new_read" href="#">веб-дизайн</a>, <a class="new_read" href="#">интерфейсы</a>
 					</div>
@@ -148,7 +148,7 @@
 				посвященная вопросам проектирования пользовательских интерфейсов, user experience, дизайну и юзабилити.
 				В качестве докладчиков приглашены опытные специалисты и руководители из России, Беларуси, ближнего и дальнего зарубежья.
 				Среди докладчиков: Виталий Фридман, Дмитрий Сатин, Hegle Sarapuu, Владислав Головач, Максим Гулевич и др.
-				<a class="new_read" href="/spring/resources/articles/01_uxpeople.jsp">Читать дальше...</a>
+				<a class="new_read" href="#">Читать дальше...</a>
 				</p>
 			</section >
 			<section class="section_article" id="post2">
