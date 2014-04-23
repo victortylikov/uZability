@@ -54,7 +54,7 @@
 			</security:authorize>
 			<nav>
 			<ul class="main_ul">
-				<li><a id="a_glav" href="#">Главная</a></li>
+				<li><a id="a_glav" href="/spring/">Главная</a></li>
 				<li><a id="a_stat" href="#">Статьи</a></li>
 				<li><a id="a_shabl" href="#">Шаблоны</a></li>
 				<li><a id="a_knigi" href="#">Книги</a></li>

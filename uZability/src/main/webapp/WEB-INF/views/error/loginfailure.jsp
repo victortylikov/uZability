@@ -6,6 +6,7 @@
 	pageEncoding="windows-1251"%>
 <html>
 <head>
+
 <link href="<c:url value="/resources/css/reset.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/960_24_col.css" />"
 	rel="stylesheet">
