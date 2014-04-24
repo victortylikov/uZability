@@ -561,7 +561,7 @@ article section header h2 a{
 
 aside{
 	/* background: #FF6600; */
-	height: 400px;
+	height: auto;
 	width: 230px;
 	display: inline;
     float: right;

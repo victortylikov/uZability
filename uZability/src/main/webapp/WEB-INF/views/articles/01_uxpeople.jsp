@@ -24,7 +24,7 @@
 			
 		</div>
 			<security:authorize access="isAnonymous()">
-				<form name="f" action="<c:url value='j_spring_security_check'/>"
+				<form name="f" action="<c:url value='/j_spring_security_check'/>"
 					method="POST" id="login" class="login">
 					<p class="reg">
 						<a class="enter" href="/spring/login">Войти</a> или <a
@@ -46,7 +46,7 @@
 			<security:authorize access="isAuthenticated()">
 				<div class="login">
 					<div class="photo_user"></div>
-					<a href="<c:url value="j_spring_security_logout"/>" id="logout">Выйти</a>
+					<a href="<c:url value="/j_spring_security_logout"/>" id="logout">Выйти</a>
 					<div id="username_login">
 						<security:authentication property="principal.username" />
 					</div>
