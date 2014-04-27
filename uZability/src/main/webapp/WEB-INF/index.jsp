@@ -24,7 +24,7 @@
 			
 		</div>
 			<security:authorize access="isAnonymous()">
-				<form name="f" action="<c:url value='j_spring_security_check'/>"
+				<form name="f" action="<c:url value='/j_spring_security_check'/>"
 					method="POST" id="login" class="login">
 					<p class="reg">
 						<a class="enter" href="/spring/login">Войти</a> или <a
@@ -46,7 +46,7 @@
 			<security:authorize access="isAuthenticated()">
 				<div class="login">
 					<div class="photo_user"></div>
-					<a href="<c:url value="j_spring_security_logout"/>" id="logout">Выйти</a>
+					<a href="<c:url value="/j_spring_security_logout"/>" id="logout">Выйти</a>
 					<div id="username_login">
 						<security:authentication property="principal.username" />
 					</div>
@@ -148,7 +148,7 @@
 				посвященная вопросам проектирования пользовательских интерфейсов, user experience, дизайну и юзабилити.
 				В качестве докладчиков приглашены опытные специалисты и руководители из России, Беларуси, ближнего и дальнего зарубежья.
 				Среди докладчиков: Виталий Фридман, Дмитрий Сатин, Hegle Sarapuu, Владислав Головач, Максим Гулевич и др.
-				<a class="new_read" href="/spring/resources/articles/01_uxpeople.jsp">Читать дальше...</a>
+				<a class="new_read" href="/spring/articles/01_uxpeople">Читать дальше...</a>
 				</p>
 			</section >
 			<section class="section_article" id="post2">
