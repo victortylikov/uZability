@@ -6,12 +6,9 @@ http://www.springframework.org/schema/security
 http://www.springframework.org/schema/security/spring-security.xsd">
 
 	<http auto-config="true" use-expressions="true">
-<<<<<<< HEAD
-		<form-login login-page="/j_spring_security_check" default-target-url="/"
-=======
-		<form-login login-page="/j_spring_security_check"
->>>>>>> refs/remotes/origin/master
-			authentication-failure-url="/loginFail" />
+		<form-login login-page="/spring/j_spring_security_check" 
+				authentication-failure-url="/loginFail" />
+
 		<!--<intercept-url pattern="/addUser*" access="hasRole('ROLE_USER')" />
 		 <intercept-url pattern="/users" access="hasRole('ROLE_USER')" /> 
 		
