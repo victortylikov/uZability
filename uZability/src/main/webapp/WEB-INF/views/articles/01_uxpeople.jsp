@@ -70,69 +70,8 @@
 	</header>
 	<div class="main_part clearfix">
 		<article class="grid_18 alpha" id="article_main_part">
-			<div id="main_slide">
-				<div class="div_slide_background">
-					<div class="section_slide_background">
-						<header class="header_background_news">
-							<h2 class="h2_background_news">
-								<a class="a_background_news" id="a_slide_1" href="#">Конференция UXPeople 2013</a>
-								<a class="a_background_news" id="a_slide_2" href="#">Главные особенности китайского веб-дизайна и их истоки</a>
-								<a class="a_background_news" id="a_slide_3" href="#">Flat Design, или почему все «кинулись» делать плоские интерфейсы</a>
-								<a class="a_background_news" id="a_slide_4" href="#">Дизайн красив настолько, насколько он практичен</a>
-							</h2>
-						</header>
-						<p class="p_slide_background" id="p_slide_1">
-							30 ноября в Минске пройдет конференция UXPeople, посвященная вопросам проектирования интерфейсов, user experience, дизайну и юзабилити...
-						</p>
-						<p class="p_slide_background" id="p_slide_2">
-							По роду моей деятельности ко мне часто обращаются иностранные компании за консультациями, аналитикой и другой помощью в сфере китайского интернета.
-							Нередко дело доходит до локализации сайта или приложения, тогда же...
-						</p>
-						<p class="p_slide_background" id="p_slide_3">
-							Плоский дизайн интерфейсов пришел или, точнее, объявил о себе во всей красе благодаря платформе Windows Phone
-							(и Windows 8) с ее революционными стилистически простыми и намеренно упрощенными интерфейсами...
-						</p>
-						<p class="p_slide_background" id="p_slide_4">
-							Цель этой статьи попытаться провести четкую границу между тем, что большинство пользователей считает красивым в веб-дизайне,
-							и что действительно является таковым, а также...
-						</p>
-					</div>
-			    </div>
-				<div class="div_slide_image">
-					<a href="#"> 
-						<img src="<c:url value="/resources/images/ux-people3.JPG" />" id="img_slide_1" alt="" title=""/>
-						<img src="<c:url value="/resources/images/china1.jpg" />" id="img_slide_2" alt="" title=""/>
-						<img src="<c:url value="/resources/images/Flat.png" />" id="img_slide_3" alt="" title=""/>
-						<img src="<c:url value="/resources/images/22.jpg" />" id="img_slide_4" alt="" title=""/>
-					</a>
-				</div>
-				
-				<ul class="ul_slide">
-					<li id="li_new_first">
-						<a id="a_slide_number_1" class="a_slide_button" href="#" onclick="changeNew(this.id)" onmouseover="onButton(this)" onmouseout="offButton(this)">
-							<span class="span_link" id="span_slide_number_1">&nbsp;1&nbsp;</span>
-						</a>
-					</li>
-					<li>
-						<a id="a_slide_number_2" class="a_slide_button" href="#" onclick="changeNew(this.id)" onmouseover="onButton(this)" onmouseout="offButton(this)">
-							<span class="span_link" id="span_slide_number_2">&nbsp;2&nbsp;</span>
-						</a>
-					</li>
-					<li>
-						<a id="a_slide_number_3" class="a_slide_button" href="#" onclick="changeNew(this.id)" onmouseover="onButton(this)" onmouseout="offButton(this)">
-							<span class="span_link" id="span_slide_number_3">&nbsp;3&nbsp;</span>
-						</a>
-					</li>
-					<li>
-						<a id="a_slide_number_4" class="a_slide_button" href="#" onclick="changeNew(this.id)" onmouseover="onButton(this)" onmouseout="offButton(this)">
-							<span class="span_link" id="span_slide_number_4">&nbsp;4&nbsp;</span>
-						</a>
-					</li>
-				</ul>
-			</div>
-			<script src="<c:url value="/resources/js/temp.js" />"></script>
 			<section class="section_article" id="post1">
-				<header>
+				<header id="header_withoutborder">
 					<h2><a class="a_section_link" href="#">Конференция UXPeople 2013</a></h2>
 					<div class="section_time">
 						<time datetime=2013-04-15> Ноябрь 03, 2013</time> | <a class="new_read" href="#">usability</a>, <a class="new_read" href="#">веб-дизайн</a>, <a class="new_read" href="#">интерфейсы</a>

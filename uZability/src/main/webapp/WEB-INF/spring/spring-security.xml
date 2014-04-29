@@ -6,16 +6,17 @@ http://www.springframework.org/schema/security
 http://www.springframework.org/schema/security/spring-security.xsd">
 
 	<http auto-config="true" use-expressions="true">
-		<form-login login-page="/spring/j_spring_security_check" 
-				authentication-failure-url="/loginFail" />
+		<form-login login-page="/spring/j_spring_security_check"
+			authentication-failure-url="/loginFail"
+			authentication-success-handler-ref="authenticationSuccessHandler" />
 
-		<!--<intercept-url pattern="/addUser*" access="hasRole('ROLE_USER')" />
-		 <intercept-url pattern="/users" access="hasRole('ROLE_USER')" /> 
-		
-		<anonymous username="guest" granted-authority="ROLE_GUEST" />-->
-		
-		<logout  logout-url="/j_spring_security_logout" />
-		<remember-me key="remKey" user-service-ref="UserDetailsServiceImpl"  token-validity-seconds="2419200"/>
+		<!--<intercept-url pattern="/addUser*" access="hasRole('ROLE_USER')" /> 
+			<intercept-url pattern="/users" access="hasRole('ROLE_USER')" /> <anonymous 
+			username="guest" granted-authority="ROLE_GUEST" /> -->
+
+		<logout logout-url="/j_spring_security_logout" />
+		<remember-me key="remKey" user-service-ref="UserDetailsServiceImpl"
+			token-validity-seconds="2419200" />
 	</http>
 
 	<authentication-manager alias="authenticationManager">
@@ -23,7 +24,13 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		</authentication-provider>
 	</authentication-manager>
 
+	<!-- After login, return to the last visited page -->
+	<beans:bean id="authenticationSuccessHandler"
+		class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
+		<beans:property name="useReferer" value="true" />
+	</beans:bean>
+
 	<beans:import resource="/appServlet/servlet-context.xml" />
- 	
+
 
 </beans:beans>

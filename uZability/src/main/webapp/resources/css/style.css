@@ -484,6 +484,10 @@ article section header{
 	padding-bottom: 3px;
 }
 
+#header_withoutborder{
+	border-top:none;
+}
+
 article section header h2{
 	font-size: 16pt;
 }
