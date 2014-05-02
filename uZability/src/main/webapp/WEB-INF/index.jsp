@@ -76,7 +76,7 @@
 						<header class="header_background_news">
 							<h2 class="h2_background_news">
 								<a class="a_background_news" id="a_slide_1" href="/spring/articles/01_uxpeople">Конференция UXPeople 2013</a>
-								<a class="a_background_news" id="a_slide_2" href="#">Главные особенности китайского веб-дизайна и их истоки</a>
+								<a class="a_background_news" id="a_slide_2" href="/spring/articles/02_chinadesign">Главные особенности китайского веб-дизайна и их истоки</a>
 								<a class="a_background_news" id="a_slide_3" href="#">Flat Design, или почему все «кинулись» делать плоские интерфейсы</a>
 								<a class="a_background_news" id="a_slide_4" href="#">Дизайн красив настолько, насколько он практичен</a>
 							</h2>
@@ -102,7 +102,7 @@
 					<a href="/spring/articles/01_uxpeople"> 
 						<img src="<c:url value="/resources/images/ux-people3.JPG" />" id="img_slide_1" alt="" title=""/>
 					</a>
-					<a href="#">
+					<a href="/spring/articles/02_chinadesign">
 						<img src="<c:url value="/resources/images/china1.jpg" />" id="img_slide_2" alt="" title=""/>
 					</a>	
 					<a href="#">	
@@ -160,13 +160,13 @@
 			</section >
 			<section class="section_article" id="post2">
 				<header>
-					<h2><a class="a_section_link" href="#">Главные особенности китайского веб-дизайна и их истоки</a></h2>
+					<h2><a class="a_section_link" href="/spring/articles/02_chinadesign">Главные особенности китайского веб-дизайна и их истоки</a></h2>
 					<div class="section_time">
 						<time datetime=2013-04-16> Октябрь 28, 2013</time> | <a class="new_read" href="#">веб-дизайн</a>, <a class="new_read" href="#">интерфейсы</a>
 					</div>
 				</header>
 				<p class="section_figure" id="post1_image">
-					<a href="#">
+					<a href="/spring/articles/02_chinadesign">
 						<img src="<c:url value="/resources/images/china2.jpg" />" width="669" height="224" alt="Фотография">
 					</a>
 				</p>
@@ -176,7 +176,7 @@
 				дизайне под китайскую аудиторию. Вопрос правильный, так как современный подход к дизайну напрямую связан с конверсией,
 				где незначительные изменения в интерфейсе могут принести к увеличению (или падению) прибыли (и других показателей) на 
 				десятки процентов. 
-				<a class="new_read" href="#">Читать дальше</a>
+				<a class="new_read" href="/spring/articles/02_chinadesign">Читать дальше</a>
 				</p>
 			</section>
 			<section class="section_article" id="post3">
