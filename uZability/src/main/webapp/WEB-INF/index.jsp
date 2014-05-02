@@ -75,7 +75,7 @@
 					<div class="section_slide_background">
 						<header class="header_background_news">
 							<h2 class="h2_background_news">
-								<a class="a_background_news" id="a_slide_1" href="#">Конференция UXPeople 2013</a>
+								<a class="a_background_news" id="a_slide_1" href="/spring/articles/01_uxpeople">Конференция UXPeople 2013</a>
 								<a class="a_background_news" id="a_slide_2" href="#">Главные особенности китайского веб-дизайна и их истоки</a>
 								<a class="a_background_news" id="a_slide_3" href="#">Flat Design, или почему все «кинулись» делать плоские интерфейсы</a>
 								<a class="a_background_news" id="a_slide_4" href="#">Дизайн красив настолько, насколько он практичен</a>
@@ -99,12 +99,19 @@
 					</div>
 			    </div>
 				<div class="div_slide_image">
-					<a href="#"> 
+					<a href="/spring/articles/01_uxpeople"> 
 						<img src="<c:url value="/resources/images/ux-people3.JPG" />" id="img_slide_1" alt="" title=""/>
-						<img src="<c:url value="/resources/images/china1.jpg" />" id="img_slide_2" alt="" title=""/>
-						<img src="<c:url value="/resources/images/Flat.png" />" id="img_slide_3" alt="" title=""/>
-						<img src="<c:url value="/resources/images/22.jpg" />" id="img_slide_4" alt="" title=""/>
 					</a>
+					<a href="#">
+						<img src="<c:url value="/resources/images/china1.jpg" />" id="img_slide_2" alt="" title=""/>
+					</a>	
+					<a href="#">	
+						<img src="<c:url value="/resources/images/Flat.png" />" id="img_slide_3" alt="" title=""/>
+					</a>	
+					<a href="#">	
+						<img src="<c:url value="/resources/images/22.jpg" />" id="img_slide_4" alt="" title=""/>
+					</a>	
+					
 				</div>
 				
 				<ul class="ul_slide">
@@ -133,7 +140,7 @@
 			<script src="<c:url value="/resources/js/temp.js" />"></script>
 			<section class="section_article" id="post1">
 				<header>
-					<h2><a class="a_section_link" href="/spring/articles/01_uxpeople.jsp">Конференция UXPeople 2013</a></h2>
+					<h2><a class="a_section_link" href="/spring/articles/01_uxpeople">Конференция UXPeople 2013</a></h2>
 					<div class="section_time">
 						<time datetime=2013-04-15> Ноябрь 03, 2013</time> | <a class="new_read" href="#">usability</a>, <a class="new_read" href="#">веб-дизайн</a>, <a class="new_read" href="#">интерфейсы</a>
 					</div>

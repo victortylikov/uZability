@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security"%>
 <%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=windows-1251"
 	pageEncoding="windows-1251"%>
@@ -18,12 +19,15 @@
 	type="image/x-icon">
 </head>
 <body>
+	<security:authorize access="isAuthenticated()">
+	<c:redirect url="/"/>
+	</security:authorize>
 	<div class="container_18">
 		<div class="main_div">
 			<h1 id="reg">Здравствуйте</h1>
 			<p id="pre_p">Пожалуйста, заполните поля.</p>
 			<div id="reg_form">
-				<form name="f" action="<c:url value='j_spring_security_check' />"
+				<form name="f" action="<c:url value='/j_spring_security_check' />"
 					method="POST" class="form_login">
 					<p class="form_p">
 						<input type='text' class="input_login" name='j_username'
