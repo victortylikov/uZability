@@ -536,6 +536,10 @@ article section header h2 a{
 	text-decoration: underline;
 }
 
+.paragraph{
+	
+}
+
 /*
  ******************
  * article post slide
@@ -569,7 +573,7 @@ aside{
 	width: 230px;
 	display: inline;
     float: right;
-	
+	margin-bottom: 20px;
 	margin-top: 10px;
 }
 

@@ -18,6 +18,8 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<remember-me key="remKey" user-service-ref="UserDetailsServiceImpl"
 			token-validity-seconds="2419200" />
 	</http>
+	
+	
 
 	<authentication-manager alias="authenticationManager">
 		<authentication-provider user-service-ref="UserDetailsServiceImpl">
