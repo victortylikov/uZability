@@ -14,8 +14,7 @@
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	<mvc:view-controller path="/articles/01_uxpeople"  view-name="/articles/01_uxpeople"/>
-	<mvc:view-controller path="/articles/02_chinadesign"  view-name="/articles/02_chinadesign"/>
+
 	<!-- DispatcherServlet Context: defines this servlet's request-processing 
 		infrastructure -->
 
@@ -74,4 +73,8 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
+	<mvc:view-controller path="/articles/01_uxpeople"  view-name="/articles/01_uxpeople"/>
+	<mvc:view-controller path="/articles/02_chinadesign"  view-name="/articles/02_chinadesign"/>
+	<mvc:view-controller path="/articles/03_flatdesign"  view-name="/articles/03_flatdesign"/>
+	<mvc:view-controller path="/articles/04_beautyindesign"  view-name="/articles/04_beautyindesign"/>
 </beans>

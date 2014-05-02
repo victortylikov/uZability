@@ -77,8 +77,8 @@
 							<h2 class="h2_background_news">
 								<a class="a_background_news" id="a_slide_1" href="/spring/articles/01_uxpeople">Конференция UXPeople 2013</a>
 								<a class="a_background_news" id="a_slide_2" href="/spring/articles/02_chinadesign">Главные особенности китайского веб-дизайна и их истоки</a>
-								<a class="a_background_news" id="a_slide_3" href="#">Flat Design, или почему все «кинулись» делать плоские интерфейсы</a>
-								<a class="a_background_news" id="a_slide_4" href="#">Дизайн красив настолько, насколько он практичен</a>
+								<a class="a_background_news" id="a_slide_3" href="/spring/articles/03_flatdesign">Flat Design, или почему все «кинулись» делать плоские интерфейсы</a>
+								<a class="a_background_news" id="a_slide_4" href="/spring/articles/04_beautyindesign">Дизайн красив настолько, насколько он практичен</a>
 							</h2>
 						</header>
 						<p class="p_slide_background" id="p_slide_1">
@@ -105,10 +105,10 @@
 					<a href="/spring/articles/02_chinadesign">
 						<img src="<c:url value="/resources/images/china1.jpg" />" id="img_slide_2" alt="" title=""/>
 					</a>	
-					<a href="#">	
+					<a href="/spring/articles/03_flatdesign">	
 						<img src="<c:url value="/resources/images/Flat.png" />" id="img_slide_3" alt="" title=""/>
 					</a>	
-					<a href="#">	
+					<a href="/spring/articles/04_beautyindesign">	
 						<img src="<c:url value="/resources/images/22.jpg" />" id="img_slide_4" alt="" title=""/>
 					</a>	
 					
@@ -181,13 +181,13 @@
 			</section>
 			<section class="section_article" id="post3">
 				<header>
-					<h2><a class="a_section_link" href="#">Flat Design, или почему все «кинулись» делать плоские интерфейсы</a></h2>
+					<h2><a class="a_section_link" href="/spring/articles/03_flatdesign">Flat Design, или почему все «кинулись» делать плоские интерфейсы</a></h2>
 					<div class="section_time">
 						<time datetime=2013-04-16> Октябрь 24, 2013</time> | <a class="new_read" href="#">веб-дизайн</a>, <a class="new_read" href="#">интерфейсы</a>
 					</div>
 				</header>
 				<p class="section_figure" id="post1_image">
-					<a href="#">
+					<a href="/spring/articles/03_flatdesign">
 						<img src="<c:url value="/resources/images/Flat1.png" />" width="672" height="260" alt="Фотография">
 					</a>
 				</p>
@@ -201,13 +201,13 @@
 			</section>
 			<section class="section_article" id="post4">
 				<header>
-					<h2><a class="a_section_link" href="#">Дизайн красив настолько, насколько он практичен</a></h2>
+					<h2><a class="a_section_link" href="/spring/articles/04_beautyindesign">Дизайн красив настолько, насколько он практичен</a></h2>
 					<div class="section_time">
 						<time datetime=2013-04-15> Октябрь 02, 2013</time> | <a class="new_read" href="#">веб-дизайн</a>, <a class="new_read" href="#">usability</a>
 					</div>
 				</header>
 				<p class="section_figure" id="post1_image">
-					<a href="#">
+					<a href="/spring/articles/04_beautyindesign">
 						<img src="<c:url value="/resources/images/mint-screen.jpg" />" width="500" height="200" alt="Фотография">
 					</a>
 				</p>

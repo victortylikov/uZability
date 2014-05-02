@@ -519,6 +519,8 @@ article section header h2 a {
 
 .sign {
 	margin-top: 15px;
+	text-align: center;
+	display: block;
 }
 
 .sign figcaption {
