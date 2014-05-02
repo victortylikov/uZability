@@ -7,7 +7,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 
 	<http auto-config="true" use-expressions="true">
 		<form-login login-page="/j_spring_security_check"
-			authentication-failure-url="/loginFail" />
+			authentication-failure-url="/loginFail" always-use-default-target="false" default-target-url="/" />
 		<!--<intercept-url pattern="/addUser*" access="hasRole('ROLE_USER')" />
 		 <intercept-url pattern="/users" access="hasRole('ROLE_USER')" /> 
 		
