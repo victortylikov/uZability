@@ -140,10 +140,9 @@ header #quote {
 }
 
 #username_login {
-	text-align: center;
-	margin-top: 30px;
+	margin-top: 5px;
 	font-size: 16px;
-	width: 85px;
+	width: 130px;
 	float: right;
 }
 
@@ -530,7 +529,7 @@ article section header h2 a {
 }
 
 #conclusion {
-	margin-top:5px;
+	margin-top: 5px;
 	list-style: decimal outside;
 	margin-left: 10px;
 }

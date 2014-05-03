@@ -83,11 +83,11 @@ public class UserController {
         return "/error/loginfailure";
     }
     
-    @RequestMapping(value = "/info/{login}", method = RequestMethod.GET)
+    @RequestMapping(value = "/profile/{login}", method = RequestMethod.GET)
     public String deleteUser(ModelMap model, @PathVariable("login") String login) {
         User user=userService.getUserByName(login);
         model.addAttribute("user", user);
-        return "userInfo";
+        return "profile";
     }
     
    }
