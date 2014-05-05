@@ -16,13 +16,26 @@
 	rel="stylesheet">
 <link href="<c:url value="/resources/css/profile.css" />"
 	rel="stylesheet">
+<script src="<c:url value="/resources/js/jquery-1.2.6.js" />"></script>
+<script src="<c:url value="/resources/js/changePassword.js" />"></script>
 <title>uZability</title>
 <link rel="shortcut icon"
 	href="<c:url value="/resources/images/favicon.ico" />"
 	type="image/x-icon">
 </head>
 <body>
+	<div id="cp_modal_background" onclick="back()"></div>
+	<div id="change_password_form">
+		<form:form action="changePassword" class="form" method="POST" modelAttribute="password">
+			<p class="form_p">
+				<label for=currentPassword>Текущий пароль:</label>
+				<form:input path="currentPassword" autocomplete="off" id="input_st" />
+			</p>
+		</form:form>
+		<h4 class="field_name">Сменить пароль</h4>
+	</div>
 	<div class="container_profile">
+
 		<div class="main_div_profile">
 			<div class="avatar"></div>
 			<h3>Данные для входа</h3>
@@ -36,7 +49,10 @@
 					<div class="field">${user.email}</div>
 				</div>
 				<div class="block">
-					<div class="field_change_password"><a href="#" id="href_change_password">Сменить пароль</a></div>
+					<div class="field_change_password">
+						<button onclick="addChangePassword()" id="href_change_password">Сменить
+							пароль</button>
+					</div>
 				</div>
 			</div>
 		</div>

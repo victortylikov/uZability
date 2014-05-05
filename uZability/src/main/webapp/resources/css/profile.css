@@ -64,6 +64,10 @@ h4 {
 	text-decoration: underline;
 	font-weight: bold;
 	color: black;
+	padding: 0;
+	border: none;
+	background-color: white;
+	font-size: 14px;
 }
 
 #href_change_password:hover {
@@ -78,4 +82,31 @@ h4 {
 	height: 140px;
 	top: 40px;
 	right: 50px;
+}
+
+#cp_modal_background {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: #000;
+	display: none;
+	z-index: 10;
+	opacity: 0.7;
+}
+
+#change_password_form {
+	top: 30%;
+	left: 50%;
+	position: fixed;
+	z-index: 11;
+	height: auto;
+	width: auto;
+	background-color: white;
+	display: none;
+	padding: 30px 40px;
+	margin-left: -180px;
 }

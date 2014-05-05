@@ -61,7 +61,7 @@
 					<div class="photo_user"></div>
 					<a href="<c:url value="/j_spring_security_logout"/>" id="logout">Выйти</a>
 					<div id="username_login">
-						<security:authentication property="principal.username" />
+						<a href="/spring/profile/<security:authentication property="principal.username" />"><security:authentication property="principal.username" /></a>
 					</div>
 				</div>
 			</security:authorize>

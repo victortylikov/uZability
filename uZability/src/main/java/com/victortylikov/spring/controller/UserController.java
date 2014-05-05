@@ -20,74 +20,71 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.victortylikov.spring.domain.User;
+
 import com.victortylikov.spring.service.UserService;
 
 @Controller
 public class UserController {
-	
+
 	@Autowired
-	@Qualifier("authenticationManager") 
+	@Qualifier("authenticationManager")
 	private AuthenticationManager authenticationManager;
-		
+
 	@Autowired
-    private UserService userService;
-    
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String index(ModelMap model) {
-        return "../index";
-    }
- 
-    @RequestMapping(value = "/users", method = RequestMethod.GET)
-    public String listUsers(ModelMap map)
-    {
-        map.addAttribute("user", new User());
-        map.addAttribute("listUsers", userService.findAllUsers());
-   
-        return "listUsers";
-    }
-    
-    @RequestMapping(value = "/registration", method = RequestMethod.GET)
-    public String addUserGet(ModelMap map)
-    { 
-    	map.addAttribute("user", new User());
-        return "addUser";
-    }
- 
-    @RequestMapping(value = "/addUserPost", method = RequestMethod.POST)
-    public String addUser(@ModelAttribute(value="user") @Valid User user, BindingResult result)
-    {
-    	if (result.hasErrors()) {
+	private UserService userService;
+
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String index(ModelMap model) {
+		return "../index";
+	}
+
+	@RequestMapping(value = "/registration", method = RequestMethod.GET)
+	public String addUserGet(ModelMap map) {
+		map.addAttribute("user", new User());
+		return "addUser";
+	}
+
+	@RequestMapping(value = "/addUserPost", method = RequestMethod.POST)
+	public String addUser(@ModelAttribute(value = "user") @Valid User user,
+			BindingResult result) {
+		if (result.hasErrors()) {
 			return "/addUser";
 		}
-    	userService.addUser(user);
-    	authenticateUserAndSetSession(user);
-        return "../index";
-    }
-    
-    	private void authenticateUserAndSetSession(User user)
-    {
-        UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
-                user.getLogin(), user.getPassword());
-        Authentication authenticatedUser = authenticationManager.authenticate(token);
-        SecurityContextHolder.getContext().setAuthentication(authenticatedUser);
-    }
-    
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String login(ModelMap model) {
-        return "login";
-    }
-    
-    @RequestMapping(value = "/loginFail", method = RequestMethod.GET)
-    public String loginerror(ModelMap model) {
-        model.addAttribute("error", "true");
-        return "/error/loginfailure";
-    }
-    
-    @RequestMapping(value = "/profile/{login}", method = RequestMethod.GET)
-    public String deleteUser(ModelMap model, @PathVariable("login") String login) {
-        User user=userService.getUserByName(login);
-        model.addAttribute("user", user);
-        return "profile";
-    }
-    
-   }
+		userService.addUser(user);
+		authenticateUserAndSetSession(user);
+		return "../index";
+	}
+
+	private void authenticateUserAndSetSession(User user) {
+		UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(
+				user.getLogin(), user.getPassword());
+		Authentication authenticatedUser = authenticationManager
+				.authenticate(token);
+		SecurityContextHolder.getContext().setAuthentication(authenticatedUser);
+	}
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(ModelMap model) {
+		return "login";
+	}
+
+	@RequestMapping(value = "/loginFail", method = RequestMethod.GET)
+	public String loginerror(ModelMap model) {
+		model.addAttribute("error", "true");
+		return "/error/loginfailure";
+	}
+
+	@RequestMapping(value = "/profile/{login}", method = RequestMethod.GET)
+	public String deleteUser(ModelMap model, @PathVariable("login") String login) {
+		User user = userService.getUserByName(login);
+		model.addAttribute("user", user);
+		return "profile";
+	}
+
+	@RequestMapping(value = "/changePassword", method = RequestMethod.POST)
+	public String changePassword() {
+
+		return "profile";
+	}
+
+}
