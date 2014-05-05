@@ -26,13 +26,18 @@
 <body>
 	<div id="cp_modal_background" onclick="back()"></div>
 	<div id="change_password_form">
-		<form:form action="changePassword" class="form" method="POST" modelAttribute="password">
+		<form:form action="changePassword" class="form" method="POST"
+			commandName="password">
+			<h4 class="field_name">Сменить пароль</h4>
 			<p class="form_p">
 				<label for=currentPassword>Текущий пароль:</label>
 				<form:input path="currentPassword" autocomplete="off" id="input_st" />
 			</p>
+			<p class="submit">
+				<input type="submit" value="Отправить">
+			</p>
 		</form:form>
-		<h4 class="field_name">Сменить пароль</h4>
+
 	</div>
 	<div class="container_profile">
 

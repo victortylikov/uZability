@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.victortylikov.spring.domain.User;
-
+import com.victortylikov.spring.service.Password;
 import com.victortylikov.spring.service.UserService;
 
 @Controller
@@ -69,21 +69,25 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/loginFail", method = RequestMethod.GET)
-	public String loginerror(ModelMap model) {
+	public String loginError(ModelMap model) {
 		model.addAttribute("error", "true");
 		return "/error/loginfailure";
 	}
 
 	@RequestMapping(value = "/profile/{login}", method = RequestMethod.GET)
-	public String deleteUser(ModelMap model, @PathVariable("login") String login) {
+	public String profileUser(ModelMap model, @PathVariable("login") String login) {
 		User user = userService.getUserByName(login);
+		model.addAttribute("password", new Password());
 		model.addAttribute("user", user);
 		return "profile";
 	}
-
+	
+	
+	
 	@RequestMapping(value = "/changePassword", method = RequestMethod.POST)
-	public String changePassword() {
-
+	public String changePassword(@ModelAttribute(value = "password") Password password,
+			BindingResult result) {
+		
 		return "profile";
 	}
 
