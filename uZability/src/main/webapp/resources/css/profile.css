@@ -99,7 +99,11 @@ h4 {
 }
 
 #change_password_form {
-	top: 30%;
+	border-color: #808080;
+	border-style: solid;
+	border-width: 4px;
+	border-radius: 20px;
+	top: 20%;
 	left: 50%;
 	position: fixed;
 	z-index: 11;
@@ -110,3 +114,36 @@ h4 {
 	padding: 30px 40px;
 	margin-left: -180px;
 }
+
+.change_password_p {
+	margin-top: 20px;
+	font-size: 14px;
+}
+
+.change_password_input {
+	width: 180px;
+}
+
+.change_password_label {
+	width: 180px;
+	display: inline-block;
+}
+
+.change_password_form_form {
+	width: auto;
+}
+
+.close_button {
+	position: absolute;
+	float: right;
+	right: 20;
+	border-radius: 6;
+	padding: 4px;
+	top: 20;
+	background: #003366;
+	cursor: pointer;
+}
+
+.close_button:HOVER {
+	background: #CB0000;
+	}

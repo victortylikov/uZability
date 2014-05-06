@@ -26,12 +26,31 @@
 <body>
 	<div id="cp_modal_background" onclick="back()"></div>
 	<div id="change_password_form">
-		<form:form action="changePassword" class="form" method="POST"
+	<!-- <button class="close_button" onclick="back()">X</button> -->
+	<a title="Закрыть" class="close_button" onclick="back()"><img
+			id="close_image"
+			src="<c:url value="/resources/images/x_button1.png" />" width="20"
+			height="20"></a>
+		<form:form action="changePassword" class="change_password_form_form" method="POST"
 			commandName="password">
-			<h4 class="field_name">Сменить пароль</h4>
-			<p class="form_p">
-				<label for=currentPassword>Текущий пароль:</label>
-				<form:input path="currentPassword" autocomplete="off" id="input_st" />
+			<h3>Сменить пароль</h3>
+			<p class="change_password_p">
+				<label class="change_password_label" for=currentPassword>Текущий
+					пароль:</label>
+				<form:input path="currentPassword" autocomplete="off"
+					cssClass="change_password_input" />
+			</p>
+			<p class="change_password_p">
+				<label class="change_password_label" for=newPassword1>Новый
+					пароль:</label>
+				<form:input path="newPassword1" autocomplete="off"
+					cssClass="change_password_input" />
+			</p>
+			<p class="change_password_p">
+				<label class="change_password_label" for=newPassword2>Повторите
+					новый пароль:</label>
+				<form:input path="newPassword2" autocomplete="off"
+					cssClass="change_password_input" />
 			</p>
 			<p class="submit">
 				<input type="submit" value="Отправить">
