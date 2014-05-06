@@ -32,7 +32,7 @@
 			src="<c:url value="/resources/images/x_button1.png" />" width="20"
 			height="20"></a>
 		<form:form action="changePassword" class="change_password_form_form" method="POST"
-			commandName="password">
+			modelAttribute="password">
 			<h3>Сменить пароль</h3>
 			<p class="change_password_p">
 				<label class="change_password_label" for=currentPassword>Текущий

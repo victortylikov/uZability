@@ -11,4 +11,6 @@ public interface UserDao {
 	void addUser(User user);
 	
 	User getUserByName(String login);
+
+	User updateUserPassword(String username, String newPassword1);
 }

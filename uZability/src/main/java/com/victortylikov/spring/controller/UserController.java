@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.victortylikov.spring.domain.User;
+import com.victortylikov.spring.service.AuthenticationUserDetails;
 import com.victortylikov.spring.service.Password;
 import com.victortylikov.spring.service.UserService;
 
@@ -84,10 +85,15 @@ public class UserController {
 	
 	
 	
-	@RequestMapping(value = "/changePassword", method = RequestMethod.POST)
+	@RequestMapping(value = "/profile/changePassword", method = RequestMethod.POST)
 	public String changePassword(@ModelAttribute(value = "password") Password password,
 			BindingResult result) {
-		
+	
+		AuthenticationUserDetails authUser = (AuthenticationUserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if(password.getCurrentPassword().equals(authUser.getPassword())){
+			User user=userService.updateUserPassword(authUser.getUsername(),password.getNewPassword1());
+			authenticateUserAndSetSession(user);
+		}
 		return "profile";
 	}
 

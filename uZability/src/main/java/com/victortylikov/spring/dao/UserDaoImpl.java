@@ -18,8 +18,6 @@ public class UserDaoImpl implements UserDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	
-
 	@Override
 	public List<User> findAllUsers() {
 		return sessionFactory
@@ -62,6 +60,15 @@ public class UserDaoImpl implements UserDao {
 			}
 		}
 		return user;
+	}
+
+	@Override
+	public User updateUserPassword(String username, String newPassword1) {
+		User user=getUserByName(username);
+		user.setPassword(newPassword1);
+		sessionFactory.getCurrentSession().update(user);
+		return user;
+		
 	}
 
 }

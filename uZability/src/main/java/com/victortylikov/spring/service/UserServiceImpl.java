@@ -40,6 +40,14 @@ public class UserServiceImpl implements UserService {
 	public User getUserByName(String login) {
 		return userDao.getUserByName(login);
 	}
+
+	@Override
+	@Transactional
+	public User updateUserPassword(String username,String newPassword1) {
+		return userDao.updateUserPassword(username,newPassword1);
+		
+		
+	}
 	
 
 }
