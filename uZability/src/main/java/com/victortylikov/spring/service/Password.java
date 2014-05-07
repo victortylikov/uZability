@@ -1,11 +1,15 @@
 package com.victortylikov.spring.service;
 
+import javax.validation.constraints.Size;
+
 import org.springframework.stereotype.Component;
 
 public class Password {
-	
+	@Size(min=3,max=30,message="ֿאנמכü המכזום בûעü מע 3 המ 30 סטלגמכמג")
 	private String currentPassword;
+	@Size(min=3,max=30,message="ֿאנמכü המכזום בûעü מע 3 המ 30 סטלגמכמג")
 	private String newPassword1;
+	@Size(min=3,max=30,message="ֿאנמכü המכזום בûעü מע 3 המ 30 סטלגמכמג")
 	private String newPassword2;
 
 	public String getCurrentPassword() {

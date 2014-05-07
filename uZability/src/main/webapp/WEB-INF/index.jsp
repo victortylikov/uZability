@@ -146,7 +146,7 @@
 					</div>
 				</header>
 				<p class="section_figure" id="post1_image">
-					<a href="#">
+					<a href="/spring/articles/01_uxpeople">
 						<img src="<c:url value="/resources/images/ux-people.JPG" />" width="669" height="230" alt="Фотография">
 					</a>
 				</p>

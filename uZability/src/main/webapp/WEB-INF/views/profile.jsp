@@ -18,6 +18,7 @@
 	rel="stylesheet">
 <script src="<c:url value="/resources/js/jquery-1.2.6.js" />"></script>
 <script src="<c:url value="/resources/js/changePassword.js" />"></script>
+<script src="<c:url value="/resources/js/validPassword.js" />"></script>
 <title>uZability</title>
 <link rel="shortcut icon"
 	href="<c:url value="/resources/images/favicon.ico" />"
@@ -26,31 +27,34 @@
 <body>
 	<div id="cp_modal_background" onclick="back()"></div>
 	<div id="change_password_form">
-	<!-- <button class="close_button" onclick="back()">X</button> -->
-	<a title="Закрыть" class="close_button" onclick="back()"><img
+		<!-- <button class="close_button" onclick="back()">X</button> -->
+		<a title="Закрыть" class="close_button" onclick="back()"><img
 			id="close_image"
 			src="<c:url value="/resources/images/x_button1.png" />" width="20"
 			height="20"></a>
-		<form:form action="changePassword" class="change_password_form_form" method="POST"
-			modelAttribute="password">
+		<form:form action="changePassword" class="change_password_form_form"
+			method="POST" modelAttribute="password"  >
 			<h3>Сменить пароль</h3>
 			<p class="change_password_p">
+				<form:errors path="currentPassword" cssClass="error"></form:errors>
 				<label class="change_password_label" for=currentPassword>Текущий
 					пароль:</label>
 				<form:input path="currentPassword" autocomplete="off"
-					cssClass="change_password_input" />
+					cssClass="change_password_input" id="currentPassword"/>
 			</p>
 			<p class="change_password_p">
+				<form:errors path="newPassword1" cssClass="error"></form:errors>
 				<label class="change_password_label" for=newPassword1>Новый
 					пароль:</label>
 				<form:input path="newPassword1" autocomplete="off"
-					cssClass="change_password_input" />
+					cssClass="change_password_input" id="newPassword1"/>
 			</p>
 			<p class="change_password_p">
+				<form:errors path="newPassword2" cssClass="error" id="errorNewPassword2"></form:errors>
 				<label class="change_password_label" for=newPassword2>Повторите
 					новый пароль:</label>
 				<form:input path="newPassword2" autocomplete="off"
-					cssClass="change_password_input" />
+					cssClass="change_password_input" id="newPassword2"/>
 			</p>
 			<p class="submit">
 				<input type="submit" value="Отправить">
@@ -80,6 +84,7 @@
 				</div>
 			</div>
 		</div>
+
 		<a href="/spring/" title="Назад" id="left_button"><img
 			id="image_left_button"
 			src="<c:url value="/resources/images/arrowLeft.png" />" width="70"

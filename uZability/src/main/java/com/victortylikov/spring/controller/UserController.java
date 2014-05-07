@@ -86,15 +86,26 @@ public class UserController {
 	
 	
 	@RequestMapping(value = "/profile/changePassword", method = RequestMethod.POST)
-	public String changePassword(@ModelAttribute(value = "password") Password password,
-			BindingResult result) {
+	public String changePassword(@ModelAttribute(value = "password") @Valid Password password,
+			BindingResult result,ModelMap model) {
 	
 		AuthenticationUserDetails authUser = (AuthenticationUserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		if(password.getCurrentPassword().equals(authUser.getPassword())){
+		User userOld = userService.getUserByName(authUser.getUsername());
+		model.addAttribute("password", new Password());
+		model.addAttribute("user", userOld);
+		if (result.hasErrors()) {
+			return "/profile";
+		}
+		if((password.getCurrentPassword().equals(authUser.getPassword()))&(password.getNewPassword1().equals(password.getNewPassword2()))){
 			User user=userService.updateUserPassword(authUser.getUsername(),password.getNewPassword1());
 			authenticateUserAndSetSession(user);
+			model.addAttribute("password", new Password());
+			model.addAttribute("user", user);
+			return "/profile";
 		}
-		return "profile";
+		return "/profile";
+		
+		
 	}
 
 }
