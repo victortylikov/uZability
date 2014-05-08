@@ -80,7 +80,7 @@ public class UserController {
 		User user = userService.getUserByName(login);
 		model.addAttribute("password", new Password());
 		model.addAttribute("user", user);
-		return "profile";
+		return "/profile";
 	}
 	
 	
@@ -90,10 +90,11 @@ public class UserController {
 			BindingResult result,ModelMap model) {
 	
 		AuthenticationUserDetails authUser = (AuthenticationUserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		User userOld = userService.getUserByName(authUser.getUsername());
-		model.addAttribute("password", new Password());
-		model.addAttribute("user", userOld);
+
 		if (result.hasErrors()) {
+				User userOld = userService.getUserByName(authUser.getUsername());
+		//	model.addAttribute("password", new Password());
+			model.addAttribute("user", userOld);
 			return "/profile";
 		}
 		if((password.getCurrentPassword().equals(authUser.getPassword()))&(password.getNewPassword1().equals(password.getNewPassword2()))){
@@ -101,9 +102,10 @@ public class UserController {
 			authenticateUserAndSetSession(user);
 			model.addAttribute("password", new Password());
 			model.addAttribute("user", user);
-			return "/profile";
+			//aaaa
+			return "redirect:/profile/"+user.getLogin();
 		}
-		return "/profile";
+		return "redirect:/profile/"+authUser.getUsername();
 		
 		
 	}
