@@ -118,6 +118,7 @@ h4 {
 .change_password_p {
 	margin-top: 20px;
 	font-size: 14px;
+	position: relative;
 }
 
 .change_password_input {
@@ -146,4 +147,14 @@ h4 {
 
 .close_button:HOVER {
 	background: #CB0000;
-	}
+}
+
+.errorPassword {
+	clear: right;
+	display: block;
+	color: red;
+	font-size: 12px;
+	position: absolute;
+	top: -15;
+	right: 0;
+}

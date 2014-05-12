@@ -92,9 +92,9 @@ public class UserController {
 		AuthenticationUserDetails authUser = (AuthenticationUserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
 		if (result.hasErrors()) {
-				User userOld = userService.getUserByName(authUser.getUsername());
-		//	model.addAttribute("password", new Password());
+			User userOld = userService.getUserByName(authUser.getUsername());
 			model.addAttribute("user", userOld);
+			model.addAttribute("mess", "Неправильно");
 			return "/profile";
 		}
 		if((password.getCurrentPassword().equals(authUser.getPassword()))&(password.getNewPassword1().equals(password.getNewPassword2()))){
@@ -102,7 +102,6 @@ public class UserController {
 			authenticateUserAndSetSession(user);
 			model.addAttribute("password", new Password());
 			model.addAttribute("user", user);
-			//aaaa
 			return "redirect:/profile/"+user.getLogin();
 		}
 		return "redirect:/profile/"+authUser.getUsername();
