@@ -76,37 +76,52 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/profile/{login}", method = RequestMethod.GET)
-	public String profileUser(ModelMap model, @PathVariable("login") String login) {
+	public String profileUser(ModelMap model,
+			@PathVariable("login") String login) {
 		User user = userService.getUserByName(login);
 		model.addAttribute("password", new Password());
 		model.addAttribute("user", user);
 		return "/profile";
 	}
-	
-	
-	
+
 	@RequestMapping(value = "/profile/changePassword", method = RequestMethod.POST)
-	public String changePassword(@ModelAttribute(value = "password") @Valid Password password,
-			BindingResult result,ModelMap model) {
-	
-		AuthenticationUserDetails authUser = (AuthenticationUserDetails)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+	public String changePassword(
+			@ModelAttribute(value = "password") @Valid Password password,
+			BindingResult result, ModelMap model) {
+
+		AuthenticationUserDetails authUser = (AuthenticationUserDetails) SecurityContextHolder
+				.getContext().getAuthentication().getPrincipal();
 
 		if (result.hasErrors()) {
 			User userOld = userService.getUserByName(authUser.getUsername());
 			model.addAttribute("user", userOld);
-			model.addAttribute("mess", "Неправильно");
 			return "/profile";
 		}
-		if((password.getCurrentPassword().equals(authUser.getPassword()))&(password.getNewPassword1().equals(password.getNewPassword2()))){
-			User user=userService.updateUserPassword(authUser.getUsername(),password.getNewPassword1());
+		if ((password.getCurrentPassword().equals(authUser.getPassword()))
+				& (password.getNewPassword1()
+						.equals(password.getNewPassword2()))) {
+			User user = userService.updateUserPassword(authUser.getUsername(),
+					password.getNewPassword1());
 			authenticateUserAndSetSession(user);
 			model.addAttribute("password", new Password());
 			model.addAttribute("user", user);
-			return "redirect:/profile/"+user.getLogin();
+			return "redirect:/profile/" + user.getLogin();
 		}
-		return "redirect:/profile/"+authUser.getUsername();
-		
-		
+		if (!(password.getCurrentPassword().equals(authUser.getPassword()))) {
+			User userOld = userService.getUserByName(authUser.getUsername());
+			model.addAttribute("user", userOld);
+			model.addAttribute("wrongOldPassword",
+					"Неправильный текущий пароль!");
+			return "/profile";
+		}
+		if (!(password.getNewPassword1().equals(password.getNewPassword2()))) {
+			User userOld = userService.getUserByName(authUser.getUsername());
+			model.addAttribute("user", userOld);
+			model.addAttribute("wrongNewPassword", "Пароли не совпадают!");
+			return "/profile";
+		}
+		return "redirect:/profile/" + authUser.getUsername();
+
 	}
 
 }

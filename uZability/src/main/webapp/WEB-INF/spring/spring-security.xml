@@ -9,7 +9,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<form-login login-page="/spring/j_spring_security_check"
 			authentication-failure-url="/loginFail"
 			authentication-success-handler-ref="authenticationSuccessHandler" />
-
+		<intercept-url pattern="/profile/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')"/>
 		<!--<intercept-url pattern="/addUser*" access="hasRole('ROLE_USER')" /> 
 			<intercept-url pattern="/users" access="hasRole('ROLE_USER')" /> <anonymous 
 			username="guest" granted-authority="ROLE_GUEST" /> -->

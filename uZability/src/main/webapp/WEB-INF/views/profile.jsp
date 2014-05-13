@@ -51,26 +51,28 @@
 			class="change_password_form_form" method="POST"
 			modelAttribute="password">
 			<h3>Сменить пароль</h3>
-			
+
 			<p class="change_password_p">
 				<form:errors path="currentPassword" cssClass="errorPassword"></form:errors>
-				<label class="change_password_label" for=currentPassword>Текущий
+				<span class="errorPassword">${wrongOldPassword}</span> <label
+					class="change_password_label" for=currentPassword>Текущий
 					пароль:</label>
-				<form:input path="currentPassword" autocomplete="off"
+				<form:password path="currentPassword" autocomplete="off"
 					cssClass="change_password_input" id="currentPassword" />
 			</p>
 			<p class="change_password_p">
 				<form:errors path="newPassword1" cssClass="errorPassword"></form:errors>
-				<label class="change_password_label" for=newPassword1>Новый
+				<span class="errorPassword">${wrongNewPassword}</span> <label
+					class="change_password_label" for=newPassword1>Новый
 					пароль:</label>
-				<form:input path="newPassword1" autocomplete="off"
+				<form:password path="newPassword1" autocomplete="off"
 					cssClass="change_password_input" id="newPassword1" />
 			</p>
 			<p class="change_password_p">
 				<form:errors path="newPassword2" cssClass="errorPassword"></form:errors>
 				<label class="change_password_label" for=newPassword2>Повторите
 					новый пароль:</label>
-				<form:input path="newPassword2" autocomplete="off"
+				<form:password path="newPassword2" autocomplete="off"
 					cssClass="change_password_input" id="newPassword2" />
 			</p>
 			<p class="submit">
@@ -83,7 +85,7 @@
 		<div class="main_div_profile">
 			<div class="avatar"></div>
 			<h3 id="error_message1">Данные для входа</h3>
-			<p id="jtest">${mess}</p>
+
 			<div class="data_user">
 				<div class="block">
 					<h4 class="field_name">Логин:</h4>
