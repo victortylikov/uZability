@@ -13,6 +13,7 @@
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/articles.css" />"
 	rel="stylesheet">
+	<link href="<c:url value="/resources/css/articles.css" />" rel="stylesheet">
 <title>uZability</title>
 <script src="<c:url value="/resources/js/quote.js" />"></script>
 <script src="<c:url value="/resources/js/changeNews.js" />"></script>
@@ -69,9 +70,8 @@
 			<nav>
 				<ul class="main_ul">
 					<li><a id="a_glav" href="/spring/">Главная</a></li>
-					<li><a id="a_stat" href="#">Статьи</a></li>
-					<li><a id="a_shabl" href="#">Шаблоны</a></li>
-					<li><a id="a_knigi" href="#">Книги</a></li>
+					<li><a id="a_stat" href="/spring/articles">Статьи</a></li>
+					<li><a id="a_knigi" href="/spring/books">Книги</a></li>
 					<li><a id="a_gloss" href="#">Глоссарий</a></li>
 				</ul>
 				<form action="search_action" id="search" class="search"

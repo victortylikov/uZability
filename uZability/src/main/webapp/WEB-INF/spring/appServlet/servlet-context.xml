@@ -73,8 +73,12 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
+	<mvc:view-controller path="/articles"  view-name="/articles"/>
 	<mvc:view-controller path="/articles/01_uxpeople"  view-name="/articles/01_uxpeople"/>
 	<mvc:view-controller path="/articles/02_chinadesign"  view-name="/articles/02_chinadesign"/>
 	<mvc:view-controller path="/articles/03_flatdesign"  view-name="/articles/03_flatdesign"/>
 	<mvc:view-controller path="/articles/04_beautyindesign"  view-name="/articles/04_beautyindesign"/>
+
+	<mvc:view-controller path="/books"  view-name="/books"/>
+	<mvc:view-controller path="/books/01_infoArchitecture"  view-name="/books/01_infoArchitecture"/>
 </beans>
