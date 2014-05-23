@@ -34,3 +34,25 @@
 	position: relative;
 	top: 10px;
 }
+
+.book_name{
+	width: 480px;
+	border-top: none;
+	border-bottom: none;
+	padding-top: none;
+	padding-bottom: none;
+	float: right;
+}
+
+.h2_book_name{
+	font-size: 14pt;
+}
+
+.div_author_name ul li{
+	display: inline;
+	margin-left: 10px;
+}
+
+.div_author_name ul li:first-child{
+	margin-left: 0px;
+}
