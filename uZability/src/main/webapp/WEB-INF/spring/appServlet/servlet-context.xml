@@ -81,4 +81,6 @@
 
 	<mvc:view-controller path="/books"  view-name="/books"/>
 	<mvc:view-controller path="/books/01_infoArchitecture"  view-name="/books/01_infoArchitecture"/>
+	
+	<mvc:view-controller path="/glossary"  view-name="/glossary"/>
 </beans>

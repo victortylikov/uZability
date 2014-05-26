@@ -1,0 +1,90 @@
+#a_knigi {
+	padding: 3px 9px;
+	background: #CB0000;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#a_knigi:hover {
+	background: linear-gradient(to top, #CB0000, red) repeat scroll 0 0
+		rgba(0, 0, 0, 0);
+}
+
+#a_knigi:hover,#a_gloss:hover,#a_sait:hover,#a_obrat:hover,#a_shabl:hover,#a_stat:hover,#a_glav:hover
+	{
+	/* color: #FFCC99; */
+	border-bottom: 2px solid #CB0000;
+}
+
+#a_knigi:hover {
+	
+}
+
+.section_book {
+	width: 680px;
+	height: auto;
+	margin-top: 20px;
+	margin-left: 5px;
+	padding-bottom: 5px;
+	border-top: 2px solid grey;
+}
+
+.book_image {
+	position: relative;
+	top: 10px;
+	height: 250px;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+.book_name {
+	width: 480px;
+	border-top: none;
+	border-bottom: none;
+	padding-top: none;
+	padding-bottom: none;
+	float: right;
+	margin-bottom: 10px;
+}
+
+.h2_book_name {
+	font-size: 14pt;
+}
+
+.div_author_name ul li {
+	display: inline;
+	margin-left: 10px;
+}
+
+.div_author_name ul li:first-child {
+	margin-left: 0px;
+}
+
+.p_author_name {
+	font-style: italic;
+	color: #808080;
+}
+
+.p_short_review {
+	/* text-align: justify; */
+}
+
+.span_publisher {
+	
+}
+
+.p_add_information {
+	font-style: italic;
+	border-bottom: 2px dotted grey;
+	padding-bottom: 3px;
+}
+
+article .section_book:first-of-type {
+	margin-top: 10px;
+}
+
+article .section_book:last-of-type {
+	margin-bottom: 20px;
+}

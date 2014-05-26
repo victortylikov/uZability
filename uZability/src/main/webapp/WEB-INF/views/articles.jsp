@@ -70,7 +70,7 @@
 	</header>
 	<div class="main_part clearfix">
 		<article class="grid_18 alpha">
-			<script src="<c:url value="/resources/js/temp.js" />"></script>
+			
 			<section class="section_article" id="post1">
 				<header>
 					<h2><a class="a_section_link" href="/spring/articles/01_uxpeople">Конференция UXPeople 2013</a></h2>
