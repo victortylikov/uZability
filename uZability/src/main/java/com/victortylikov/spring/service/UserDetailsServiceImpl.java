@@ -18,26 +18,20 @@ import org.springframework.transaction.annotation.Transactional;
 import com.victortylikov.spring.dao.UserDao;
 import com.victortylikov.spring.domain.Role;
 
-@Service  
-@Transactional(readOnly=true) 
+@Service
+@Transactional(readOnly = true)
 public class UserDetailsServiceImpl implements UserDetailsService {
 
 	@Autowired
 	private UserDao userDao;
-	
+
 	@Override
 	public UserDetails loadUserByUsername(String login)
 			throws UsernameNotFoundException {
-		com.victortylikov.spring.domain.User user=userDao.getUserByName(login);
-		
-/*		Collection<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-	    for (Role role : user.getRoles()) {
-	      authorities.add(new GrantedAuthorityImpl(role.getRole()));
-	    }*/
-		
+		com.victortylikov.spring.domain.User user = userDao
+				.getUserByName(login);
+
 		return new AuthenticationUserDetails(user);
 	}
-
-
 
 }

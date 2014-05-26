@@ -23,21 +23,6 @@
 <link rel="shortcut icon"
 	href="<c:url value="/resources/images/favicon.ico" />"
 	type="image/x-icon">
-<!-- <script>
-	function validate() {
-		var currentPassword = document.getElementById("currentPassword").value;
-		var newPassword1 = document.getElementById("newPassword1").value;
-		var newPassword2 = document.getElementById("newPassword2").value;
-		var valid = true;
-		
-		if (currentPassword.length <= 0 || newPassword1.length <= 0
-				|| newPassword2.length <= 0) {
-			 alert("Don't leave the field empty!");
-			valid = false;
-		}
-		return valid;
-	};
-</script> -->
 </head>
 <body>
 	<div id="cp_modal_background" onclick="back()"></div>

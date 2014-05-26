@@ -7,11 +7,10 @@ function back() {
 	$("#change_password_form:visible").css("display", "none");
 }
 
-$(document).ready(function(){ 
-	var loc=$(location).attr('href');
-	if (loc=="http://localhost:8080/spring/profile/changePassword") {
+$(document).ready(function() {
+	var loc = $(location).attr('href');
+	if (loc == "http://localhost:8080/spring/profile/changePassword") {
 		addChangePassword();
 	}
-				
 
 });

@@ -17,7 +17,7 @@ public class UserDaoImpl implements UserDao {
 
 	@Autowired
 	private SessionFactory sessionFactory;
-	
+
 	@Override
 	public List<User> findAllUsers() {
 		return sessionFactory
@@ -29,12 +29,12 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public void addUser(User user) {
-		Role role=(Role)sessionFactory.getCurrentSession().createQuery("from Role r where r.idRole=1").uniqueResult();
+		Role role = (Role) sessionFactory.getCurrentSession()
+				.createQuery("from Role r where r.idRole=1").uniqueResult();
 		System.out.println(role.getRole());
-		Set<Role> roles=new HashSet<Role>();
+		Set<Role> roles = new HashSet<Role>();
 		roles.add(role);
 		user.setRoles(roles);
-	//	sessionFactory.getCurrentSession().save(role);
 		sessionFactory.getCurrentSession().save(user);
 	}
 
@@ -64,11 +64,11 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public User updateUserPassword(String username, String newPassword1) {
-		User user=getUserByName(username);
+		User user = getUserByName(username);
 		user.setPassword(newPassword1);
 		sessionFactory.getCurrentSession().update(user);
 		return user;
-		
+
 	}
 
 }
