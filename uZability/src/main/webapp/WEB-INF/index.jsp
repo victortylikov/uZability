@@ -17,7 +17,7 @@
 <body>
 	<div class="container_24">
 	<header>
-		<h1 name="top"><a href="index.html"><img src="<c:url value="/resources/images/logo2.png" />" width="239" height="100" alt="Логотип"></a></h1>
+		<h1 name="top"><a href="/spring/"><img src="<c:url value="/resources/images/logo2.png" />" width="239" height="100" alt="Логотип"></a></h1>
 		<div id="quote">
 			<blockquote id="quote_sentence">Трудность создания опыта взаимодействия состоит в необходимости понять потребности 
 пользователей лучше, чем они понимают их сами</blockquote>

@@ -456,7 +456,7 @@ article section header h2 a {
 }
 
 .section_new {
-	text-align: justify;
+	/* text-align: justify; */
 }
 
 .new_read {

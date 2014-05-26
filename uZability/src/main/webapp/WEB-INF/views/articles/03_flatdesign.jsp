@@ -26,7 +26,7 @@
 	<div class="container_24">
 		<header>
 			<h1 name="top">
-				<a href="index.html"><img
+				<a href="/spring/"><img
 					src="<c:url value="/resources/images/logo2.png" />" width="239"
 					height="100" alt="Логотип"></a>
 			</h1>
