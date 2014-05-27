@@ -72,7 +72,7 @@
 					<li><a id="a_glav" href="/spring/">Главная</a></li>
 					<li><a id="a_stat" href="/spring/articles">Статьи</a></li>
 					<li><a id="a_knigi" href="/spring/books">Книги</a></li>
-					<li><a id="a_gloss" href="#">Глоссарий</a></li>
+					<li><a id="a_gloss" href="/spring/glossary">Глоссарий</a></li>
 				</ul>
 				<form action="search_action" id="search" class="search"
 					enctype="text/plain">

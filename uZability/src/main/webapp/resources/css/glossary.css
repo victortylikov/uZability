@@ -1,4 +1,4 @@
-#a_knigi {
+#a_gloss {
 	padding: 3px 9px;
 	background: #CB0000;
 	-moz-border-radius: 5px;
@@ -6,7 +6,7 @@
 	border-radius: 5px;
 }
 
-#a_knigi:hover {
+#a_gloss:hover {
 	background: linear-gradient(to top, #CB0000, red) repeat scroll 0 0
 		rgba(0, 0, 0, 0);
 }

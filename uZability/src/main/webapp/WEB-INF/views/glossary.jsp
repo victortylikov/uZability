@@ -11,7 +11,7 @@
 	rel="stylesheet">
 <link href="<c:url value="/resources/css/text.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
-<link href="<c:url value="/resources/css/books.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/glossary.css" />" rel="stylesheet">
 <title>uZability</title>
 <script src="<c:url value="/resources/js/quote.js" />"></script>
 <script src="<c:url value="/resources/js/changeNews.js" />"></script>
