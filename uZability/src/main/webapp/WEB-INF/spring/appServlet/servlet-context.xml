@@ -83,4 +83,5 @@
 	<mvc:view-controller path="/books/01_infoArchitecture"  view-name="/books/01_infoArchitecture"/>
 	
 	<mvc:view-controller path="/glossary"  view-name="/glossary"/>
+	<mvc:view-controller path="/glossary/e_ergonomics"  view-name="/glossary/e_ergonomics"/>
 </beans>
