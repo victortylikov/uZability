@@ -97,14 +97,25 @@
 								личные данные</a>
 						</div>
 					</c:if>
-					<div class="block">
-						<h4 class="field_name">Имя и фамилия:</h4>
-						<div class="field">${userdetail.firstName} ${userdetail.lastName}</div>
-					</div>
-					<div class="block">
-						<h4 class="field_name">Дата рождения:</h4>
-						<div class="field">${userdetail.birthDate}</div>
-					</div>
+					<c:if test="${(not empty userdetail.firstName)||(not empty userdetail.lastName)}">
+						<div class="block">
+							<h4 class="field_name">Имя и фамилия:</h4>
+							<div class="field">${userdetail.firstName}
+								${userdetail.lastName}</div>
+						</div>
+					</c:if>
+					<c:if test="${not empty userdetail.birthDate}">
+						<div class="block">
+							<h4 class="field_name">Дата рождения:</h4>
+							<div class="field">${userdetail.birthDate}</div>
+						</div>
+					</c:if>
+					<c:if test="${not empty userdetail.description}">
+						<div class="div_parent_table">
+							<h4 class="field_name">О себе:</h4>
+							<div class="div_child_table">${userdetail.description}</div>
+						</div>
+					</c:if>
 				</div>
 			</div>
 			<a href="/spring/" title="Назад" id="left_button"><img

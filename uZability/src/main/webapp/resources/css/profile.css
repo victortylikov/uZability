@@ -23,7 +23,7 @@
 }
 
 .field_name {
-	width: 200px;
+	width: 170px;
 	float: left;
 	font-size: 14px;
 }
@@ -57,7 +57,7 @@ h4 {
 	float: left;
 	width: 300px;
 	font-size: 14px;
-	margin-left: 200px;
+	margin-left: 170px;
 }
 
 .href_change_password {
@@ -166,4 +166,13 @@ h4 {
 .block_detail {
 	clear: both;
 	margin: 5px 0;
+}
+.div_parent_table{
+	display: table;
+	margin: 5px 0;
+}
+.div_child_table{
+	display: table-cell;
+	width: 400px;
+	font-style: italic;
 }
