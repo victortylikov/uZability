@@ -6,7 +6,7 @@
 
 .main_div_profile {
 	height: auto;
-	width: 650px;
+	
 	margin-top: 100px;
 	border-color: #808080;
 	border-style: solid;
@@ -60,7 +60,7 @@ h4 {
 	margin-left: 200px;
 }
 
-#href_change_password {
+.href_change_password {
 	text-decoration: underline;
 	font-weight: bold;
 	color: black;
@@ -70,7 +70,7 @@ h4 {
 	font-size: 14px;
 }
 
-#href_change_password:hover {
+.href_change_password:hover {
 	text-decoration: underline;
 	color: #CB0000;
 }
@@ -157,4 +157,13 @@ h4 {
 	position: absolute;
 	top: -15;
 	right: 0;
+}
+
+#h3_detail_info {
+	margin-top: 20;
+}
+
+.block_detail {
+	clear: both;
+	margin: 5px 0;
 }

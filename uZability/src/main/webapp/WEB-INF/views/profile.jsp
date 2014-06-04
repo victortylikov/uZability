@@ -69,7 +69,7 @@
 
 		<div class="main_div_profile">
 			<div class="avatar"></div>
-			<h3 id="error_message1">Данные для входа</h3>
+			<h3>Данные для входа</h3>
 
 			<div class="data_user">
 				<div class="block">
@@ -82,16 +82,35 @@
 				</div>
 				<div class="block">
 					<div class="field_change_password">
-						<button onclick="addChangePassword()" id="href_change_password">Сменить
+						<button onclick="addChangePassword()" class="href_change_password">Сменить
 							пароль</button>
 					</div>
 				</div>
 			</div>
+			<h3 id="h3_detail_info">Личная информация</h3>
+			<div class="data_user">
+				<div class="block_detail">
+					<c:if test="${empty userdetail}">
+						<div>
+							Вы не указали дополнительной информации о себе<br> <a
+								class="href_change_password" href="/spring/articles/01_uxpeople">Добавить
+								личные данные</a>
+						</div>
+					</c:if>
+					<div class="block">
+						<h4 class="field_name">Имя и фамилия:</h4>
+						<div class="field">${userdetail.firstName} ${userdetail.lastName}</div>
+					</div>
+					<div class="block">
+						<h4 class="field_name">Дата рождения:</h4>
+						<div class="field">${userdetail.birthDate}</div>
+					</div>
+				</div>
+			</div>
+			<a href="/spring/" title="Назад" id="left_button"><img
+				id="image_left_button"
+				src="<c:url value="/resources/images/arrowLeft.png" />" width="70"
+				height="70"></a>
 		</div>
-		<a href="/spring/" title="Назад" id="left_button"><img
-			id="image_left_button"
-			src="<c:url value="/resources/images/arrowLeft.png" />" width="70"
-			height="70"></a>
-	</div>
 </body>
 </html>

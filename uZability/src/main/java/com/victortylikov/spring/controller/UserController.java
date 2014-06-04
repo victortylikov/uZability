@@ -81,6 +81,7 @@ public class UserController {
 		User user = userService.getUserByName(login);
 		model.addAttribute("password", new Password());
 		model.addAttribute("user", user);
+		model.addAttribute("userdetail", user.getUserDetail());
 		return "/profile";
 	}
 

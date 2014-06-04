@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.victortylikov.spring.domain.Role;
 import com.victortylikov.spring.domain.User;
+import com.victortylikov.spring.domain.UserDetail;
 
 @Repository
 public class UserDaoImpl implements UserDao {
