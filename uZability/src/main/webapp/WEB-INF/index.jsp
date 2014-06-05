@@ -315,7 +315,7 @@
 		<div class="bottom_nav_div">
 			<a href="#" class="bottom_nav_a">О сайте</a>
 		</div>
-		<a href="#top" id="up_button"><img id="image_up_button"
+		<a href="#top" title="Вверх" id="up_button"><img id="image_up_button"
 			src="<c:url value="/resources/images/arrow.png" />" width="70"
 			height="70"></a> <a href="#" id="feedback">Обратная связь</a>
 	</div>

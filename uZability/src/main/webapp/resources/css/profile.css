@@ -175,4 +175,11 @@ h4 {
 	display: table-cell;
 	width: 400px;
 	font-style: italic;
+	vertical-align: top;
+}
+
+.a_edit_personal_info{
+	position: relative;	
+	bottom: 4px;
+	left: 10px;
 }
