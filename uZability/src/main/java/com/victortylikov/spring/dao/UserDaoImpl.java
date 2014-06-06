@@ -72,4 +72,11 @@ public class UserDaoImpl implements UserDao {
 
 	}
 
+	@Override
+	public void addUserDetail(UserDetail userDetail) {
+		
+		sessionFactory.getCurrentSession().saveOrUpdate(userDetail);
+
+	}
+
 }

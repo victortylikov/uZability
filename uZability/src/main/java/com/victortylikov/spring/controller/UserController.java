@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.victortylikov.spring.domain.User;
+import com.victortylikov.spring.domain.UserDetail;
 import com.victortylikov.spring.service.AuthenticationUserDetails;
 import com.victortylikov.spring.service.Password;
 import com.victortylikov.spring.service.UserService;
@@ -123,6 +124,34 @@ public class UserController {
 		}
 		return "redirect:/profile/" + authUser.getUsername();
 
+	}
+
+	@RequestMapping(value = "/editProfile", method = RequestMethod.GET)
+	public String editProfileGet(ModelMap map) {
+		User user=getCurrentUser();
+		UserDetail userDetail=user.getUserDetail();
+		if(userDetail==null){
+			userDetail=new UserDetail();
+		}
+		map.addAttribute("userDetail", userDetail);
+		return "profileEdit";
+	}
+
+	@RequestMapping(value = "/editProfilePost", method = RequestMethod.POST)
+	public String editProfilePost(@ModelAttribute(value = "userDetail") UserDetail userDetail,
+			BindingResult result) {
+		User user = getCurrentUser();
+		userDetail.setIdUser(user.getIdUser());
+		userService.addUserDetail(userDetail);
+		// map.addAttribute("user", new User());
+		return "profileEdit";
+	}
+
+	public User getCurrentUser() {
+		AuthenticationUserDetails authUser = (AuthenticationUserDetails) SecurityContextHolder
+				.getContext().getAuthentication().getPrincipal();
+		User user = userService.getUserByName(authUser.getUsername());
+		return user;
 	}
 
 }

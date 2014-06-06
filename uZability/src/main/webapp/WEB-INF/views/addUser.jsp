@@ -27,7 +27,7 @@
 					<form:errors path="login" cssClass="error"></form:errors>
 					<p class="form_p">
 						<label for="login">Логин:</label>
-						<form:input path="login" autocomplete="off" id="input_st" />
+						<form:input path="login" autocomplete="off" id="input_st"  />
 					</p>
 					<form:errors path="password" cssClass="error"></form:errors>
 					<p class="form_p">

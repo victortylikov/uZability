@@ -3,6 +3,7 @@ package com.victortylikov.spring.service;
 import java.util.List;
 
 import com.victortylikov.spring.domain.User;
+import com.victortylikov.spring.domain.UserDetail;
 
 public interface UserService {
 	
@@ -13,4 +14,6 @@ public interface UserService {
 	User getUserByName(String login);
 
 	User updateUserPassword(String username,String newPassword1);
+
+	void addUserDetail(UserDetail userDetail);
 }

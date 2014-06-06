@@ -66,7 +66,6 @@
 		</form:form>
 	</div>
 	<div class="container_profile">
-
 		<div class="main_div_profile">
 			<div class="avatar"></div>
 			<h3>Данные для входа</h3>
@@ -87,17 +86,18 @@
 					</div>
 				</div>
 			</div>
-			<h3 id="h3_detail_info">Личная информация
-			<a href="/spring/editprofile" title="Редактировать" class="a_edit_personal_info" ><img
-				
-				src="<c:url value="/resources/images/edit.png" />" width="22"
-				height="22"></a></h3>
+			<h3 id="h3_detail_info">
+				Личная информация <a href="/spring/editProfile"
+					title="Редактировать" class="a_edit_personal_info"><img
+					src="<c:url value="/resources/images/edit.png" />" width="22"
+					height="22"></a>
+			</h3>
 			<div class="data_user">
 				<div class="block_detail">
 					<c:if test="${empty userdetail}">
 						<div>
 							Вы не указали дополнительной информации о себе<br> <a
-								class="href_change_password" href="/spring/editprofile">Добавить
+								class="href_change_password" href="/spring/editProfile">Добавить
 								личные данные</a>
 						</div>
 					</c:if>
@@ -128,5 +128,6 @@
 				src="<c:url value="/resources/images/arrowLeft.png" />" width="70"
 				height="70"></a>
 		</div>
+	</div>
 </body>
 </html>

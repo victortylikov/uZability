@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.victortylikov.spring.dao.UserDao;
 import com.victortylikov.spring.domain.User;
+import com.victortylikov.spring.domain.UserDetail;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -46,6 +47,13 @@ public class UserServiceImpl implements UserService {
 	public User updateUserPassword(String username,String newPassword1) {
 		return userDao.updateUserPassword(username,newPassword1);
 		
+		
+	}
+
+	@Override
+	@Transactional
+	public void addUserDetail(UserDetail userDetail) {
+		userDao.addUserDetail(userDetail);
 		
 	}
 	
