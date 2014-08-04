@@ -1,0 +1,19 @@
+#h3_detail_info {
+	margin-top: 0;
+}
+
+.field input {
+	font-weight: bold;
+	width: 200;
+}
+
+#descript {
+	width: 400px;
+	height: 100;
+	resize: none;
+}
+.block {
+clear: both;
+margin: 10px 0;
+height: 24px;
+}

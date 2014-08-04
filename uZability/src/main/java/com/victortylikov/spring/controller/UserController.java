@@ -141,13 +141,11 @@ public class UserController {
 	@RequestMapping(value = "/editProfilePost", method = RequestMethod.POST)
 	public String editProfilePost(@ModelAttribute(value = "userDetail") UserDetail userDetail,
 			BindingResult result) {
-		
 		User user = getCurrentUser();
 		userDetail.setIdUser(user.getIdUser());
 		userService.addUserDetail(userDetail);
-		System.out.println("aaaaa  "+userDetail.getFirstName());
-		// map.addAttribute("user", new User());
-		return "profileEdit";
+
+		return  "redirect:/profile/" + user.getLogin();
 	}
 
 	public User getCurrentUser() {

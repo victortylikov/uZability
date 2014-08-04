@@ -16,6 +16,8 @@
 	rel="stylesheet">
 <link href="<c:url value="/resources/css/profile.css" />"
 	rel="stylesheet">
+	<link href="<c:url value="/resources/css/profileedit.css" />"
+	rel="stylesheet">
 <title>uZability</title>
 <link rel="shortcut icon"
 	href="<c:url value="/resources/images/favicon.ico" />"
@@ -32,7 +34,7 @@
 						<div class="block">
 							<h4 class="field_name">Имя:</h4>
 							<div class="field">
-								<form:input path="firstName" autocomplete="off" value="${userdetail.firstName}"/>
+								<form:input path="firstName" autocomplete="off"  />
 							</div>
 						</div>
 						<div class="block">
@@ -50,7 +52,9 @@
 
 						<div class="div_parent_table">
 							<h4 class="field_name">О себе:</h4>
-							<div class="div_child_table"></div>
+							<div class="div_child_table">
+							<form:textarea id="descript" path="description" autocomplete="off"/>
+							</div>
 						</div>
 						<p>
 							<input type="submit" value="Сохранить">
