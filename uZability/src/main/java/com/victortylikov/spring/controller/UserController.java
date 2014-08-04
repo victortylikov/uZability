@@ -1,6 +1,7 @@
 package com.victortylikov.spring.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -140,9 +141,11 @@ public class UserController {
 	@RequestMapping(value = "/editProfilePost", method = RequestMethod.POST)
 	public String editProfilePost(@ModelAttribute(value = "userDetail") UserDetail userDetail,
 			BindingResult result) {
+		
 		User user = getCurrentUser();
 		userDetail.setIdUser(user.getIdUser());
 		userService.addUserDetail(userDetail);
+		System.out.println("aaaaa  "+userDetail.getFirstName());
 		// map.addAttribute("user", new User());
 		return "profileEdit";
 	}
