@@ -46,7 +46,10 @@
 
 						<div class="block">
 							<h4 class="field_name">Дата рождения:</h4>
-							<div class="field"></div>
+							<div class="field">
+							<form:input path="birthDate" id="datepicker" autocomplete="off" />
+							<div class="helper"> формат ввода: YYYY-MM-DD</div>
+							</div>
 						</div>
 
 
@@ -56,7 +59,7 @@
 							<form:textarea id="descript" path="description" autocomplete="off"/>
 							</div>
 						</div>
-						<p>
+						<p class="submit" id="submit_save">
 							<input type="submit" value="Сохранить">
 						</p>
 					</form:form>

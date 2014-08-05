@@ -1,3 +1,7 @@
+body{
+ height: auto;	
+}
+
 .container_profile {
 	margin-left: auto;
 	margin-right: auto;
@@ -104,7 +108,7 @@ h4 {
 	border-width: 4px;
 	border-radius: 20px;
 	top: 20%;
-	left: 50%;
+	left: 38%;
 	position: fixed;
 	z-index: 11;
 	height: auto;
@@ -112,7 +116,7 @@ h4 {
 	background-color: white;
 	display: none;
 	padding: 30px 40px;
-	margin-left: -220pxpx;
+	
 }
 
 .change_password_p {

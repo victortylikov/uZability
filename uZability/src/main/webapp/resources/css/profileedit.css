@@ -12,8 +12,31 @@
 	height: 100;
 	resize: none;
 }
+
 .block {
-clear: both;
-margin: 10px 0;
-height: 24px;
+	clear: both;
+	margin: 10px 0;
+	height: 24px;
+}
+
+.submit input {
+	background: #CB0000;
+	color: white;
+	font-weight: bold;
+	border-radius: 7px;
+	padding: 3px 7px;
+	border: 1px solid #666;
+	margin-top: 15px;
+}
+
+#submit_save {
+	margin-right: 10px;
+}
+
+.helper {
+	margin-bottom: 10px;
+	font-weight: normal;
+	font-size: 11;
+	color: grey;
+	font-style: italic;
 }
