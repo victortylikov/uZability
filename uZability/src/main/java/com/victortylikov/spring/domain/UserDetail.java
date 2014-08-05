@@ -14,15 +14,13 @@ import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-import org.hibernate.annotations.GenericGenerator;  
-import org.hibernate.annotations.Parameter;  
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
 
 @Entity
 @Table(name = "user_detail")
 public class UserDetail {
 
-	 
-	 
 	@Id
 	@Column(name = "id_user")
 	private Integer idUser;
@@ -34,7 +32,7 @@ public class UserDetail {
 	private String lastName;
 
 	@Column(name = "birth_date")
-	private Date birthDate;
+	private String birthDate;
 
 	@Column(name = "photo")
 	@Lob
@@ -42,7 +40,7 @@ public class UserDetail {
 
 	@Column(name = "description")
 	private String description;
-
+	
 	@OneToOne
 	@PrimaryKeyJoinColumn
 	private User user;
@@ -74,12 +72,12 @@ public class UserDetail {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	
-	public Date getBirthDate() {
+
+	public String getBirthDate() {
 		return birthDate;
 	}
 
-	public void setBirthDate(Date birthDate) {
+	public void setBirthDate(String birthDate) {
 		this.birthDate = birthDate;
 	}
 
