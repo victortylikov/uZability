@@ -94,6 +94,7 @@ public class UserController {
 
 		AuthenticationUserDetails authUser = (AuthenticationUserDetails) SecurityContextHolder
 				.getContext().getAuthentication().getPrincipal();
+		model.addAttribute("userdetail", getCurrentUser().getUserDetail());
 
 		if (result.hasErrors()) {
 			User userOld = userService.getUserByName(authUser.getUsername());
@@ -141,6 +142,9 @@ public class UserController {
 	@RequestMapping(value = "/editProfilePost", method = RequestMethod.POST)
 	public String editProfilePost(@ModelAttribute(value = "userDetail") UserDetail userDetail,
 			BindingResult result) {
+		if (result.hasErrors()) {
+			return "../index";
+		}
 		User user = getCurrentUser();
 		userDetail.setIdUser(user.getIdUser());
 		userService.addUserDetail(userDetail);

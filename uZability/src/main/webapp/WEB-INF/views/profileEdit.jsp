@@ -1,3 +1,4 @@
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -16,8 +17,13 @@
 	rel="stylesheet">
 <link href="<c:url value="/resources/css/profile.css" />"
 	rel="stylesheet">
-	<link href="<c:url value="/resources/css/profileedit.css" />"
+<link href="<c:url value="/resources/css/profileedit.css" />"
 	rel="stylesheet">
+<script src="<c:url value="/resources/js/jquery-1.2.6.js" />"></script>
+<script src="<c:url value="/resources/js/jquery.maskedinput.js" />"></script>
+<script src="<c:url value="/resources/js/dateValidator.js" />"></script>
+<script src="<c:url value="/resources/js/userDetailValidator.js" />"></script>
+
 <title>uZability</title>
 <link rel="shortcut icon"
 	href="<c:url value="/resources/images/favicon.ico" />"
@@ -30,25 +36,28 @@
 			<div class="data_user">
 				<div class="block_detail">
 					<form:form action="editProfilePost" modelAttribute="userDetail"
-						method="POST">
+						name="user_detail_form" method="POST"
+						onsubmit="return check_form()">
 						<div class="block">
 							<h4 class="field_name">Имя:</h4>
 							<div class="field">
-								<form:input path="firstName" autocomplete="off"  />
+								<form:input path="firstName" autocomplete="off" maxlength="30" />
 							</div>
 						</div>
 						<div class="block">
 							<h4 class="field_name">Фамилия:</h4>
 							<div class="field">
-								<form:input path="lastName" autocomplete="off" />
+								<form:input path="lastName" autocomplete="off" maxlength="30" />
 							</div>
 						</div>
 
 						<div class="block">
 							<h4 class="field_name">Дата рождения:</h4>
 							<div class="field">
-							<form:input path="birthDate" id="datepicker" autocomplete="off" />
-							<div class="helper"> формат ввода: YYYY-MM-DD</div>
+								<span id="errorDate"></span>
+								<form:input path="birthDate" id="datepicker"
+									autocomplete="off" />
+								<div class="helper">формат ввода: YYYY/MM/DD</div>
 							</div>
 						</div>
 
@@ -56,7 +65,8 @@
 						<div class="div_parent_table">
 							<h4 class="field_name">О себе:</h4>
 							<div class="div_child_table">
-							<form:textarea id="descript" path="description" autocomplete="off"/>
+								<form:textarea id="descript" path="description"
+									autocomplete="off" maxlength="1000" />
 							</div>
 						</div>
 						<p class="submit" id="submit_save">
