@@ -30,7 +30,10 @@ public class UserDetail {
 
 	@Column(name = "last_name")
 	private String lastName;
-
+	
+	@Column(name = "gender")
+	private byte gender;
+	
 	@Column(name = "birth_date")
 	private String birthDate;
 
@@ -67,6 +70,14 @@ public class UserDetail {
 
 	public String getLastName() {
 		return lastName;
+	}
+
+	public byte getGender() {
+		return gender;
+	}
+
+	public void setGender(byte gender) {
+		this.gender = gender;
 	}
 
 	public void setLastName(String lastName) {

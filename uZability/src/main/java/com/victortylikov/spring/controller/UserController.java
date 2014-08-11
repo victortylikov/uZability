@@ -147,6 +147,10 @@ public class UserController {
 		}
 		User user = getCurrentUser();
 		userDetail.setIdUser(user.getIdUser());
+		if(userDetail.getBirthDate()==""){
+			userDetail.setBirthDate(null);
+		}
+		
 		userService.addUserDetail(userDetail);
 
 		return  "redirect:/profile/" + user.getLogin();

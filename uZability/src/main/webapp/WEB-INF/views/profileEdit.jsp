@@ -40,8 +40,10 @@
 						onsubmit="return check_form()">
 						<div class="block">
 							<h4 class="field_name">Имя:</h4>
+							<span id="errorName"></span>
 							<div class="field">
-								<form:input path="firstName" autocomplete="off" maxlength="30" />
+								<form:input path="firstName" autocomplete="off" maxlength="30"
+									id="first_name" />
 							</div>
 						</div>
 						<div class="block">
@@ -52,15 +54,21 @@
 						</div>
 
 						<div class="block">
-							<h4 class="field_name">Дата рождения:</h4>
+							<h4 class="field_name">Пол:</h4>
 							<div class="field">
-								<span id="errorDate"></span>
-								<form:input path="birthDate" id="datepicker"
-									autocomplete="off" />
-								<div class="helper">формат ввода: YYYY/MM/DD</div>
+								<input type="radio" name="gender" id="gender_m" class="gender" value="1"/>Мужской
+								<input type="radio" name="gender" id="gender_w" class="gender" value="2"/>Женский
 							</div>
 						</div>
 
+						<div class="block">
+							<h4 class="field_name">Дата рождения:</h4>
+							<span id="errorDate"></span>
+							<div class="field">
+								<form:input path="birthDate" id="datepicker" autocomplete="off" />
+								<div class="helper">формат ввода: YYYY/MM/DD</div>
+							</div>
+						</div>
 
 						<div class="div_parent_table">
 							<h4 class="field_name">О себе:</h4>

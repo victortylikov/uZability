@@ -5,6 +5,7 @@
 .field input {
 	font-weight: bold;
 	width: 200;
+	margin-bottom: 10px;
 }
 
 #descript {
@@ -39,4 +40,16 @@
 	font-size: 11;
 	color: grey;
 	font-style: italic;
+}
+#errorDate {
+	color: red;
+	font-size: 12px;
+}
+#errorName{
+	color: red;
+	font-size: 12px;
+}
+
+.gender{
+	width: auto;
 }
