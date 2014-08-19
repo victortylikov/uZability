@@ -22,6 +22,7 @@
 <script src="<c:url value="/resources/js/jquery-1.2.6.js" />"></script>
 <script src="<c:url value="/resources/js/jquery.maskedinput.js" />"></script>
 <script src="<c:url value="/resources/js/dateValidator.js" />"></script>
+<script src="<c:url value="/resources/js/gender.js" />"></script>
 <script src="<c:url value="/resources/js/userDetailValidator.js" />"></script>
 
 <title>uZability</title>
@@ -56,9 +57,13 @@
 						<div class="block">
 							<h4 class="field_name">Пол:</h4>
 							<div class="field">
-								<input type="radio" name="gender" id="gender_m" class="gender" value="1"/>Мужской
-								<input type="radio" name="gender" id="gender_w" class="gender" value="2"/>Женский
+								<input type="radio" name="gender" id="gender_m" class="gender"
+									value="1" /><span class="span_gender">Мужской</span> 
+									<input
+									type="radio" name="gender" id="gender_w" class="gender"
+									value="2" /><span class="span_gender">Женский</span>
 							</div>
+							<div id="id_gender_check" style="visibility: hidden;" >${userDetail.gender}</div>
 						</div>
 
 						<div class="block">

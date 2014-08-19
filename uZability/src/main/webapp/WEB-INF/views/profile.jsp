@@ -18,7 +18,7 @@
 	rel="stylesheet">
 <script src="<c:url value="/resources/js/jquery-1.2.6.js" />"></script>
 <script src="<c:url value="/resources/js/changePassword.js" />"></script>
-
+<script src="<c:url value="/resources/js/changeGender.js" />"></script>
 <title>uZability</title>
 <link rel="shortcut icon"
 	href="<c:url value="/resources/images/favicon.ico" />"
@@ -107,6 +107,12 @@
 							<h4 class="field_name">Имя и фамилия:</h4>
 							<div class="field">${userdetail.firstName}
 								${userdetail.lastName}</div>
+						</div>
+					</c:if>
+					<c:if test="${not empty userdetail.gender}">
+						<div class="block">
+							<h4 class="field_name">Пол:</h4>
+							<div class="field" id="id_change_gender">${userGender}</div>
 						</div>
 					</c:if>
 					<c:if test="${not empty userdetail.birthDate}">

@@ -81,9 +81,18 @@ public class UserController {
 	public String profileUser(ModelMap model,
 			@PathVariable("login") String login) {
 		User user = userService.getUserByName(login);
+		String userGenderString=null;
+		if(user.getUserDetail().getGender()==1){
+			userGenderString="Мужской";
+			
+		}else if(user.getUserDetail().getGender()==2){
+			userGenderString="Женский";
+			
+		}
 		model.addAttribute("password", new Password());
 		model.addAttribute("user", user);
 		model.addAttribute("userdetail", user.getUserDetail());
+		model.addAttribute("userGender", userGenderString);
 		return "/profile";
 	}
 
@@ -130,12 +139,16 @@ public class UserController {
 
 	@RequestMapping(value = "/editProfile", method = RequestMethod.GET)
 	public String editProfileGet(ModelMap map) {
+		
 		User user=getCurrentUser();
 		UserDetail userDetail=user.getUserDetail();
 		if(userDetail==null){
 			userDetail=new UserDetail();
 		}
+	
+		
 		map.addAttribute("userDetail", userDetail);
+		
 		return "profileEdit";
 	}
 
