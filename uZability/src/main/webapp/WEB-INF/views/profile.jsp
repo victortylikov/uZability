@@ -19,6 +19,7 @@
 <script src="<c:url value="/resources/js/jquery-1.2.6.js" />"></script>
 <script src="<c:url value="/resources/js/changePassword.js" />"></script>
 <script src="<c:url value="/resources/js/changeGender.js" />"></script>
+<script src="<c:url value="/resources/js/upload_img.js" />"></script>
 <title>uZability</title>
 <link rel="shortcut icon"
 	href="<c:url value="/resources/images/favicon.ico" />"
@@ -67,7 +68,17 @@
 	</div>
 	<div class="container_profile">
 		<div class="main_div_profile">
-			<div class="avatar"></div>
+			<div class="avatar">
+				<div class="img_avatar"></div>
+				<div class="below_avatar">
+					<form:form method="post" action="uploadImage"
+						modelAttribute="uploadForm" enctype="multipart/form-data">
+						<input id="trigger" type="button" value="Загрузить аватар" onclick="click_upload_file()"/>
+						<input id="file" type="file" name="image" />
+						<input type="submit" value="ok"/>
+					</form:form>
+				</div>
+			</div>
 			<h3>Данные для входа</h3>
 
 			<div class="data_user">

@@ -81,11 +81,21 @@ h4 {
 
 .avatar {
 	position: absolute;
-	background: red;
+
 	width: 100px;
-	height: 140px;
+	height: 180px;
 	top: 40px;
 	right: 50px;
+}
+
+#file{
+	visibility: hidden;
+}
+
+.img_avatar {
+	background: red;
+	width: 120px;
+	height: 140px;
 }
 
 #cp_modal_background {

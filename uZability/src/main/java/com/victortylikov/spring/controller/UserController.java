@@ -168,6 +168,13 @@ public class UserController {
 
 		return  "redirect:/profile/" + user.getLogin();
 	}
+	
+	@RequestMapping(value = "/uploadImage", method = RequestMethod.POST)
+	public String uploadImage(@ModelAttribute(value = "uploadForm") UserDetail userDetail){
+		
+		
+		return null;
+	}
 
 	public User getCurrentUser() {
 		AuthenticationUserDetails authUser = (AuthenticationUserDetails) SecurityContextHolder
