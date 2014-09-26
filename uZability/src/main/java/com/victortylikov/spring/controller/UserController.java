@@ -1,9 +1,17 @@
 package com.victortylikov.spring.controller;
 
+import java.io.IOException;
+
+
+import java.sql.Blob;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+
+
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -19,6 +27,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.victortylikov.spring.domain.User;
 import com.victortylikov.spring.domain.UserDetail;
@@ -169,11 +179,22 @@ public class UserController {
 		return  "redirect:/profile/" + user.getLogin();
 	}
 	
-	@RequestMapping(value = "/uploadImage", method = RequestMethod.POST)
-	public String uploadImage(@ModelAttribute(value = "uploadForm") UserDetail userDetail){
+	@RequestMapping(value = "/profile/uploadImage", method = RequestMethod.POST)
+	public String uploadImage(@ModelAttribute(value = "uploadForm") UserDetail userDetail,@RequestParam("file") MultipartFile file,BindingResult result){
+		User user = getCurrentUser();
+		userDetail.setIdUser(user.getIdUser());
+		try {
+			 
+ 
+			
+            userDetail.setPhoto(file);
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+		userService.addUserDetail(userDetail);
 		
-		
-		return null;
+		return "redirect:/profile/" + getCurrentUser();
 	}
 
 	public User getCurrentUser() {

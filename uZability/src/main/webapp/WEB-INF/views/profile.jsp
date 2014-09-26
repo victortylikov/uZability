@@ -71,9 +71,9 @@
 			<div class="avatar">
 				<div class="img_avatar"></div>
 				<div class="below_avatar">
-					<form:form method="post" action="uploadImage"
+					<form:form method="POST" action="uploadImage"
 						modelAttribute="uploadForm" enctype="multipart/form-data">
-						<input id="trigger" type="button" value="Загрузить аватар" onclick="click_upload_file()"/>
+<!-- 						<input id="trigger" type="button" value="Загрузить аватар" onclick="click_upload_file()"/> -->
 						<input id="file" type="file" name="image" />
 						<input type="submit" value="ok"/>
 					</form:form>

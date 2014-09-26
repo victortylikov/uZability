@@ -88,9 +88,9 @@ h4 {
 	right: 50px;
 }
 
-#file{
-	visibility: hidden;
-}
+/* #file{ */
+/* 	visibility: hidden; */
+/* } */
 
 .img_avatar {
 	background: red;
