@@ -94,7 +94,6 @@ public class UserController {
 		String userGenderString=null;
 		if(user.getUserDetail().getGender()==1){
 			userGenderString="Мужской";
-			
 		}else if(user.getUserDetail().getGender()==2){
 			userGenderString="Женский";
 			
@@ -181,20 +180,16 @@ public class UserController {
 	
 	@RequestMapping(value = "/profile/uploadImage", method = RequestMethod.POST)
 	public String uploadImage(@ModelAttribute(value = "uploadForm") UserDetail userDetail,@RequestParam("file") MultipartFile file,BindingResult result){
-		User user = getCurrentUser();
-		userDetail.setIdUser(user.getIdUser());
+
 		try {
-			 
- 
-			
-            userDetail.setPhoto(file);
-            
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-		userService.addUserDetail(userDetail);
+			byte[] bytes = file.getBytes();
+			userService.saveAvatar(bytes);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		return "redirect:/profile/" + getCurrentUser();
+		return "redirect:/profile/" + getCurrentUser().getLogin();
 	}
 
 	public User getCurrentUser() {

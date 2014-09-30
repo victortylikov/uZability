@@ -1,9 +1,11 @@
 package com.victortylikov.spring.dao;
 
+import java.sql.Blob;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +39,9 @@ public class UserDaoImpl implements UserDao {
 		roles.add(role);
 		user.setRoles(roles);
 		sessionFactory.getCurrentSession().save(user);
+		UserDetail userDetail=new UserDetail();
+		userDetail.setIdUser(user.getIdUser());
+		addUserDetail(userDetail);
 	}
 
 	public SessionFactory getSessionFactory() {
@@ -69,14 +74,27 @@ public class UserDaoImpl implements UserDao {
 		user.setPassword(newPassword1);
 		sessionFactory.getCurrentSession().update(user);
 		return user;
-
 	}
 
 	@Override
 	public void addUserDetail(UserDetail userDetail) {
-		
 		sessionFactory.getCurrentSession().saveOrUpdate(userDetail);
-
 	}
+
+	@Override
+	public void saveAvatar(byte[] bytes) {
+		Blob blob=Hibernate.getLobCreator(sessionFactory.getCurrentSession()).createBlob(bytes);
+		UserDetail userDetail=new UserDetail();
+		userDetail.setIdUser(55);
+		userDetail.setFirstName("Виктор");
+		userDetail.setLastName("YYYYYYY");
+		userDetail.setPhoto(blob);
+		addUserDetail(userDetail);
+		
+		
+		
+	}
+	
+	
 
 }

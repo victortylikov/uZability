@@ -16,4 +16,6 @@ public interface UserDao {
 	User updateUserPassword(String username, String newPassword1);
 
 	void addUserDetail(UserDetail userDetail);
+	
+	void saveAvatar(byte[] bytes);
 }

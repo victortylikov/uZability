@@ -46,16 +46,18 @@ public class UserServiceImpl implements UserService {
 	@Transactional
 	public User updateUserPassword(String username,String newPassword1) {
 		return userDao.updateUserPassword(username,newPassword1);
-		
-		
 	}
 
 	@Override
 	@Transactional
 	public void addUserDetail(UserDetail userDetail) {
 		userDao.addUserDetail(userDetail);
-		
 	}
-	
+
+	@Override
+	@Transactional
+	public void saveAvatar(byte[] bytes){
+		userDao.saveAvatar(bytes);
+	}
 
 }
