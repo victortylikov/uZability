@@ -69,7 +69,7 @@
 	<div class="container_profile">
 		<div class="main_div_profile">
 			<div class="avatar">
-				<div class="img_avatar"></div>
+				<div class="img_avatar"><img src="/UserController/getAvatar/"  alt="" height=160 width=160/></div>
 				<div class="below_avatar">
 					<form:form method="POST" action="uploadImage"
 						modelAttribute="uploadForm" enctype="multipart/form-data">

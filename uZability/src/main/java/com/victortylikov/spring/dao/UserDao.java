@@ -17,5 +17,5 @@ public interface UserDao {
 
 	void addUserDetail(UserDetail userDetail);
 	
-	void saveAvatar(byte[] bytes);
+	void saveAvatar(UserDetail userDetail,byte[] bytes);
 }

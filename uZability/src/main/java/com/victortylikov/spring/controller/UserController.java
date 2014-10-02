@@ -1,9 +1,13 @@
 package com.victortylikov.spring.controller;
 
+import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.io.IOException;
 
 
+import java.io.InputStream;
 import java.sql.Blob;
+import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +15,12 @@ import javax.validation.Valid;
 
 
 
+
+
+
+
+
+import org.apache.commons.io.IOUtils;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -183,7 +193,7 @@ public class UserController {
 
 		try {
 			byte[] bytes = file.getBytes();
-			userService.saveAvatar(bytes);
+			userService.saveAvatar(getCurrentUser().getUserDetail(),bytes);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -198,5 +208,16 @@ public class UserController {
 		User user = userService.getUserByName(authUser.getUsername());
 		return user;
 	}
+	
+	
+	public   byte[] getAvatar(HttpServletResponse response) throws SQLException{
+		Blob blob=getCurrentUser().getUserDetail().getPhoto();
+		int blobLength = (int) blob.length();  
+		byte[] buffer = blob.getBytes(1, blobLength);
+	
+		return buffer;
+		
+	}
+	
 
 }

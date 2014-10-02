@@ -82,12 +82,8 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public void saveAvatar(byte[] bytes) {
+	public void saveAvatar(UserDetail userDetail,byte[] bytes) {
 		Blob blob=Hibernate.getLobCreator(sessionFactory.getCurrentSession()).createBlob(bytes);
-		UserDetail userDetail=new UserDetail();
-		userDetail.setIdUser(55);
-		userDetail.setFirstName("Виктор");
-		userDetail.setLastName("YYYYYYY");
 		userDetail.setPhoto(blob);
 		addUserDetail(userDetail);
 		

@@ -56,8 +56,8 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	@Transactional
-	public void saveAvatar(byte[] bytes){
-		userDao.saveAvatar(bytes);
+	public void saveAvatar(UserDetail userDetail,byte[] bytes){
+		userDao.saveAvatar(userDetail,bytes);
 	}
 
 }
