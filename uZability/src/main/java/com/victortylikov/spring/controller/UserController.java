@@ -6,12 +6,14 @@ import java.io.IOException;
 
 
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.sql.Blob;
 import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+
 
 
 
@@ -209,13 +211,32 @@ public class UserController {
 		return user;
 	}
 	
-	
-	public   byte[] getAvatar(HttpServletResponse response) throws SQLException{
+	@RequestMapping(value ="/profile/image/getAvatar")
+	public   void getAvatar(HttpServletResponse response) {
 		Blob blob=getCurrentUser().getUserDetail().getPhoto();
-		int blobLength = (int) blob.length();  
-		byte[] buffer = blob.getBytes(1, blobLength);
+		try {
+			InputStream image=blob.getBinaryStream();
+			OutputStream out = response.getOutputStream();
+			response.setContentType("image/jpeg");
+			int length = (int) image.available();
+	        int bufferSize = 1024;
+	        byte[] buffer = new byte[bufferSize];
+	        while ((length = image.read(buffer)) != -1) {
+	            out.write(buffer, 0, length);
+	        }
+	           response.flushBuffer();
+	        //image.close();
+	        out.flush();
+	        out.close();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	
-		return buffer;
 		
 	}
 	

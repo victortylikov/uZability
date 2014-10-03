@@ -58,7 +58,7 @@
 			</security:authorize>
 			<security:authorize access="isAuthenticated()">
 				<div class="login">
-					<div class="photo_user"></div>
+					<div class="photo_user"><img src="/spring/profile/image/getAvatar"  alt="" height=70 width=70/></div>
 					<a href="<c:url value="/j_spring_security_logout"/>" id="logout">Выйти</a>
 					<div id="username_login">
 						<a
