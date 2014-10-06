@@ -69,13 +69,17 @@
 	<div class="container_profile">
 		<div class="main_div_profile">
 			<div class="avatar">
-				<div class="img_avatar"><img src="/spring/profile/image/getAvatar"  alt="" height=120 width=120/></div>
+				<div class="img_avatar">
+					<img src="/spring/profile/image/getAvatar" alt="" height=120
+						width=120 />
+				</div>
 				<div class="below_avatar">
 					<form:form method="POST" action="uploadImage"
-						modelAttribute="uploadForm" enctype="multipart/form-data">
-<!-- 						<input id="trigger" type="button" value="Загрузить аватар" onclick="click_upload_file()"/> -->
-						<input id="file" type="file" name="file" />
-						<input type="submit" value="ok"/>
+						modelAttribute="uploadForm" enctype="multipart/form-data" id="id_uploadform">
+						<input id="trigger" type="button" value="Загрузить аватар"
+							onclick="click_upload_file()" />
+						<input id="file" type="file" name="file" onchange="javascript:this.form.submit();" />
+						<!-- <input type="submit" value="ok" id="submitAvatar" /> -->
 					</form:form>
 				</div>
 			</div>

@@ -51,6 +51,7 @@
 							class="text_login" placeholder="пароль" required="required"
 							maxlength="30" pattern="[A-Za-z0-9_.-]{3,30}" />
 					</p>
+					<input id="id_remember_me" name="_spring_security_remember_me" type="checkbox" checked="checked">
 					<p class="submit">
 						<input type="submit" value="Ok" />
 					</p>
@@ -58,7 +59,9 @@
 			</security:authorize>
 			<security:authorize access="isAuthenticated()">
 				<div class="login">
-					<div class="photo_user"><img src="/spring/profile/image/getAvatar"  alt="" height=70 width=70/></div>
+					<div class="photo_user">
+						<a href="/spring/profile/<security:authentication property="principal.username" />"><img src="/spring/profile/image/getAvatar"  alt="" height=70 width=70/></a>
+					</div>
 					<a href="<c:url value="/j_spring_security_logout"/>" id="logout">Выйти</a>
 					<div id="username_login">
 						<a

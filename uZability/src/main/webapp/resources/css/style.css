@@ -658,3 +658,7 @@ aside ul li a {
 .bottom_nav_a:hover {
 	border-bottom: 2px solid #CB0000;
 }
+
+#id_remember_me{
+	visibility: hidden;
+}

@@ -184,7 +184,7 @@ public class UserController {
 		if(userDetail.getBirthDate()==""){
 			userDetail.setBirthDate(null);
 		}
-		
+		userDetail.setPhoto(user.getUserDetail().getPhoto());
 		userService.addUserDetail(userDetail);
 
 		return  "redirect:/profile/" + user.getLogin();
