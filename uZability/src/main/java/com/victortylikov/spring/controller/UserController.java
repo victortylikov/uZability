@@ -194,7 +194,9 @@ public class UserController {
 	public String uploadImage(@ModelAttribute(value = "uploadForm") UserDetail userDetail,@RequestParam("file") MultipartFile file,BindingResult result){
 
 		try {
+
 			byte[] bytes = file.getBytes();
+
 			userService.saveAvatar(getCurrentUser().getUserDetail(),bytes);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

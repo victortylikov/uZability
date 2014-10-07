@@ -76,9 +76,11 @@
 				<div class="below_avatar">
 					<form:form method="POST" action="uploadImage"
 						modelAttribute="uploadForm" enctype="multipart/form-data" id="id_uploadform">
+						<div id="photoLabel"></div>
 						<input id="trigger" type="button" value="Загрузить аватар"
 							onclick="click_upload_file()" />
-						<input id="file" type="file" name="file" onchange="javascript:this.form.submit();" />
+						<input id="file" type="file" name="file"  onchange="checkPhoto(this)"/>
+						<!-- onchange="javascript:this.form.submit();" -->
 						<!-- <input type="submit" value="ok" id="submitAvatar" /> -->
 					</form:form>
 				</div>
