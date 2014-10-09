@@ -122,7 +122,7 @@
 					<header class="book_name">
 						<h2 class="h2_book_name">
 							<a class="a_section_link"
-								href="/spring/books/01_infoArchitecture">Проектирование
+								href="/spring/books/02_designWebInterface">Проектирование
 								веб-интерфейсов</a>
 						</h2>
 						<div class=div_author_name>

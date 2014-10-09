@@ -86,6 +86,7 @@
 
 	<mvc:view-controller path="/books"  view-name="/books"/>
 	<mvc:view-controller path="/books/01_infoArchitecture"  view-name="/books/01_infoArchitecture"/>
+	<mvc:view-controller path="/books/02_designWebInterface"  view-name="/books/02_designWebInterface"/>
 	
 	<mvc:view-controller path="/glossary"  view-name="/glossary"/>
 	<mvc:view-controller path="/glossary/e_ergonomics"  view-name="/glossary/e_ergonomics"/>

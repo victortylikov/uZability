@@ -69,6 +69,7 @@
 
 .p_short_review {
 	/* text-align: justify; */
+	
 }
 
 .span_publisher {
@@ -88,3 +89,29 @@ article .section_book:first-of-type {
 article .section_book:last-of-type {
 	margin-bottom: 20px;
 }
+
+.english_title {
+	color: #808080;
+	margin-bottom: 5px;
+}
+
+.book_detail_info_title {
+	list-style: none;
+	float: left;
+	color: #808080;
+}
+
+.book_detail_info_title li {
+	margin-left: 10px;
+}
+
+.book_detail_info {
+	list-style: none;
+	float: left;
+
+}
+
+.next_paragraph_annotation{
+	margin-top: 10px;
+}
+
