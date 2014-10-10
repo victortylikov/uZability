@@ -154,7 +154,7 @@
 					<header class="book_name">
 						<h2 class="h2_book_name">
 							<a class="a_section_link"
-								href="/spring/books/01_infoArchitecture">Дизайн привычных
+								href="/spring/books/03_designEverydayThings">Дизайн привычных
 								вещей</a>
 						</h2>
 						<div class=div_author_name>
@@ -184,7 +184,7 @@
 					<header class="book_name">
 						<h2 class="h2_book_name">
 							<a class="a_section_link"
-								href="/spring/books/01_infoArchitecture">Дизайн для
+								href="/spring/books/04_Nondesigner">Дизайн для
 								недизайнеров</a>
 						</h2>
 						<div class=div_author_name>
