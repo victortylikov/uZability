@@ -15,13 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 
-
-
-
-
-
-
-
 import org.apache.commons.io.IOUtils;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,6 +40,7 @@ import com.victortylikov.spring.domain.UserDetail;
 import com.victortylikov.spring.service.AuthenticationUserDetails;
 import com.victortylikov.spring.service.Password;
 import com.victortylikov.spring.service.UserService;
+import com.victortylikov.spring.service.ArticleService;
 
 @Controller
 public class UserController {
@@ -57,10 +51,15 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private ArticleService articleService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index(ModelMap model) {
+		model.addAttribute("article", articleService.getArticles());
 		return "../index";
+		
 	}
 
 	@RequestMapping(value = "/registration", method = RequestMethod.GET)

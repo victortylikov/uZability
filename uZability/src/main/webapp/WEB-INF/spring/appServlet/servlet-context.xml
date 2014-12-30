@@ -39,6 +39,9 @@
 	<bean id="userDao" class="com.victortylikov.spring.dao.UserDaoImpl"></bean>
 	<bean id="userService" class="com.victortylikov.spring.service.UserServiceImpl"></bean>
 	<bean id="UserDetailsServiceImpl" class="com.victortylikov.spring.service.UserDetailsServiceImpl"></bean>
+		
+	<bean id="articleDao" class="com.victortylikov.spring.dao.ArticleDaoImpl"></bean>
+	<bean id="articleService" class="com.victortylikov.spring.service.ArticleServiceImpl"></bean>
 	
 	<bean id="propertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
