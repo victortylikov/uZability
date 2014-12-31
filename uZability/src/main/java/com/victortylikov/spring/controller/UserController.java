@@ -109,6 +109,7 @@ public class UserController {
 			userGenderString="Женский";
 			
 		}
+		model.addAttribute("article", articleService.getArticles());
 		model.addAttribute("password", new Password());
 		model.addAttribute("user", user);
 		model.addAttribute("userdetail", user.getUserDetail());

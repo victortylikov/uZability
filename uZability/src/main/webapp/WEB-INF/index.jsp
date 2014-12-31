@@ -171,8 +171,7 @@
 				<section class="section_article" id="post1">
 					<header>
 						<h2>
-							<a class="a_section_link" href="/spring/articles/01_uxpeople">Конференция
-								UXPeople 2013</a>
+							<a class="a_section_link" href="/spring/articles/01_uxpeople">${article.articleName}</a>
 						</h2>
 						<div class="section_time">
 							<time datetime=2013-04-15> Ноябрь 03, 2013</time>

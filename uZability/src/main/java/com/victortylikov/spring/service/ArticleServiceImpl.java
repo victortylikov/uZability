@@ -1,16 +1,32 @@
 package com.victortylikov.spring.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.victortylikov.spring.dao.ArticleDao;
+import com.victortylikov.spring.dao.UserDao;
 import com.victortylikov.spring.domain.Article;
 
 @Service
-public class ArticleServiceImpl implements ArticleService{
+public class ArticleServiceImpl implements ArticleService {
+
+	@Autowired
+	private ArticleDao articleDao;
 
 	@Override
+	@Transactional
 	public Article getArticles() {
 		// TODO Auto-generated method stub
-		return null;
+		return articleDao.getArticles();
+	}
+
+	public ArticleDao getArticleDao() {
+		return articleDao;
+	}
+
+	public void setArticleDao(ArticleDao articleDao) {
+		this.articleDao = articleDao;
 	}
 
 }

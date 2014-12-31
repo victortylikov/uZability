@@ -123,7 +123,7 @@
 						<div class="block">
 							<h4 class="field_name">Имя и фамилия:</h4>
 							<div class="field">${userdetail.firstName}
-								${userdetail.lastName}</div>
+								${userdetail.lastName}  ${article.articleName}</div>
 						</div>
 					</c:if>
 					<c:if test="${not empty userdetail.gender}">
