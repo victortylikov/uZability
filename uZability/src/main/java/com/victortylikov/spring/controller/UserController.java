@@ -3,8 +3,6 @@ package com.victortylikov.spring.controller;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
-
-
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.sql.Blob;
@@ -13,7 +11,6 @@ import java.sql.SQLException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
-
 
 import org.apache.commons.io.IOUtils;
 import org.hibernate.Hibernate;
@@ -35,6 +32,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.victortylikov.spring.domain.Article;
 import com.victortylikov.spring.domain.User;
 import com.victortylikov.spring.domain.UserDetail;
 import com.victortylikov.spring.service.AuthenticationUserDetails;
@@ -51,15 +49,22 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
-	
+
 	@Autowired
 	private ArticleService articleService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String index(ModelMap model) {
+	public String homePage(ModelMap model) {
 		model.addAttribute("article", articleService.getArticles());
 		return "../index";
-		
+	}
+
+	@RequestMapping(value = "/articles", method = RequestMethod.GET)
+	public String articles(ModelMap model,HttpServletResponse response) {
+		Article article=articleService.getArticles();
+		model.addAttribute("article", article);
+						
+		return "articles";
 	}
 
 	@RequestMapping(value = "/registration", method = RequestMethod.GET)
@@ -102,14 +107,13 @@ public class UserController {
 	public String profileUser(ModelMap model,
 			@PathVariable("login") String login) {
 		User user = userService.getUserByName(login);
-		String userGenderString=null;
-		if(user.getUserDetail().getGender()==1){
-			userGenderString="Мужской";
-		}else if(user.getUserDetail().getGender()==2){
-			userGenderString="Женский";
-			
+		String userGenderString = null;
+		if (user.getUserDetail().getGender() == 1) {
+			userGenderString = "Мужской";
+		} else if (user.getUserDetail().getGender() == 2) {
+			userGenderString = "Женский";
+
 		}
-		model.addAttribute("article", articleService.getArticles());
 		model.addAttribute("password", new Password());
 		model.addAttribute("user", user);
 		model.addAttribute("userdetail", user.getUserDetail());
@@ -160,49 +164,51 @@ public class UserController {
 
 	@RequestMapping(value = "/editProfile", method = RequestMethod.GET)
 	public String editProfileGet(ModelMap map) {
-		
-		User user=getCurrentUser();
-		UserDetail userDetail=user.getUserDetail();
-		if(userDetail==null){
-			userDetail=new UserDetail();
+
+		User user = getCurrentUser();
+		UserDetail userDetail = user.getUserDetail();
+		if (userDetail == null) {
+			userDetail = new UserDetail();
 		}
-	
-		
+
 		map.addAttribute("userDetail", userDetail);
-		
+
 		return "profileEdit";
 	}
 
 	@RequestMapping(value = "/editProfilePost", method = RequestMethod.POST)
-	public String editProfilePost(@ModelAttribute(value = "userDetail") UserDetail userDetail,
+	public String editProfilePost(
+			@ModelAttribute(value = "userDetail") UserDetail userDetail,
 			BindingResult result) {
 		if (result.hasErrors()) {
 			return "../index";
 		}
 		User user = getCurrentUser();
 		userDetail.setIdUser(user.getIdUser());
-		if(userDetail.getBirthDate()==""){
+		if (userDetail.getBirthDate() == "") {
 			userDetail.setBirthDate(null);
 		}
 		userDetail.setPhoto(user.getUserDetail().getPhoto());
 		userService.addUserDetail(userDetail);
 
-		return  "redirect:/profile/" + user.getLogin();
+		return "redirect:/profile/" + user.getLogin();
 	}
-	
+
 	@RequestMapping(value = "/profile/uploadImage", method = RequestMethod.POST)
-	public String uploadImage(@ModelAttribute(value = "uploadForm") UserDetail userDetail,@RequestParam("file") MultipartFile file,BindingResult result){
+	public String uploadImage(
+			@ModelAttribute(value = "uploadForm") UserDetail userDetail,
+			@RequestParam("file") MultipartFile file, BindingResult result) {
 
 		try {
 
 			byte[] bytes = file.getBytes();
 
-			userService.saveAvatar(getCurrentUser().getUserDetail(),bytes);
+			userService.saveAvatar(getCurrentUser().getUserDetail(), bytes);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return "redirect:/profile/" + getCurrentUser().getLogin();
 	}
 
@@ -212,25 +218,25 @@ public class UserController {
 		User user = userService.getUserByName(authUser.getUsername());
 		return user;
 	}
-	
-	@RequestMapping(value ="/profile/image/getAvatar")
-	public   void getAvatar(HttpServletResponse response) {
-		Blob blob=getCurrentUser().getUserDetail().getPhoto();
+
+	@RequestMapping(value = "/profile/image/getAvatar")
+	public void getAvatar(HttpServletResponse response) {
+		Blob blob = getCurrentUser().getUserDetail().getPhoto();
 		try {
-			InputStream image=blob.getBinaryStream();
+			InputStream image = blob.getBinaryStream();
 			OutputStream out = response.getOutputStream();
 			response.setContentType("image/jpeg");
 			int length = (int) image.available();
-	        int bufferSize = 1024;
-	        byte[] buffer = new byte[bufferSize];
-	        while ((length = image.read(buffer)) != -1) {
-	            out.write(buffer, 0, length);
-	        }
-	           response.flushBuffer();
-	        //image.close();
-	        out.flush();
-	        out.close();
-			
+			int bufferSize = 1024;
+			byte[] buffer = new byte[bufferSize];
+			while ((length = image.read(buffer)) != -1) {
+				out.write(buffer, 0, length);
+			}
+			response.flushBuffer();
+			// image.close();
+			out.flush();
+			out.close();
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -238,9 +244,35 @@ public class UserController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	
-		
+
 	}
 	
+	@RequestMapping(value = "/getArticleImage")
+	public void getArticleImage(HttpServletResponse response) {
+		Blob blob = articleService.getArticles().getArticleImage();
+		try {
+			InputStream image = blob.getBinaryStream();
+			OutputStream out = response.getOutputStream();
+			response.setContentType("image/jpeg");
+			int length = (int) image.available();
+			int bufferSize = 1024;
+			byte[] buffer = new byte[bufferSize];
+			while ((length = image.read(buffer)) != -1) {
+				out.write(buffer, 0, length);
+			}
+			response.flushBuffer();
+			// image.close();
+			out.flush();
+			out.close();
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
 
 }

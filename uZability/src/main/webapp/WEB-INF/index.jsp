@@ -180,19 +180,15 @@
 						</div>
 					</header>
 					<p class="section_figure" id="post1_image">
-						<a href="/spring/articles/01_uxpeople"> <img
+						<a href="/spring/articles/01_uxpeople"> 
+						<img src="/spring/getArticleImage">
+						<%-- <img
 							src="<c:url value="/resources/images/ux-people.JPG" />"
-							width="669" height="230" alt="Фотография">
+							width="669" height="230" alt="Фотография"> --%>
 						</a>
 					</p>
-					<p class="section_new">
-						Минске (конференц-зал гостиницы «Виктория», пр-т Победителей 59)
-						пройдет конференция UXPeople, посвященная вопросам проектирования
-						пользовательских интерфейсов, user experience, дизайну и
-						юзабилити. В качестве докладчиков приглашены опытные специалисты и
-						руководители из России, Беларуси, ближнего и дальнего зарубежья.
-						Среди докладчиков: Виталий Фридман, Дмитрий Сатин, Hegle Sarapuu,
-						Владислав Головач, Максим Гулевич и др. <a class="new_read"
+					<p class="section_new">${article.articleSummary}
+						<a class="new_read"
 							href="/spring/articles/01_uxpeople">Читать дальше...</a>
 					</p>
 				</section>
