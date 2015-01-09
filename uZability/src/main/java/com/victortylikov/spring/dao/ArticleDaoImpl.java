@@ -15,13 +15,10 @@ public class ArticleDaoImpl implements ArticleDao {
 	private SessionFactory sessionFactory;
 
 	@Override
-	public Article getArticles() {
-	List<Article> articleList=sessionFactory.getCurrentSession().createQuery("select distinct u from Article u").list();
-	Article article=articleList.get(0);
-	System.out.println("");
-	System.out.println(article.getArticleName());
-	System.out.println("");
-		return article;
+	public List <Article> getArticles() {
+	List <Article> articleList=sessionFactory.getCurrentSession().createQuery("select distinct u from Article u").list();
+	
+		return articleList;
 	}
 	
 	public SessionFactory getSessionFactory() {

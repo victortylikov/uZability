@@ -1,9 +1,11 @@
 package com.victortylikov.spring.dao;
 
+import java.util.List;
+
 import com.victortylikov.spring.domain.Article;
 
 public interface ArticleDao {
 
-	Article getArticles();
+	public List <Article> getArticles() ;
 
 }

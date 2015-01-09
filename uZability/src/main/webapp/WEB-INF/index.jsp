@@ -51,7 +51,8 @@
 							class="text_login" placeholder="пароль" required="required"
 							maxlength="30" pattern="[A-Za-z0-9_.-]{3,30}" />
 					</p>
-					<input id="id_remember_me" name="_spring_security_remember_me" type="checkbox" checked="checked">
+					<input id="id_remember_me" name="_spring_security_remember_me"
+						type="checkbox" checked="checked">
 					<p class="submit">
 						<input type="submit" value="Ok" />
 					</p>
@@ -60,7 +61,9 @@
 			<security:authorize access="isAuthenticated()">
 				<div class="login">
 					<div class="photo_user">
-						<a href="/spring/profile/<security:authentication property="principal.username" />"><img src="/spring/profile/image/getAvatar"  alt="" height=70 width=70/></a>
+						<a
+							href="/spring/profile/<security:authentication property="principal.username" />"><img
+							src="/spring/profile/image/getAvatar" alt="" height=70 width=70 /></a>
 					</div>
 					<a href="<c:url value="/j_spring_security_logout"/>" id="logout">Выйти</a>
 					<div id="username_login">
@@ -171,7 +174,7 @@
 				<section class="section_article" id="post1">
 					<header>
 						<h2>
-							<a class="a_section_link" href="/spring/articles/01_uxpeople">${article.articleName}</a>
+							<a class="a_section_link" href="${article.articleHref}">${article.articleName}</a>
 						</h2>
 						<div class="section_time">
 							<time datetime=2013-04-15> Ноябрь 03, 2013</time>
@@ -180,16 +183,15 @@
 						</div>
 					</header>
 					<p class="section_figure" id="post1_image">
-						<a href="/spring/articles/01_uxpeople"> 
-						<img src="/spring/getArticleImage">
-						<%-- <img
+						<a href="${article.articleHref}"> <img
+							src="/spring/getArticleImage"> <%-- <img
 							src="<c:url value="/resources/images/ux-people.JPG" />"
 							width="669" height="230" alt="Фотография"> --%>
 						</a>
 					</p>
 					<p class="section_new">${article.articleSummary}
-						<a class="new_read"
-							href="/spring/articles/01_uxpeople">Читать дальше...</a>
+						<a class="new_read" href="${article.articleHref}">Читать
+							дальше...</a>
 					</p>
 				</section>
 				<section class="section_article" id="post2">
@@ -280,7 +282,8 @@
 						индустрии веб-дизайна таланты сегодня встречаются сплошь и рядом,
 						и практически кто угодно может создать «красивый» сайт, то
 						становится все сложнее определить подлинные критерии красоты в
-						веб-дизайне. <a class="new_read" href="/spring/articles/04_beautyindesign">Читать дальше</a>
+						веб-дизайне. <a class="new_read"
+							href="/spring/articles/04_beautyindesign">Читать дальше</a>
 					</p>
 				</section>
 				<script src="<c:url value="/resources/js/cross.js" />"></script>
@@ -313,7 +316,8 @@
 		<div class="bottom_nav_div">
 			<a href="#" class="bottom_nav_a">О сайте</a>
 		</div>
-		<a href="#top" title="Вверх" id="up_button"><img id="image_up_button"
+		<a href="#top" title="Вверх" id="up_button"><img
+			id="image_up_button"
 			src="<c:url value="/resources/images/arrow.png" />" width="70"
 			height="70"></a> <a href="#" id="feedback">Обратная связь</a>
 	</div>

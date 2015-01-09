@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.sql.Blob;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -61,7 +62,7 @@ public class UserController {
 
 	@RequestMapping(value = "/articles", method = RequestMethod.GET)
 	public String articles(ModelMap model,HttpServletResponse response) {
-		Article article=articleService.getArticles();
+		List<Article> article=articleService.getArticles();
 		model.addAttribute("article", article);
 						
 		return "articles";
@@ -249,7 +250,7 @@ public class UserController {
 	
 	@RequestMapping(value = "/getArticleImage")
 	public void getArticleImage(HttpServletResponse response) {
-		Blob blob = articleService.getArticles().getArticleImage();
+		Blob blob = articleService.getArticles().get(0).getArticleImage();
 		try {
 			InputStream image = blob.getBinaryStream();
 			OutputStream out = response.getOutputStream();
