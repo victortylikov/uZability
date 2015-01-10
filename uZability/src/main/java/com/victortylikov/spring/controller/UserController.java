@@ -56,14 +56,14 @@ public class UserController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String homePage(ModelMap model) {
-		model.addAttribute("article", articleService.getArticles());
+		model.addAttribute("listArticles", articleService.getArticles());
 		return "../index";
 	}
 
 	@RequestMapping(value = "/articles", method = RequestMethod.GET)
 	public String articles(ModelMap model,HttpServletResponse response) {
-		List<Article> article=articleService.getArticles();
-		model.addAttribute("article", article);
+		List<Article> listArticles=articleService.getArticles();
+		model.addAttribute("listArticles", listArticles);
 						
 		return "articles";
 	}
@@ -248,9 +248,9 @@ public class UserController {
 
 	}
 	
-	@RequestMapping(value = "/getArticleImage")
-	public void getArticleImage(HttpServletResponse response) {
-		Blob blob = articleService.getArticles().get(0).getArticleImage();
+	@RequestMapping(value = "/getArticleImage/{idArticle}")
+	public void getArticleImage(HttpServletResponse response,@PathVariable("idArticle") int idArticle) {
+		Blob blob = articleService.getArticles().get(idArticle-1).getArticleImage();
 		try {
 			InputStream image = blob.getBinaryStream();
 			OutputStream out = response.getOutputStream();
