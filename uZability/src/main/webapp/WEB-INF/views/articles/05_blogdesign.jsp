@@ -100,13 +100,13 @@
 								блога: какой он должен быть</a>
 						</h2>
 						<div class="section_time">
-							<time datetime=2013-04-15> январь 01, 2015</time>
+							<time datetime=2015-01-09> январь 09, 2015</time>
 							| <a class="new_read" href="#">веб-дизайн</a>, <a
 								class="new_read" href="#">usability</a>
 						</div>
 					</header>
 					<p class="section_figure" id="post1_image">
-						<a href="/spring/articles/04_beautyindesign"> <img
+						<a href="/spring/articles/05_blogdesign"> <img
 							src="<c:url value="/resources/images/blogdesign1.jpg" />"
 							width="675" height="385" alt="‘отографи€">
 						</a>
