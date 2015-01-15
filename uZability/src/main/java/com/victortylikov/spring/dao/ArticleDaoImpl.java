@@ -2,6 +2,7 @@ package com.victortylikov.spring.dao;
 
 import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -24,14 +25,16 @@ public class ArticleDaoImpl implements ArticleDao {
 	}
 
 	public Article getArticleByID(int idArticle) {
-		List<Article> articles = sessionFactory.getCurrentSession()
-				.createQuery("select distinct a from Article a").list();
-		Article article = null;
-		for (Article a : articles) {
-			if (a.getIdArticle().equals(idArticle)) {
-				article = a;
-			}
-		}
+		String hql = "FROM Article A WHERE A.idArticle = :idArticle";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		query.setParameter("idArticle", idArticle);
+		Article article = (Article) query.uniqueResult();
+		/*
+		 * List<Article> articles = sessionFactory.getCurrentSession()
+		 * .createQuery("select distinct a from Article a").list(); Article
+		 * article = null; for (Article a : articles) { if
+		 * (a.getIdArticle().equals(idArticle)) { article = a; } }
+		 */
 		return article;
 	}
 
