@@ -101,7 +101,7 @@
 					<p class="section_figure" id="post1_image">
 						<a href="/spring/articles/07_killlanding"> <img
 							src="<c:url value="/resources/images/killlanding1.jpg" />"
-							width="500" height="200" alt="Фотография">
+							width="680" height="240" alt="Фотография">
 						</a>
 					</p>
 					<p class="section_new">Существует множество пословиц,
