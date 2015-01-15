@@ -250,7 +250,7 @@ public class UserController {
 	
 	@RequestMapping(value = "/getArticleImage/{idArticle}")
 	public void getArticleImage(HttpServletResponse response,@PathVariable("idArticle") int idArticle) {
-		Blob blob = articleService.getArticles().get(idArticle-1).getArticleImage();
+		Blob blob = articleService.getArticleByID(idArticle).getArticleImage();
 		try {
 			InputStream image = blob.getBinaryStream();
 			OutputStream out = response.getOutputStream();

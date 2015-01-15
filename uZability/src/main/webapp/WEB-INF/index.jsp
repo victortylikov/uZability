@@ -186,9 +186,7 @@
 						</header>
 						<p class="section_figure" id="post1_image">
 							<a href="${article.articleHref}"> <img
-								src="/spring/getArticleImage/${article.idArticle}"> <%-- <img
-							src="<c:url value="/resources/images/ux-people.JPG" />"
-							width="669" height="230" alt="Фотография"> --%>
+								src="/spring/getArticleImage/${article.idArticle}"> 
 							</a>
 						</p>
 						<p class="section_new">${article.articleSummary}

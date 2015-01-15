@@ -22,6 +22,12 @@ public class ArticleServiceImpl implements ArticleService {
 		// TODO Auto-generated method stub
 		return articleDao.getArticles();
 	}
+	
+	@Override
+	@Transactional
+	public Article getArticleByID(int idArticle){
+		return articleDao.getArticleByID(idArticle);
+	};
 
 	public ArticleDao getArticleDao() {
 		return articleDao;

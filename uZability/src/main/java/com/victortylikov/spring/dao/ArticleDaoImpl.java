@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.victortylikov.spring.domain.Article;
+import com.victortylikov.spring.domain.User;
 
 @Repository
 public class ArticleDaoImpl implements ArticleDao {
@@ -15,12 +16,33 @@ public class ArticleDaoImpl implements ArticleDao {
 	private SessionFactory sessionFactory;
 
 	@Override
-	public List <Article> getArticles() {
-	List <Article> articleList=sessionFactory.getCurrentSession().createQuery("select distinct u from Article u").list();
-	
+	public List<Article> getArticles() {
+		List<Article> articleList = sessionFactory.getCurrentSession()
+				.createQuery("select distinct u from Article u").list();
+
 		return articleList;
 	}
-	
+
+	public Article getArticleByID(int idArticle) {
+		List<Article> articles = sessionFactory.getCurrentSession()
+				.createQuery("select distinct a from Article a").list();
+		Article article = null;
+		for (Article a : articles) {
+			if (a.getIdArticle().equals(idArticle)) {
+				article = a;
+			}
+		}
+		return article;
+	}
+
+	/*
+	 * public User getUserByName(String login) { List<User> users =
+	 * sessionFactory .getCurrentSession() .createQuery(
+	 * "select distinct u from User u left join fetch u.roles r") .list(); User
+	 * user = null; for (User u : users) { if (u.getLogin().equals(login)) {
+	 * user = u; } } return user; }
+	 */
+
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
 	}

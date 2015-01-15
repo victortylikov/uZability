@@ -86,6 +86,7 @@
 	<mvc:view-controller path="/articles/02_chinadesign"  view-name="/articles/02_chinadesign"/>
 	<mvc:view-controller path="/articles/03_flatdesign"  view-name="/articles/03_flatdesign"/>
 	<mvc:view-controller path="/articles/04_beautyindesign"  view-name="/articles/04_beautyindesign"/>
+	<mvc:view-controller path="/articles/05_blogdesign"  view-name="/articles/05_blogdesign"/>
 
 	<mvc:view-controller path="/books"  view-name="/books"/>
 	<mvc:view-controller path="/books/01_infoArchitecture"  view-name="/books/01_infoArchitecture"/>
