@@ -19,7 +19,7 @@ public class ArticleDaoImpl implements ArticleDao {
 	@Override
 	public List<Article> getArticles() {
 		List<Article> articleList = sessionFactory.getCurrentSession()
-				.createQuery("select distinct u from Article u").list();
+				.createQuery("select distinct a from Article a ORDER BY a.idArticle DESC").list();
 
 		return articleList;
 	}
