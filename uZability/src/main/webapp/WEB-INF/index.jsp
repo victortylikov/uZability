@@ -179,9 +179,11 @@
 							</h2>
 							<div class="section_time">
 								<time datetime=2013-04-15> Ноябрь 03, 2013</time>
-								| <a class="new_read" href="#">usability</a>, <a
-									class="new_read" href="#">веб-дизайн</a>, <a class="new_read"
-									href="#">интерфейсы</a>
+								| <c:forEach items="${article.themes}" var="themes">${themes.theme}
+								</c:forEach>
+								<!-- <a class="new_read" href="#"></a>, <a
+									class="new_read" href="#"></a>, <a class="new_read"
+									href="#"></a> -->
 							</div>
 						</header>
 						<p class="section_figure" id="post1_image">
