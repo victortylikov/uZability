@@ -1,12 +1,17 @@
 package com.victortylikov.spring.domain;
 
 import java.sql.Blob;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -30,6 +35,10 @@ public class Article {
 
 	@Column(name = "article_href")
 	private String articleHref;
+	
+	@ManyToMany
+	@JoinTable(name = "article_theme", joinColumns = @JoinColumn(name = "id_article"), inverseJoinColumns = @JoinColumn(name = "id_theme"))
+	private Set<Theme> themes = new HashSet<Theme>();
 
 	public Integer getIdArticle() {
 		return idArticle;
@@ -70,5 +79,14 @@ public class Article {
 	public void setArticleHref(String articleHref) {
 		this.articleHref = articleHref;
 	}
+
+	public Set<Theme> getThemes() {
+		return themes;
+	}
+
+	public void setThemes(Set<Theme> themes) {
+		this.themes = themes;
+	}
+	
 
 }
