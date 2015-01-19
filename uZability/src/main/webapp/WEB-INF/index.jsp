@@ -179,8 +179,14 @@
 							</h2>
 							<div class="section_time">
 								<time datetime=2013-04-15> Ноябрь 03, 2013</time>
-								| <c:forEach items="${article.themes}" var="themes">${themes.theme}
-								</c:forEach>
+								|
+								<c:if test="${!empty article.themes}">
+									<c:forEach items="${article.themes}" var="theme">
+										${theme.theme}
+									</c:forEach>
+								</c:if>
+								<%--  <c:forEach items="${article.themes}" var="themes">${themes.theme}
+								</c:forEach> --%>
 								<!-- <a class="new_read" href="#"></a>, <a
 									class="new_read" href="#"></a>, <a class="new_read"
 									href="#"></a> -->
@@ -188,7 +194,7 @@
 						</header>
 						<p class="section_figure" id="post1_image">
 							<a href="${article.articleHref}"> <img
-								src="/spring/getArticleImage/${article.idArticle}"> 
+								src="/spring/getArticleImage/${article.idArticle}">
 							</a>
 						</p>
 						<p class="section_new">${article.articleSummary}
