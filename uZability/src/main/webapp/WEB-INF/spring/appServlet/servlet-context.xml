@@ -89,6 +89,7 @@
 	<mvc:view-controller path="/articles/05_blogdesign"  view-name="/articles/05_blogdesign"/>
 	<mvc:view-controller path="/articles/06_headhunter"  view-name="/articles/06_headhunter"/>
 	<mvc:view-controller path="/articles/07_killlanding"  view-name="/articles/07_killlanding"/>
+	<mvc:view-controller path="/articles/08_gamer"  view-name="/articles/08_gamer"/>
 
 	<mvc:view-controller path="/books"  view-name="/books"/>
 	<mvc:view-controller path="/books/01_infoArchitecture"  view-name="/books/01_infoArchitecture"/>
