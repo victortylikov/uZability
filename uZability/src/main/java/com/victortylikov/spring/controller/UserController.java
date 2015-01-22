@@ -68,7 +68,7 @@ public class UserController {
 		return "articles";
 	}
 	
-	@RequestMapping(value = "/articles/{idTheme}", method = RequestMethod.GET)
+	@RequestMapping(value = "/articles/order/{idTheme}", method = RequestMethod.GET)
 	public String orderBy(ModelMap model,@PathVariable("idTheme") int idTheme,HttpServletResponse response) {
 		List<Article> listArticles=articleService.getArticlesByTheme(idTheme);
 		model.addAttribute("listArticles", listArticles);

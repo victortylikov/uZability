@@ -34,7 +34,7 @@ public class ArticleDaoImpl implements ArticleDao {
 
 	@Override
 	public List<Article> getArticlesByTheme(int idTheme) {
-		String hql = "select distinct a from Article a left join fetch a.themes t where t.idTheme =:idTheme";
+		String hql = "select distinct a from Article a left join fetch a.themes t where t.idTheme =:idTheme ORDER BY a.idArticle DESC";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		query.setParameter("idTheme", idTheme);
 		List<Article> articleList=query.list();

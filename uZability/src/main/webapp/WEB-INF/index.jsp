@@ -208,12 +208,12 @@
 			<aside>
 				<h3>Категории</h3>
 				<ul class="categories_ul">
-					<li><a href="/spring/articles/1">Usability</a></li>
-					<li><a href="/spring/articles/2">Веб-дизайн</a></li>
-					<li><a href="/spring/articles/3">Интерфейсы</a></li>
-					<li><a href="/spring/articles/4">События</a></li>
-					<li><a href="/spring/articles/5">Accessibility</a></li>
-					<li id="categories_li_last"><a href="/spring/articles/6">Тестирование</a></li>
+					<li><a href="/spring/articles/order/1">Usability</a></li>
+					<li><a href="/spring/articles/order/2">Веб-дизайн</a></li>
+					<li><a href="/spring/articles/order/3">Интерфейсы</a></li>
+					<li><a href="/spring/articles/order/4">События</a></li>
+					<li><a href="/spring/articles/order/5">Accessibility</a></li>
+					<li id="categories_li_last"><a href="/spring/articles/order/6">Тестирование</a></li>
 				</ul>
 				<div id="advertising">
 					<a href="#"><img
