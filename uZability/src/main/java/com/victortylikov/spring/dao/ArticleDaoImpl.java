@@ -29,22 +29,17 @@ public class ArticleDaoImpl implements ArticleDao {
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		query.setParameter("idArticle", idArticle);
 		Article article = (Article) query.uniqueResult();
-		/*
-		 * List<Article> articles = sessionFactory.getCurrentSession()
-		 * .createQuery("select distinct a from Article a").list(); Article
-		 * article = null; for (Article a : articles) { if
-		 * (a.getIdArticle().equals(idArticle)) { article = a; } }
-		 */
 		return article;
 	}
 
-	/*
-	 * public User getUserByName(String login) { List<User> users =
-	 * sessionFactory .getCurrentSession() .createQuery(
-	 * "select distinct u from User u left join fetch u.roles r") .list(); User
-	 * user = null; for (User u : users) { if (u.getLogin().equals(login)) {
-	 * user = u; } } return user; }
-	 */
+	@Override
+	public List<Article> getArticlesByTheme(int idTheme) {
+		String hql = "select distinct a from Article a left join fetch a.themes t where t.idTheme =:idTheme";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		query.setParameter("idTheme", idTheme);
+		List<Article> articleList=query.list();
+		return articleList;
+	}
 
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
@@ -53,5 +48,7 @@ public class ArticleDaoImpl implements ArticleDao {
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
+
+
 
 }

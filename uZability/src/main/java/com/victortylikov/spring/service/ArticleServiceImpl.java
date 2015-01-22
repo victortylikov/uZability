@@ -37,4 +37,10 @@ public class ArticleServiceImpl implements ArticleService {
 		this.articleDao = articleDao;
 	}
 
+	@Override
+	@Transactional
+	public List<Article> getArticlesByTheme(int idTheme) {
+		return articleDao.getArticlesByTheme(idTheme);
+	}
+
 }

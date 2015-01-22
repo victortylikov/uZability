@@ -3,8 +3,10 @@ package com.victortylikov.spring.domain;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -22,7 +24,7 @@ public class Theme {
 	@Column(name = "theme")
 	private String theme;
 	
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(name = "article_theme", 
 	      joinColumns = @JoinColumn(name = "id_theme"), 
 	      inverseJoinColumns = @JoinColumn(name = "id_article"))

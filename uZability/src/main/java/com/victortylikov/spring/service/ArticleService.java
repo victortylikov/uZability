@@ -10,4 +10,6 @@ public interface ArticleService {
 	
 	public Article getArticleByID(int idArticle);
 
+	public List <Article>  getArticlesByTheme(int idTheme);
+
 }

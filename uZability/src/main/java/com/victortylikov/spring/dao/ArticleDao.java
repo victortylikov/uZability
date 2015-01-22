@@ -10,4 +10,6 @@ public interface ArticleDao {
 
 	public Article getArticleByID(int idArticle);
 
+	public List<Article> getArticlesByTheme(int idTheme);
+
 }
