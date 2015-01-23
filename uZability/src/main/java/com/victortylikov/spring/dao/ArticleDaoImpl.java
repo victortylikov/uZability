@@ -1,5 +1,6 @@
 package com.victortylikov.spring.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -18,8 +19,11 @@ public class ArticleDaoImpl implements ArticleDao {
 
 	@Override
 	public List<Article> getArticles() {
-		List<Article> articleList = sessionFactory.getCurrentSession()
-				.createQuery("select distinct a from Article a ORDER BY a.idArticle DESC").list();
+		List<Article> articleList = sessionFactory
+				.getCurrentSession()
+				.createQuery(
+						"select distinct a from Article a ORDER BY a.idArticle DESC")
+				.list();
 
 		return articleList;
 	}
@@ -34,10 +38,10 @@ public class ArticleDaoImpl implements ArticleDao {
 
 	@Override
 	public List<Article> getArticlesByTheme(int idTheme) {
-		String hql = "select distinct a from Article a left join fetch a.themes t where t.idTheme =:idTheme ORDER BY a.idArticle DESC";
+		String hql = "select distinct a from Article a right join fetch a.themes t where t.idTheme =:idTheme ORDER BY a.idArticle DESC";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		query.setParameter("idTheme", idTheme);
-		List<Article> articleList=query.list();
+		List<Article> articleList = query.list();
 		return articleList;
 	}
 
@@ -48,7 +52,5 @@ public class ArticleDaoImpl implements ArticleDao {
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
-
-
 
 }

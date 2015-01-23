@@ -26,7 +26,7 @@ public class UserDaoImpl implements UserDao {
 		return sessionFactory
 				.getCurrentSession()
 				.createQuery(
-						"select distinct u from User u left join fetch u.roles r")
+						"select distinct u from User u right join fetch u.roles r")
 				.list();
 	}
 
@@ -57,7 +57,7 @@ public class UserDaoImpl implements UserDao {
 		List<User> users = sessionFactory
 				.getCurrentSession()
 				.createQuery(
-						"select distinct u from User u left join fetch u.roles r")
+						"select distinct u from User u right join fetch u.roles r")
 				.list();
 		User user = null;
 		for (User u : users) {
