@@ -42,6 +42,7 @@ public class ArticleDaoImpl implements ArticleDao {
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		query.setParameter("idTheme", idTheme);
 		List<Article> articleList = query.list();
+
 		return articleList;
 	}
 

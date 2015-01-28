@@ -1,6 +1,9 @@
 package com.victortylikov.spring.domain;
 
 import java.sql.Blob;
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -27,6 +30,9 @@ public class Article {
 
 	@Column(name = "article_name")
 	private String articleName;
+	
+	@Column(name = "article_date")
+	private Date articleDate;
 
 	@Column(name = "article_image")
 	@Lob
@@ -88,6 +94,16 @@ public class Article {
 
 	public void setThemes(Set<Theme> themes) {
 		this.themes = themes;
+	}
+
+	public String getArticleDate() {
+		DateFormat df = new SimpleDateFormat("dd MMMM yyyy");
+		String text = df.format(articleDate);
+		return text;
+	}
+
+	public void setArticleDate(Date articleDate) {
+		this.articleDate = articleDate;
 	}
 	
 

@@ -178,7 +178,7 @@
 								<a class="a_section_link" href="${article.articleHref}">${article.articleName}</a>
 							</h2>
 							<div class="section_time">
-								<time datetime=2013-04-15> Ноябрь 03, 2013</time>
+								<time>${article.articleDate}</time>
 								|
 								<c:if test="${!empty article.themes}">
 									<c:forEach items="${article.themes}" var="theme">
