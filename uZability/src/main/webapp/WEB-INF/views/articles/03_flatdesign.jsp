@@ -96,9 +96,8 @@
 								Design, или почему все Ђкинулисьї делать плоские интерфейсы</a>
 						</h2>
 						<div class="section_time">
-							<time datetime=2013-04-16> ќкт€брь 24, 2013</time>
-							| <a class="new_read" href="#">веб-дизайн</a>, <a
-								class="new_read" href="#">интерфейсы</a>
+							<time>12 Ќо€брь 2014</time>
+							| веб-дизайн интерфейсы
 						</div>
 					</header>
 					<p class="section_figure" id="post1_image">

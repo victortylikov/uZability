@@ -92,9 +92,8 @@
 								особенности китайского веб-дизайна и их истоки</a>
 						</h2>
 						<div class="section_time">
-							<time datetime=2013-04-16> ќкт€брь 28, 2013</time>
-							| <a class="new_read" href="#">веб-дизайн</a>, <a
-								class="new_read" href="#">интерфейсы</a>
+							<time>28 —ент€брь 2014</time>
+							| веб-дизайн интерфейсы
 						</div>
 					</header>
 					<p class="section_figure" id="post1_image">

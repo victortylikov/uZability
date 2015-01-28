@@ -91,9 +91,8 @@
 								UXPeople 2013</a>
 						</h2>
 						<div class="section_time">
-							<time datetime=2013-04-15> Ноябрь 03, 2013</time>
-							| <a class="new_read" href="#">usability</a>, <a class="new_read"
-								href="#">веб-дизайн</a>, <a class="new_read" href="#">интерфейсы</a>
+							<time>02 Июль 2014</time>
+							| веб-дизайн usability события
 						</div>
 					</header>
 					<p class="section_figure" id="post1_image">

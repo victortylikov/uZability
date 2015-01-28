@@ -100,9 +100,8 @@
 								тест нового интерфейса HeadHunter</a>
 						</h2>
 						<div class="section_time">
-							<time datetime=2015-01-11> январь 11, 2015</time>
-							| <a class="new_read" href="#">веб-дизайн</a>, <a
-								class="new_read" href="#">usability</a>
+							<time>15 январь 2015</time>
+							| тестирование веб-дизайн
 						</div>
 					</header>
 					<p class="section_figure" id="post1_image">

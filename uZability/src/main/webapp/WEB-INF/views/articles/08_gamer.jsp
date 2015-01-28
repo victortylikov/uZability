@@ -100,9 +100,8 @@
 								опыта геймеров с ограниченными возможност€ми</a>
 						</h2>
 						<div class="section_time">
-							<time datetime=2013-04-15> ќкт€брь 02, 2013</time>
-							| <a class="new_read" href="#">веб-дизайн</a>, <a
-								class="new_read" href="#">usability</a>
+							<time>27 январь 2015</time>
+							| accessibility
 						</div>
 					</header>
 					<p class="section_figure" id="post1_image">
