@@ -17,6 +17,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -47,6 +48,9 @@ public class Article {
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@JoinTable(name = "article_theme", joinColumns = @JoinColumn(name = "id_article"), inverseJoinColumns = @JoinColumn(name = "id_theme"))
 	private Set<Theme> themes = new HashSet<Theme>();
+	
+	@OneToMany(mappedBy="article")
+    private Set<Comment> comments;
 
 	public Integer getIdArticle() {
 		return idArticle;
@@ -104,6 +108,14 @@ public class Article {
 
 	public void setArticleDate(Date articleDate) {
 		this.articleDate = articleDate;
+	}
+
+	public Set<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(Set<Comment> comments) {
+		this.comments = comments;
 	}
 	
 

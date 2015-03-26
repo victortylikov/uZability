@@ -34,6 +34,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.victortylikov.spring.domain.Article;
+import com.victortylikov.spring.domain.Comment;
 import com.victortylikov.spring.domain.User;
 import com.victortylikov.spring.domain.UserDetail;
 import com.victortylikov.spring.service.AuthenticationUserDetails;
@@ -287,5 +288,19 @@ public class UserController {
 		}
 
 	}
-
+	
+	@RequestMapping(value = "/addComment", method = RequestMethod.POST)
+	public String addComment(
+			@ModelAttribute(value = "comment") Comment comment,
+			BindingResult result) {
+		
+		return "../index";
+	}
+	
+	@RequestMapping(value = "/articles/08_gamer", method = RequestMethod.GET)
+	public void addComment1(ModelMap model) {
+		Comment comment=new Comment();
+		model.addAttribute("comment", comment);
+		
+	}
 }

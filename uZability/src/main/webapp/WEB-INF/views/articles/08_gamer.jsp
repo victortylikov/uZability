@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="security"%>
+	<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=windows-1251"
 	pageEncoding="windows-1251"%>
@@ -187,6 +188,12 @@
 							the experience of gamers with disabilities»</a>).
 					</p>
 
+					<form:form action="addComment" modelAttribute="comment"
+					name="user_comment_form" method="POST">
+						<form:textarea id="comment" path="commentText"
+									autocomplete="off" maxlength="2000" />
+									<input type="submit" value="Êîììåíòèðîâàòü">
+					</form:form>
 				</section>
 				<script src="<c:url value="/resources/js/cross.js" />"></script>
 			</article>

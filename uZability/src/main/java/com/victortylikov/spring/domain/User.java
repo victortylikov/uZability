@@ -15,6 +15,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.JoinColumn;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import javax.persistence.OneToMany;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -46,6 +47,9 @@ public class User {
 
 	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
 	private UserDetail userDetail;
+	
+	@OneToMany(mappedBy="user")
+    private Set<Comment> comments;
 
 	public UserDetail getUserDetail() {
 		return userDetail;
@@ -93,6 +97,14 @@ public class User {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public Set<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(Set<Comment> comments) {
+		this.comments = comments;
 	}
 
 }
