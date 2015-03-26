@@ -56,7 +56,11 @@ public class UserController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String homePage(ModelMap model) {
-		model.addAttribute("listArticles", articleService.getArticles());
+		List <Article> articleList=articleService.getArticles();
+		//int numberOfArticles=articleList.size();
+		//List <Article> articleList2;
+		List <Article> articleList2=null;
+		model.addAttribute("listArticles", articleList);
 		return "../index";
 	}
 
