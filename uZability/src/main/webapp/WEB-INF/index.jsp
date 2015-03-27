@@ -2,8 +2,8 @@
 <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="security"%>
 <%@ page session="false"%>
-<%@ page language="java" contentType="text/html; charset=windows-1251"
-	pageEncoding="windows-1251"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <html>
 <head>
 <link href="<c:url value="/resources/css/reset.css" />" rel="stylesheet">
@@ -25,30 +25,30 @@
 			<h1 name="top">
 				<a href="/spring/"><img
 					src="<c:url value="/resources/images/logo2.png" />" width="239"
-					height="100" alt="Логотип"></a>
+					height="100" alt="Р›РѕРіРѕС‚РёРї"></a>
 			</h1>
 			<div id="quote">
-				<blockquote id="quote_sentence">Трудность создания
-					опыта взаимодействия состоит в необходимости понять потребности
-					пользователей лучше, чем они понимают их сами</blockquote>
-				<p id="quote_author">Джесс Гарретт</p>
+				<blockquote id="quote_sentence">РўСЂСѓРґРЅРѕСЃС‚СЊ СЃРѕР·РґР°РЅРёСЏ
+					РѕРїС‹С‚Р° РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёСЏ СЃРѕСЃС‚РѕРёС‚ РІ РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚Рё РїРѕРЅСЏС‚СЊ РїРѕС‚СЂРµР±РЅРѕСЃС‚Рё
+					РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ Р»СѓС‡С€Рµ, С‡РµРј РѕРЅРё РїРѕРЅРёРјР°СЋС‚ РёС… СЃР°РјРё</blockquote>
+				<p id="quote_author">Р”Р¶РµСЃСЃ Р“Р°СЂСЂРµС‚С‚</p>
 
 			</div>
 			<security:authorize access="isAnonymous()">
 				<form name="f" action="<c:url value='/j_spring_security_check'/>"
 					method="POST" id="login" class="login">
 					<p class="reg">
-						<a class="enter" href="/spring/login">Войти</a> или <a
-							class="enter" href="/spring/registration">Зарегистрироваться</a>
+						<a class="enter" href="/spring/login">Р’РѕР№С‚Рё</a> РёР»Рё <a
+							class="enter" href="/spring/registration">Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°С‚СЊСЃСЏ</a>
 					</p>
 					<p class="field">
 						<input type="text" name="j_username" id="username"
-							class="text_login" placeholder="логин" required="required"
+							class="text_login" placeholder="Р»РѕРіРёРЅ" required="required"
 							autocomplete="off" maxlength="30" pattern="[A-Za-z0-9_.-]{3,30}" />
 					</p>
 					<p class="field">
 						<input type="password" name="j_password" id="password"
-							class="text_login" placeholder="пароль" required="required"
+							class="text_login" placeholder="РїР°СЂРѕР»СЊ" required="required"
 							maxlength="30" pattern="[A-Za-z0-9_.-]{3,30}" />
 					</p>
 					<input id="id_remember_me" name="_spring_security_remember_me"
@@ -65,7 +65,7 @@
 							href="/spring/profile/<security:authentication property="principal.username" />"><img
 							src="/spring/profile/image/getAvatar" alt="" height=70 width=70 /></a>
 					</div>
-					<a href="<c:url value="/j_spring_security_logout"/>" id="logout">Выйти</a>
+					<a href="<c:url value="/j_spring_security_logout"/>" id="logout">Р’С‹Р№С‚Рё</a>
 					<div id="username_login">
 						<a
 							href="/spring/profile/<security:authentication property="principal.username" />"><security:authentication
@@ -75,16 +75,16 @@
 			</security:authorize>
 			<nav>
 				<ul class="main_ul">
-					<li><a id="a_glav" href="/spring/">Главная</a></li>
-					<li><a id="a_stat" href="/spring/articles">Статьи</a></li>
-					<li><a id="a_knigi" href="/spring/books">Книги</a></li>
-					<li><a id="a_gloss" href="/spring/glossary">Глоссарий</a></li>
+					<li><a id="a_glav" href="/spring/">Р“Р»Р°РІРЅР°СЏ</a></li>
+					<li><a id="a_stat" href="/spring/articles">РЎС‚Р°С‚СЊРё</a></li>
+					<li><a id="a_knigi" href="/spring/books">РљРЅРёРіРё</a></li>
+					<li><a id="a_gloss" href="/spring/glossary">Р“Р»РѕСЃСЃР°СЂРёР№</a></li>
 				</ul>
 				<form action="search_action" id="search" class="search"
 					enctype="text/plain">
 					<div class="search_div">
 						<input type="text" name="search_input" id="search_input"
-							class="search_input" placeholder="поиск" autofocus /> <input
+							class="search_input" placeholder="РїРѕРёСЃРє" autofocus /> <input
 							id="search_submit" type="submit" value="" />
 					</div>
 				</form>
@@ -98,36 +98,36 @@
 							<header class="header_background_news">
 								<h2 class="h2_background_news">
 									<a class="a_background_news" id="a_slide_1"
-										href="/spring/articles/01_uxpeople">Конференция UXPeople
+										href="/spring/articles/01_uxpeople">РљРѕРЅС„РµСЂРµРЅС†РёСЏ UXPeople
 										2013</a> <a class="a_background_news" id="a_slide_2"
-										href="/spring/articles/02_chinadesign">Главные особенности
-										китайского веб-дизайна и их истоки</a> <a
+										href="/spring/articles/02_chinadesign">Р“Р»Р°РІРЅС‹Рµ РѕСЃРѕР±РµРЅРЅРѕСЃС‚Рё
+										РєРёС‚Р°Р№СЃРєРѕРіРѕ РІРµР±-РґРёР·Р°Р№РЅР° Рё РёС… РёСЃС‚РѕРєРё</a> <a
 										class="a_background_news" id="a_slide_3"
-										href="/spring/articles/03_flatdesign">Flat Design, или
-										почему все «кинулись» делать плоские интерфейсы</a> <a
+										href="/spring/articles/03_flatdesign">Flat Design, РёР»Рё
+										РїРѕС‡РµРјСѓ РІСЃРµ В«РєРёРЅСѓР»РёСЃСЊВ» РґРµР»Р°С‚СЊ РїР»РѕСЃРєРёРµ РёРЅС‚РµСЂС„РµР№СЃС‹</a> <a
 										class="a_background_news" id="a_slide_4"
-										href="/spring/articles/04_beautyindesign">Дизайн красив
-										настолько, насколько он практичен</a>
+										href="/spring/articles/04_beautyindesign">Р”РёР·Р°Р№РЅ РєСЂР°СЃРёРІ
+										РЅР°СЃС‚РѕР»СЊРєРѕ, РЅР°СЃРєРѕР»СЊРєРѕ РѕРЅ РїСЂР°РєС‚РёС‡РµРЅ</a>
 								</h2>
 							</header>
-							<p class="p_slide_background" id="p_slide_1">30 ноября в
-								Минске пройдет конференция UXPeople, посвященная вопросам
-								проектирования интерфейсов, user experience, дизайну и
-								юзабилити...</p>
-							<p class="p_slide_background" id="p_slide_2">По роду моей
-								деятельности ко мне часто обращаются иностранные компании за
-								консультациями, аналитикой и другой помощью в сфере китайского
-								интернета. Нередко дело доходит до локализации сайта или
-								приложения, тогда же...</p>
-							<p class="p_slide_background" id="p_slide_3">Плоский дизайн
-								интерфейсов пришел или, точнее, объявил о себе во всей красе
-								благодаря платформе Windows Phone (и Windows 8) с ее
-								революционными стилистически простыми и намеренно упрощенными
-								интерфейсами...</p>
-							<p class="p_slide_background" id="p_slide_4">Цель этой статьи
-								попытаться провести четкую границу между тем, что большинство
-								пользователей считает красивым в веб-дизайне, и что
-								действительно является таковым, а также...</p>
+							<p class="p_slide_background" id="p_slide_1">30 РЅРѕСЏР±СЂСЏ РІ
+								РњРёРЅСЃРєРµ РїСЂРѕР№РґРµС‚ РєРѕРЅС„РµСЂРµРЅС†РёСЏ UXPeople, РїРѕСЃРІСЏС‰РµРЅРЅР°СЏ РІРѕРїСЂРѕСЃР°Рј
+								РїСЂРѕРµРєС‚РёСЂРѕРІР°РЅРёСЏ РёРЅС‚РµСЂС„РµР№СЃРѕРІ, user experience, РґРёР·Р°Р№РЅСѓ Рё
+								СЋР·Р°Р±РёР»РёС‚Рё...</p>
+							<p class="p_slide_background" id="p_slide_2">РџРѕ СЂРѕРґСѓ РјРѕРµР№
+								РґРµСЏС‚РµР»СЊРЅРѕСЃС‚Рё РєРѕ РјРЅРµ С‡Р°СЃС‚Рѕ РѕР±СЂР°С‰Р°СЋС‚СЃСЏ РёРЅРѕСЃС‚СЂР°РЅРЅС‹Рµ РєРѕРјРїР°РЅРёРё Р·Р°
+								РєРѕРЅСЃСѓР»СЊС‚Р°С†РёСЏРјРё, Р°РЅР°Р»РёС‚РёРєРѕР№ Рё РґСЂСѓРіРѕР№ РїРѕРјРѕС‰СЊСЋ РІ СЃС„РµСЂРµ РєРёС‚Р°Р№СЃРєРѕРіРѕ
+								РёРЅС‚РµСЂРЅРµС‚Р°. РќРµСЂРµРґРєРѕ РґРµР»Рѕ РґРѕС…РѕРґРёС‚ РґРѕ Р»РѕРєР°Р»РёР·Р°С†РёРё СЃР°Р№С‚Р° РёР»Рё
+								РїСЂРёР»РѕР¶РµРЅРёСЏ, С‚РѕРіРґР° Р¶Рµ...</p>
+							<p class="p_slide_background" id="p_slide_3">РџР»РѕСЃРєРёР№ РґРёР·Р°Р№РЅ
+								РёРЅС‚РµСЂС„РµР№СЃРѕРІ РїСЂРёС€РµР» РёР»Рё, С‚РѕС‡РЅРµРµ, РѕР±СЉСЏРІРёР» Рѕ СЃРµР±Рµ РІРѕ РІСЃРµР№ РєСЂР°СЃРµ
+								Р±Р»Р°РіРѕРґР°СЂСЏ РїР»Р°С‚С„РѕСЂРјРµ Windows Phone (Рё Windows 8) СЃ РµРµ
+								СЂРµРІРѕР»СЋС†РёРѕРЅРЅС‹РјРё СЃС‚РёР»РёСЃС‚РёС‡РµСЃРєРё РїСЂРѕСЃС‚С‹РјРё Рё РЅР°РјРµСЂРµРЅРЅРѕ СѓРїСЂРѕС‰РµРЅРЅС‹РјРё
+								РёРЅС‚РµСЂС„РµР№СЃР°РјРё...</p>
+							<p class="p_slide_background" id="p_slide_4">Р¦РµР»СЊ СЌС‚РѕР№ СЃС‚Р°С‚СЊРё
+								РїРѕРїС‹С‚Р°С‚СЊСЃСЏ РїСЂРѕРІРµСЃС‚Рё С‡РµС‚РєСѓСЋ РіСЂР°РЅРёС†Сѓ РјРµР¶РґСѓ С‚РµРј, С‡С‚Рѕ Р±РѕР»СЊС€РёРЅСЃС‚РІРѕ
+								РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ СЃС‡РёС‚Р°РµС‚ РєСЂР°СЃРёРІС‹Рј РІ РІРµР±-РґРёР·Р°Р№РЅРµ, Рё С‡С‚Рѕ
+								РґРµР№СЃС‚РІРёС‚РµР»СЊРЅРѕ СЏРІР»СЏРµС‚СЃСЏ С‚Р°РєРѕРІС‹Рј, Р° С‚Р°РєР¶Рµ...</p>
 						</div>
 					</div>
 					<div class="div_slide_image">
@@ -198,38 +198,38 @@
 							</a>
 						</p>
 						<p class="section_new">${article.articleSummary}
-							<a class="new_read" href="${article.articleHref}">Читать
-								дальше...</a>
+							<a class="new_read" href="${article.articleHref}">Р§РёС‚Р°С‚СЊ
+								РґР°Р»СЊС€Рµ...</a>
 						</p>
 					</section>
 				</c:forEach>
 				<script src="<c:url value="/resources/js/cross.js" />"></script>
 			</article>
 			<aside>
-				<h3>Категории</h3>
+				<h3>РљР°С‚РµРіРѕСЂРёРё</h3>
 				<ul class="categories_ul">
 					<li><a href="/spring/articles/order/1">Usability</a></li>
-					<li><a href="/spring/articles/order/2">Веб-дизайн</a></li>
-					<li><a href="/spring/articles/order/3">Интерфейсы</a></li>
-					<li><a href="/spring/articles/order/4">События</a></li>
+					<li><a href="/spring/articles/order/2">Р’РµР±-РґРёР·Р°Р№РЅ</a></li>
+					<li><a href="/spring/articles/order/3">РРЅС‚РµСЂС„РµР№СЃС‹</a></li>
+					<li><a href="/spring/articles/order/4">РЎРѕР±С‹С‚РёСЏ</a></li>
 					<li><a href="/spring/articles/order/5">Accessibility</a></li>
-					<li id="categories_li_last"><a href="/spring/articles/order/6">Тестирование</a></li>
+					<li id="categories_li_last"><a href="/spring/articles/order/6">РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ</a></li>
 				</ul>
 				<div id="advertising">
 					<a href="#"><img
 						src="<c:url value="/resources/images/advert.png" />" width="230"
-						height="366" alt="Реклама"></a>
+						height="366" alt="Р РµРєР»Р°РјР°"></a>
 				</div>
 			</aside>
 		</div>
-		<footer class="footer_main"> Copyright ©2013 uZability. </footer>
+		<footer class="footer_main"> Copyright В©2013 uZability. </footer>
 		<div class="bottom_nav_div">
-			<a href="#" class="bottom_nav_a">О сайте</a>
+			<a href="#" class="bottom_nav_a">Рћ СЃР°Р№С‚Рµ</a>
 		</div>
-		<a href="#top" title="Вверх" id="up_button"><img
+		<a href="#top" title="Р’РІРµСЂС…" id="up_button"><img
 			id="image_up_button"
 			src="<c:url value="/resources/images/arrow.png" />" width="70"
-			height="70"></a> <a href="#" id="feedback">Обратная связь</a>
+			height="70"></a> <a href="#" id="feedback">РћР±СЂР°С‚РЅР°СЏ СЃРІСЏР·СЊ</a>
 	</div>
 
 </body>

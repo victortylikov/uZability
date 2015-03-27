@@ -2,8 +2,8 @@
 <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="security"%>
 <%@ page session="false"%>
-<%@ page language="java" contentType="text/html; charset=windows-1251"
-	pageEncoding="windows-1251"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <html>
 <head>
 <link href="<c:url value="/resources/css/reset.css" />" rel="stylesheet">
@@ -25,30 +25,30 @@
 			<h1 name="top">
 				<a href="/spring/"><img
 					src="<c:url value="/resources/images/logo2.png" />" width="239"
-					height="100" alt="Логотип"></a>
+					height="100" alt="Р›РѕРіРѕС‚РёРї"></a>
 			</h1>
 			<div id="quote">
-				<blockquote id="quote_sentence">Трудность создания
-					опыта взаимодействия состоит в необходимости понять потребности
-					пользователей лучше, чем они понимают их сами</blockquote>
-				<p id="quote_author">Джесс Гарретт</p>
+				<blockquote id="quote_sentence">РўСЂСѓРґРЅРѕСЃС‚СЊ СЃРѕР·РґР°РЅРёСЏ
+					РѕРїС‹С‚Р° РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёСЏ СЃРѕСЃС‚РѕРёС‚ РІ РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚Рё РїРѕРЅСЏС‚СЊ РїРѕС‚СЂРµР±РЅРѕСЃС‚Рё
+					РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ Р»СѓС‡С€Рµ, С‡РµРј РѕРЅРё РїРѕРЅРёРјР°СЋС‚ РёС… СЃР°РјРё</blockquote>
+				<p id="quote_author">Р”Р¶РµСЃСЃ Р“Р°СЂСЂРµС‚С‚</p>
 
 			</div>
 			<security:authorize access="isAnonymous()">
 				<form name="f" action="<c:url value='/j_spring_security_check'/>"
 					method="POST" id="login" class="login">
 					<p class="reg">
-						<a class="enter" href="/spring/login">Войти</a> или <a
-							class="enter" href="/spring/registration">Зарегистрироваться</a>
+						<a class="enter" href="/spring/login">Р’РѕР№С‚Рё</a> РёР»Рё <a
+							class="enter" href="/spring/registration">Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°С‚СЊСЃСЏ</a>
 					</p>
 					<p class="field">
 						<input type="text" name="j_username" id="username"
-							class="text_login" placeholder="логин" required="required"
+							class="text_login" placeholder="Р»РѕРіРёРЅ" required="required"
 							autocomplete="off" maxlength="30" pattern="[A-Za-z0-9_.-]{3,30}" />
 					</p>
 					<p class="field">
 						<input type="password" name="j_password" id="password"
-							class="text_login" placeholder="пароль" required="required"
+							class="text_login" placeholder="РїР°СЂРѕР»СЊ" required="required"
 							maxlength="30" pattern="[A-Za-z0-9_.-]{3,30}" />
 					</p>
 					<p class="submit">
@@ -59,7 +59,7 @@
 			<security:authorize access="isAuthenticated()">
 				<div class="login">
 					<div class="photo_user"><a href="/spring/profile/<security:authentication property="principal.username" />"><img src="/spring/profile/image/getAvatar"  alt="" height=70 width=70/></a></div>
-					<a href="<c:url value="/j_spring_security_logout"/>" id="logout">Выйти</a>
+					<a href="<c:url value="/j_spring_security_logout"/>" id="logout">Р’С‹Р№С‚Рё</a>
 					<div id="username_login">
 						<a href="/spring/profile/<security:authentication property="principal.username" />"><security:authentication property="principal.username" /></a>
 					</div>
@@ -67,16 +67,16 @@
 			</security:authorize>
 			<nav>
 				<ul class="main_ul">
-					<li><a id="a_glav" href="/spring/">Главная</a></li>
-					<li><a id="a_stat" href="/spring/articles">Статьи</a></li>
-					<li><a id="a_knigi" href="/spring/books">Книги</a></li>
-					<li><a id="a_gloss" href="/spring/glossary">Глоссарий</a></li>
+					<li><a id="a_glav" href="/spring/">Р“Р»Р°РІРЅР°СЏ</a></li>
+					<li><a id="a_stat" href="/spring/articles">РЎС‚Р°С‚СЊРё</a></li>
+					<li><a id="a_knigi" href="/spring/books">РљРЅРёРіРё</a></li>
+					<li><a id="a_gloss" href="/spring/glossary">Р“Р»РѕСЃСЃР°СЂРёР№</a></li>
 				</ul>
 				<form action="search_action" id="search" class="search"
 					enctype="text/plain">
 					<div class="search_div">
 						<input type="text" name="search_input" id="search_input"
-							class="search_input" placeholder="поиск" autofocus /> <input
+							class="search_input" placeholder="РїРѕРёСЃРє" autofocus /> <input
 							id="search_submit" type="submit" value="" />
 					</div>
 				</form>
@@ -87,80 +87,80 @@
 				<section class="section_article" id="post1">
 					<header id="header_withoutborder">
 						<h2>
-							<a class="a_section_link" href="/spring/articles/01_uxpeople">Конференция
+							<a class="a_section_link" href="/spring/articles/01_uxpeople">РљРѕРЅС„РµСЂРµРЅС†РёСЏ
 								UXPeople 2013</a>
 						</h2>
 						<div class="section_time">
-							<time>02 Июль 2014</time>
-							| веб-дизайн usability события
+							<time>02 РСЋР»СЊ 2014</time>
+							| РІРµР±-РґРёР·Р°Р№РЅ usability СЃРѕР±С‹С‚РёСЏ
 						</div>
 					</header>
 					<p class="section_figure" id="post1_image">
 						<a href="/spring/articles/01_uxpeople"> <img
 							src="<c:url value="/resources/images/ux-people.JPG" />"
-							width="669" height="230" alt="Фотография">
+							width="669" height="230" alt="Р¤РѕС‚РѕРіСЂР°С„РёСЏ">
 						</a>
 					</p>
-					<p class="section_new">30 ноября в Минске (конференц-зал
-						гостиницы «Виктория», пр-т Победителей 59) пройдет конференция
-						UXPeople, посвященная вопросам проектирования пользовательских
-						интерфейсов, user experience, дизайну и юзабилити. В качестве
-						докладчиков приглашены опытные специалисты и руководители из
-						России, Беларуси, ближнего и дальнего зарубежья. <a href="http://uxpeople.by/speakers/">Среди
-						докладчиков</a>: Виталий Фридман (Шеф-редактор Smashing Magazine,
-						Германия), Дмитрий Сатин (Советник министра, Министерство связи и
-						массовых коммуникаций Российской Федерации), Hegle Sarapuu
-						(Trinidad Consulting, Эстония), Владислав Головач (худ.-рук и
-						сооснователь компании Usethics, Россия), Максим Гулевич
-						(человек-загадка), Платон Днепровский (UIDG, Россия), Юрий Ветров
-						(Руководитель команды проектирования и дизайна интерфейсов
-						Mail.Ru, Россия), Александр Ревяко (Арт-директор
-						Сбербанк-Технологии, Беларусь) и другие. Такого количества
-						представителей области проектирования взаимодействия и дизайна в
-						Минске еще не было.</p>
+					<p class="section_new">30 РЅРѕСЏР±СЂСЏ РІ РњРёРЅСЃРєРµ (РєРѕРЅС„РµСЂРµРЅС†-Р·Р°Р»
+						РіРѕСЃС‚РёРЅРёС†С‹ В«Р’РёРєС‚РѕСЂРёСЏВ», РїСЂ-С‚ РџРѕР±РµРґРёС‚РµР»РµР№ 59) РїСЂРѕР№РґРµС‚ РєРѕРЅС„РµСЂРµРЅС†РёСЏ
+						UXPeople, РїРѕСЃРІСЏС‰РµРЅРЅР°СЏ РІРѕРїСЂРѕСЃР°Рј РїСЂРѕРµРєС‚РёСЂРѕРІР°РЅРёСЏ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРёС…
+						РёРЅС‚РµСЂС„РµР№СЃРѕРІ, user experience, РґРёР·Р°Р№РЅСѓ Рё СЋР·Р°Р±РёР»РёС‚Рё. Р’ РєР°С‡РµСЃС‚РІРµ
+						РґРѕРєР»Р°РґС‡РёРєРѕРІ РїСЂРёРіР»Р°С€РµРЅС‹ РѕРїС‹С‚РЅС‹Рµ СЃРїРµС†РёР°Р»РёСЃС‚С‹ Рё СЂСѓРєРѕРІРѕРґРёС‚РµР»Рё РёР·
+						Р РѕСЃСЃРёРё, Р‘РµР»Р°СЂСѓСЃРё, Р±Р»РёР¶РЅРµРіРѕ Рё РґР°Р»СЊРЅРµРіРѕ Р·Р°СЂСѓР±РµР¶СЊСЏ. <a href="http://uxpeople.by/speakers/">РЎСЂРµРґРё
+						РґРѕРєР»Р°РґС‡РёРєРѕРІ</a>: Р’РёС‚Р°Р»РёР№ Р¤СЂРёРґРјР°РЅ (РЁРµС„-СЂРµРґР°РєС‚РѕСЂ Smashing Magazine,
+						Р“РµСЂРјР°РЅРёСЏ), Р”РјРёС‚СЂРёР№ РЎР°С‚РёРЅ (РЎРѕРІРµС‚РЅРёРє РјРёРЅРёСЃС‚СЂР°, РњРёРЅРёСЃС‚РµСЂСЃС‚РІРѕ СЃРІСЏР·Рё Рё
+						РјР°СЃСЃРѕРІС‹С… РєРѕРјРјСѓРЅРёРєР°С†РёР№ Р РѕСЃСЃРёР№СЃРєРѕР№ Р¤РµРґРµСЂР°С†РёРё), Hegle Sarapuu
+						(Trinidad Consulting, Р­СЃС‚РѕРЅРёСЏ), Р’Р»Р°РґРёСЃР»Р°РІ Р“РѕР»РѕРІР°С‡ (С…СѓРґ.-СЂСѓРє Рё
+						СЃРѕРѕСЃРЅРѕРІР°С‚РµР»СЊ РєРѕРјРїР°РЅРёРё Usethics, Р РѕСЃСЃРёСЏ), РњР°РєСЃРёРј Р“СѓР»РµРІРёС‡
+						(С‡РµР»РѕРІРµРє-Р·Р°РіР°РґРєР°), РџР»Р°С‚РѕРЅ Р”РЅРµРїСЂРѕРІСЃРєРёР№ (UIDG, Р РѕСЃСЃРёСЏ), Р®СЂРёР№ Р’РµС‚СЂРѕРІ
+						(Р СѓРєРѕРІРѕРґРёС‚РµР»СЊ РєРѕРјР°РЅРґС‹ РїСЂРѕРµРєС‚РёСЂРѕРІР°РЅРёСЏ Рё РґРёР·Р°Р№РЅР° РёРЅС‚РµСЂС„РµР№СЃРѕРІ
+						Mail.Ru, Р РѕСЃСЃРёСЏ), РђР»РµРєСЃР°РЅРґСЂ Р РµРІСЏРєРѕ (РђСЂС‚-РґРёСЂРµРєС‚РѕСЂ
+						РЎР±РµСЂР±Р°РЅРє-РўРµС…РЅРѕР»РѕРіРёРё, Р‘РµР»Р°СЂСѓСЃСЊ) Рё РґСЂСѓРіРёРµ. РўР°РєРѕРіРѕ РєРѕР»РёС‡РµСЃС‚РІР°
+						РїСЂРµРґСЃС‚Р°РІРёС‚РµР»РµР№ РѕР±Р»Р°СЃС‚Рё РїСЂРѕРµРєС‚РёСЂРѕРІР°РЅРёСЏ РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёСЏ Рё РґРёР·Р°Р№РЅР° РІ
+						РњРёРЅСЃРєРµ РµС‰Рµ РЅРµ Р±С‹Р»Рѕ.</p>
 
-					<p class="paragraph">У слушателей будет возможность получить
-						передовой опыт, пообщаться с коллегами и задать актуальные
-						вопросы. <a href="http://uxpeople.by/program/">Среди тем выступлений</a>:
-						 адаптивный дизайн, проектирование	и дизайн мобильных приложений и игр,
-						 особенности процесса проектирования в больших и средних компаниях, мысли и мнения
-						дизайнеров о своей профессии и ее проблемах.</p>
-					<p class="paragraph">Слушателями конференции станут около 300
-						человек из стран СНГ и ближнего зарубежья. Конференция будет
-						интересна: дизайнерам, проектировщикам интерфейсов, специалистам
-						по юзабилити, менеджерам продуктов, маркетологам, программистам и
-						студентам.</p>
-					<p class="paragraph">Партнерами конференции выступили компании
-						Wargaming и UXPresso.</p>
-					<p class="paragraph">Ждем вас на конференции.</p>
+					<p class="paragraph">РЈ СЃР»СѓС€Р°С‚РµР»РµР№ Р±СѓРґРµС‚ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ РїРѕР»СѓС‡РёС‚СЊ
+						РїРµСЂРµРґРѕРІРѕР№ РѕРїС‹С‚, РїРѕРѕР±С‰Р°С‚СЊСЃСЏ СЃ РєРѕР»Р»РµРіР°РјРё Рё Р·Р°РґР°С‚СЊ Р°РєС‚СѓР°Р»СЊРЅС‹Рµ
+						РІРѕРїСЂРѕСЃС‹. <a href="http://uxpeople.by/program/">РЎСЂРµРґРё С‚РµРј РІС‹СЃС‚СѓРїР»РµРЅРёР№</a>:
+						 Р°РґР°РїС‚РёРІРЅС‹Р№ РґРёР·Р°Р№РЅ, РїСЂРѕРµРєС‚РёСЂРѕРІР°РЅРёРµ	Рё РґРёР·Р°Р№РЅ РјРѕР±РёР»СЊРЅС‹С… РїСЂРёР»РѕР¶РµРЅРёР№ Рё РёРіСЂ,
+						 РѕСЃРѕР±РµРЅРЅРѕСЃС‚Рё РїСЂРѕС†РµСЃСЃР° РїСЂРѕРµРєС‚РёСЂРѕРІР°РЅРёСЏ РІ Р±РѕР»СЊС€РёС… Рё СЃСЂРµРґРЅРёС… РєРѕРјРїР°РЅРёСЏС…, РјС‹СЃР»Рё Рё РјРЅРµРЅРёСЏ
+						РґРёР·Р°Р№РЅРµСЂРѕРІ Рѕ СЃРІРѕРµР№ РїСЂРѕС„РµСЃСЃРёРё Рё РµРµ РїСЂРѕР±Р»РµРјР°С….</p>
+					<p class="paragraph">РЎР»СѓС€Р°С‚РµР»СЏРјРё РєРѕРЅС„РµСЂРµРЅС†РёРё СЃС‚Р°РЅСѓС‚ РѕРєРѕР»Рѕ 300
+						С‡РµР»РѕРІРµРє РёР· СЃС‚СЂР°РЅ РЎРќР“ Рё Р±Р»РёР¶РЅРµРіРѕ Р·Р°СЂСѓР±РµР¶СЊСЏ. РљРѕРЅС„РµСЂРµРЅС†РёСЏ Р±СѓРґРµС‚
+						РёРЅС‚РµСЂРµСЃРЅР°: РґРёР·Р°Р№РЅРµСЂР°Рј, РїСЂРѕРµРєС‚РёСЂРѕРІС‰РёРєР°Рј РёРЅС‚РµСЂС„РµР№СЃРѕРІ, СЃРїРµС†РёР°Р»РёСЃС‚Р°Рј
+						РїРѕ СЋР·Р°Р±РёР»РёС‚Рё, РјРµРЅРµРґР¶РµСЂР°Рј РїСЂРѕРґСѓРєС‚РѕРІ, РјР°СЂРєРµС‚РѕР»РѕРіР°Рј, РїСЂРѕРіСЂР°РјРјРёСЃС‚Р°Рј Рё
+						СЃС‚СѓРґРµРЅС‚Р°Рј.</p>
+					<p class="paragraph">РџР°СЂС‚РЅРµСЂР°РјРё РєРѕРЅС„РµСЂРµРЅС†РёРё РІС‹СЃС‚СѓРїРёР»Рё РєРѕРјРїР°РЅРёРё
+						Wargaming Рё UXPresso.</p>
+					<p class="paragraph">Р–РґРµРј РІР°СЃ РЅР° РєРѕРЅС„РµСЂРµРЅС†РёРё.</p>
 
 				</section>
 				<script src="<c:url value="/resources/js/cross.js" />"></script>
 			</article>
 			<aside>
-				<h3>Категории</h3>
+				<h3>РљР°С‚РµРіРѕСЂРёРё</h3>
 				<ul class="categories_ul">
 					<li><a href="/spring/articles/order/1">Usability</a></li>
-					<li><a href="/spring/articles/order/2">Веб-дизайн</a></li>
-					<li><a href="/spring/articles/order/3">Интерфейсы</a></li>
-					<li><a href="/spring/articles/order/4">События</a></li>
+					<li><a href="/spring/articles/order/2">Р’РµР±-РґРёР·Р°Р№РЅ</a></li>
+					<li><a href="/spring/articles/order/3">РРЅС‚РµСЂС„РµР№СЃС‹</a></li>
+					<li><a href="/spring/articles/order/4">РЎРѕР±С‹С‚РёСЏ</a></li>
 					<li><a href="/spring/articles/order/5">Accessibility</a></li>
-					<li id="categories_li_last"><a href="/spring/articles/order/6">Тестирование</a></li>
+					<li id="categories_li_last"><a href="/spring/articles/order/6">РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ</a></li>
 				</ul>
 				<div id="advertising">
 					<a href="#"><img
 						src="<c:url value="/resources/images/advert.png" />" width="230"
-						height="366" alt="Реклама"></a>
+						height="366" alt="Р РµРєР»Р°РјР°"></a>
 				</div>
 			</aside>
 		</div>
-		<footer class="footer_main"> Copyright ©2013 uZability. </footer>
+		<footer class="footer_main"> Copyright В©2013 uZability. </footer>
 		<div class="bottom_nav_div">
-			<a href="#" class="bottom_nav_a">О сайте</a>
+			<a href="#" class="bottom_nav_a">Рћ СЃР°Р№С‚Рµ</a>
 		</div>
 		<a href="#top" id="up_button"><img id="image_up_button"
 			src="<c:url value="/resources/images/arrow.png" />" width="70"
-			height="70"></a> <a href="#" id="feedback">Обратная связь</a>
+			height="70"></a> <a href="#" id="feedback">РћР±СЂР°С‚РЅР°СЏ СЃРІСЏР·СЊ</a>
 	</div>
 </body>
 </html>

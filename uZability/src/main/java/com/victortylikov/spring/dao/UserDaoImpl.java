@@ -11,6 +11,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.victortylikov.spring.domain.Comment;
 import com.victortylikov.spring.domain.Role;
 import com.victortylikov.spring.domain.User;
 import com.victortylikov.spring.domain.UserDetail;
@@ -85,9 +86,13 @@ public class UserDaoImpl implements UserDao {
 	public void saveAvatar(UserDetail userDetail,byte[] bytes) {
 		Blob blob=Hibernate.getLobCreator(sessionFactory.getCurrentSession()).createBlob(bytes);
 		userDetail.setPhoto(blob);
-		addUserDetail(userDetail);
+		addUserDetail(userDetail);	
 		
-		
+	}
+
+	@Override
+	public void addUserComment(Comment comment) {
+		sessionFactory.getCurrentSession().save(comment);
 		
 	}
 	

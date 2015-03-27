@@ -1,11 +1,12 @@
 @CHARSET "UTF-8";
-#many_photo{
+
+#many_photo {
 	text-align: center;
 }
 
-.statement{
-	margin: 10px 30px 0;	
-	font-style: italic;	
+.statement {
+	margin: 10px 30px 0;
+	font-style: italic;
 }
 
 .statement:before {
@@ -37,4 +38,19 @@
 
 #a_knigi:hover {
 	
+}
+
+.comment_form {
+	width: 600px;
+	height: auto;
+	margin: auto;
+}
+
+.comment_textarea {
+	height: 150px;
+	width: 600px;
+}
+
+.comment_input{
+	float: right;
 }

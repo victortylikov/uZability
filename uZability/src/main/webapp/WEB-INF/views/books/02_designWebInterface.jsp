@@ -2,8 +2,8 @@
 <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="security"%>
 <%@ page session="false"%>
-<%@ page language="java" contentType="text/html; charset=windows-1251"
-	pageEncoding="windows-1251"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <html>
 <head>
 <link href="<c:url value="/resources/css/reset.css" />" rel="stylesheet">
@@ -25,30 +25,30 @@
 			<h1 name="top">
 				<a href="/spring/"><img
 					src="<c:url value="/resources/images/logo2.png" />" width="239"
-					height="100" alt="Логотип"></a>
+					height="100" alt="Р›РѕРіРѕС‚РёРї"></a>
 			</h1>
 			<div id="quote">
-				<blockquote id="quote_sentence">Трудность создания
-					опыта взаимодействия состоит в необходимости понять потребности
-					пользователей лучше, чем они понимают их сами</blockquote>
-				<p id="quote_author">Джесс Гарретт</p>
+				<blockquote id="quote_sentence">РўСЂСѓРґРЅРѕСЃС‚СЊ СЃРѕР·РґР°РЅРёСЏ
+					РѕРїС‹С‚Р° РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёСЏ СЃРѕСЃС‚РѕРёС‚ РІ РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚Рё РїРѕРЅСЏС‚СЊ РїРѕС‚СЂРµР±РЅРѕСЃС‚Рё
+					РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ Р»СѓС‡С€Рµ, С‡РµРј РѕРЅРё РїРѕРЅРёРјР°СЋС‚ РёС… СЃР°РјРё</blockquote>
+				<p id="quote_author">Р”Р¶РµСЃСЃ Р“Р°СЂСЂРµС‚С‚</p>
 
 			</div>
 			<security:authorize access="isAnonymous()">
 				<form name="f" action="<c:url value='/j_spring_security_check'/>"
 					method="POST" id="login" class="login">
 					<p class="reg">
-						<a class="enter" href="/spring/login">Войти</a> или <a
-							class="enter" href="/spring/registration">Зарегистрироваться</a>
+						<a class="enter" href="/spring/login">Р’РѕР№С‚Рё</a> РёР»Рё <a
+							class="enter" href="/spring/registration">Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°С‚СЊСЃСЏ</a>
 					</p>
 					<p class="field">
 						<input type="text" name="j_username" id="username"
-							class="text_login" placeholder="логин" required="required"
+							class="text_login" placeholder="Р»РѕРіРёРЅ" required="required"
 							autocomplete="off" maxlength="30" pattern="[A-Za-z0-9_.-]{3,30}" />
 					</p>
 					<p class="field">
 						<input type="password" name="j_password" id="password"
-							class="text_login" placeholder="пароль" required="required"
+							class="text_login" placeholder="РїР°СЂРѕР»СЊ" required="required"
 							maxlength="30" pattern="[A-Za-z0-9_.-]{3,30}" />
 					</p>
 					<p class="submit">
@@ -63,7 +63,7 @@
 							href="/spring/profile/<security:authentication property="principal.username" />"><img
 							src="/spring/profile/image/getAvatar" alt="" height=70 width=70 /></a>
 					</div>
-					<a href="<c:url value="/j_spring_security_logout"/>" id="logout">Выйти</a>
+					<a href="<c:url value="/j_spring_security_logout"/>" id="logout">Р’С‹Р№С‚Рё</a>
 					<div id="username_login">
 						<a
 							href="/spring/profile/<security:authentication property="principal.username" />"><security:authentication
@@ -73,16 +73,16 @@
 			</security:authorize>
 			<nav>
 				<ul class="main_ul">
-					<li><a id="a_glav" href="/spring/">Главная</a></li>
-					<li><a id="a_stat" href="/spring/articles">Статьи</a></li>
-					<li><a id="a_knigi" href="/spring/books">Книги</a></li>
-					<li><a id="a_gloss" href="/spring/glossary">Глоссарий</a></li>
+					<li><a id="a_glav" href="/spring/">Р“Р»Р°РІРЅР°СЏ</a></li>
+					<li><a id="a_stat" href="/spring/articles">РЎС‚Р°С‚СЊРё</a></li>
+					<li><a id="a_knigi" href="/spring/books">РљРЅРёРіРё</a></li>
+					<li><a id="a_gloss" href="/spring/glossary">Р“Р»РѕСЃСЃР°СЂРёР№</a></li>
 				</ul>
 				<form action="search_action" id="search" class="search"
 					enctype="text/plain">
 					<div class="search_div">
 						<input type="text" name="search_input" id="search_input"
-							class="search_input" placeholder="поиск" autofocus /> <input
+							class="search_input" placeholder="РїРѕРёСЃРє" autofocus /> <input
 							id="search_submit" type="submit" value="" />
 					</div>
 				</form>
@@ -95,79 +95,79 @@
 					<header class="book_name">
 						<h2 class="h2_book_name">
 							<a class="a_section_link"
-								href="/spring/books/02_designWebInterface">Проектирование
-								веб-интерфейсов</a>
+								href="/spring/books/02_designWebInterface">РџСЂРѕРµРєС‚РёСЂРѕРІР°РЅРёРµ
+								РІРµР±-РёРЅС‚РµСЂС„РµР№СЃРѕРІ</a>
 						</h2>
 						<div class="english_title">
 							<p class="">Designing Web Interfaces</p>
 						</div>
 						<ol class="book_detail_info_title">
-							<li>Авторы:</li>
-							<li>Издательство:</li>
-							<li>Год издания:</li>
-							<li>Страниц:</li>
-							<li>Формат:</li>
+							<li>РђРІС‚РѕСЂС‹:</li>
+							<li>РР·РґР°С‚РµР»СЊСЃС‚РІРѕ:</li>
+							<li>Р“РѕРґ РёР·РґР°РЅРёСЏ:</li>
+							<li>РЎС‚СЂР°РЅРёС†:</li>
+							<li>Р¤РѕСЂРјР°С‚:</li>
 						</ol>
 						<ol class="book_detail_info">
-							<li>Билл Скотт, Тереза Нейл</li>
-							<li>Символ (Россия)</li>
+							<li>Р‘РёР»Р» РЎРєРѕС‚С‚, РўРµСЂРµР·Р° РќРµР№Р»</li>
+							<li>РЎРёРјРІРѕР» (Р РѕСЃСЃРёСЏ)</li>
 							<li>2010</li>
 							<li>352</li>
-							<li>70х100/16 (170х240 мм, увеличенный)</li>
+							<li>70С…100/16 (170С…240 РјРј, СѓРІРµР»РёС‡РµРЅРЅС‹Р№)</li>
 						</ol>
 					</header>
 					<a href="/spring/books/01_infoArchitecture" class="book_image">
 						<img src="<c:url value="/resources/images/book_img_2.jpg" />"
-						width="179" height="250" alt="Фотография">
+						width="179" height="250" alt="Р¤РѕС‚РѕРіСЂР°С„РёСЏ">
 					</a>
-					<p class="p_short_review">Авторы - специалисты по
-						проектированию пользовательских интерфейсов - предлагают более 75
-						шаблонов проектирования взаимодействия для создания собственных
-						удобных и привлекательных веб­приложений. Приводимые шаблоны
-						иллюстрируют шесть ключевых принципов проектирования, позволяющих
-						в полной мере использовать возможности современных веб­технологий
-						и обеспечить эффективность процесса взаимодействия с
-						пользователем. Обсуждается и ряд антишаблонов, которых следует
-						избегать при проектировании интерфейсов.</p>
-					<p class="next_paragraph_annotation">Для наглядности изложения
-						каждый шаблон сопровождается конкретным примером действующего
-						сайта. Большим подспорьем при чтении книги послужат цветные версии
-						иллюстраций, которые можно скачать с сайта издательства либо
-						воспользоваться галереей иллюстраций оригинального издания по
-						адресу <a href="http://www.flickr.com/photos/designingwebinterfaces/">http://www.flickr.com/photos/designingwebinterfaces/</a>.</p>
-					<p class="next_paragraph_annotation">Издание содержит всю
-						необходимую дизайнеру и разработчику информацию для принятия
-						правильных решений по созданию или обновлению интерактивного сайта
-						или насыщенного веб­приложения. Представленные в книге шаблоны
-						послужат прекрасным дополнением к инструментарию и полезным
-						справочным материалом как новичку, так и опытному специалисту.</p>
+					<p class="p_short_review">РђРІС‚РѕСЂС‹ - СЃРїРµС†РёР°Р»РёСЃС‚С‹ РїРѕ
+						РїСЂРѕРµРєС‚РёСЂРѕРІР°РЅРёСЋ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРёС… РёРЅС‚РµСЂС„РµР№СЃРѕРІ - РїСЂРµРґР»Р°РіР°СЋС‚ Р±РѕР»РµРµ 75
+						С€Р°Р±Р»РѕРЅРѕРІ РїСЂРѕРµРєС‚РёСЂРѕРІР°РЅРёСЏ РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёСЏ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ СЃРѕР±СЃС‚РІРµРЅРЅС‹С…
+						СѓРґРѕР±РЅС‹С… Рё РїСЂРёРІР»РµРєР°С‚РµР»СЊРЅС‹С… РІРµР±В­РїСЂРёР»РѕР¶РµРЅРёР№. РџСЂРёРІРѕРґРёРјС‹Рµ С€Р°Р±Р»РѕРЅС‹
+						РёР»Р»СЋСЃС‚СЂРёСЂСѓСЋС‚ С€РµСЃС‚СЊ РєР»СЋС‡РµРІС‹С… РїСЂРёРЅС†РёРїРѕРІ РїСЂРѕРµРєС‚РёСЂРѕРІР°РЅРёСЏ, РїРѕР·РІРѕР»СЏСЋС‰РёС…
+						РІ РїРѕР»РЅРѕР№ РјРµСЂРµ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РІРѕР·РјРѕР¶РЅРѕСЃС‚Рё СЃРѕРІСЂРµРјРµРЅРЅС‹С… РІРµР±В­С‚РµС…РЅРѕР»РѕРіРёР№
+						Рё РѕР±РµСЃРїРµС‡РёС‚СЊ СЌС„С„РµРєС‚РёРІРЅРѕСЃС‚СЊ РїСЂРѕС†РµСЃСЃР° РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёСЏ СЃ
+						РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј. РћР±СЃСѓР¶РґР°РµС‚СЃСЏ Рё СЂСЏРґ Р°РЅС‚РёС€Р°Р±Р»РѕРЅРѕРІ, РєРѕС‚РѕСЂС‹С… СЃР»РµРґСѓРµС‚
+						РёР·Р±РµРіР°С‚СЊ РїСЂРё РїСЂРѕРµРєС‚РёСЂРѕРІР°РЅРёРё РёРЅС‚РµСЂС„РµР№СЃРѕРІ.</p>
+					<p class="next_paragraph_annotation">Р”Р»СЏ РЅР°РіР»СЏРґРЅРѕСЃС‚Рё РёР·Р»РѕР¶РµРЅРёСЏ
+						РєР°Р¶РґС‹Р№ С€Р°Р±Р»РѕРЅ СЃРѕРїСЂРѕРІРѕР¶РґР°РµС‚СЃСЏ РєРѕРЅРєСЂРµС‚РЅС‹Рј РїСЂРёРјРµСЂРѕРј РґРµР№СЃС‚РІСѓСЋС‰РµРіРѕ
+						СЃР°Р№С‚Р°. Р‘РѕР»СЊС€РёРј РїРѕРґСЃРїРѕСЂСЊРµРј РїСЂРё С‡С‚РµРЅРёРё РєРЅРёРіРё РїРѕСЃР»СѓР¶Р°С‚ С†РІРµС‚РЅС‹Рµ РІРµСЂСЃРёРё
+						РёР»Р»СЋСЃС‚СЂР°С†РёР№, РєРѕС‚РѕСЂС‹Рµ РјРѕР¶РЅРѕ СЃРєР°С‡Р°С‚СЊ СЃ СЃР°Р№С‚Р° РёР·РґР°С‚РµР»СЊСЃС‚РІР° Р»РёР±Рѕ
+						РІРѕСЃРїРѕР»СЊР·РѕРІР°С‚СЊСЃСЏ РіР°Р»РµСЂРµРµР№ РёР»Р»СЋСЃС‚СЂР°С†РёР№ РѕСЂРёРіРёРЅР°Р»СЊРЅРѕРіРѕ РёР·РґР°РЅРёСЏ РїРѕ
+						Р°РґСЂРµСЃСѓ <a href="http://www.flickr.com/photos/designingwebinterfaces/">http://www.flickr.com/photos/designingwebinterfaces/</a>.</p>
+					<p class="next_paragraph_annotation">РР·РґР°РЅРёРµ СЃРѕРґРµСЂР¶РёС‚ РІСЃСЋ
+						РЅРµРѕР±С…РѕРґРёРјСѓСЋ РґРёР·Р°Р№РЅРµСЂСѓ Рё СЂР°Р·СЂР°Р±РѕС‚С‡РёРєСѓ РёРЅС„РѕСЂРјР°С†РёСЋ РґР»СЏ РїСЂРёРЅСЏС‚РёСЏ
+						РїСЂР°РІРёР»СЊРЅС‹С… СЂРµС€РµРЅРёР№ РїРѕ СЃРѕР·РґР°РЅРёСЋ РёР»Рё РѕР±РЅРѕРІР»РµРЅРёСЋ РёРЅС‚РµСЂР°РєС‚РёРІРЅРѕРіРѕ СЃР°Р№С‚Р°
+						РёР»Рё РЅР°СЃС‹С‰РµРЅРЅРѕРіРѕ РІРµР±В­РїСЂРёР»РѕР¶РµРЅРёСЏ. РџСЂРµРґСЃС‚Р°РІР»РµРЅРЅС‹Рµ РІ РєРЅРёРіРµ С€Р°Р±Р»РѕРЅС‹
+						РїРѕСЃР»СѓР¶Р°С‚ РїСЂРµРєСЂР°СЃРЅС‹Рј РґРѕРїРѕР»РЅРµРЅРёРµРј Рє РёРЅСЃС‚СЂСѓРјРµРЅС‚Р°СЂРёСЋ Рё РїРѕР»РµР·РЅС‹Рј
+						СЃРїСЂР°РІРѕС‡РЅС‹Рј РјР°С‚РµСЂРёР°Р»РѕРј РєР°Рє РЅРѕРІРёС‡РєСѓ, С‚Р°Рє Рё РѕРїС‹С‚РЅРѕРјСѓ СЃРїРµС†РёР°Р»РёСЃС‚Сѓ.</p>
 				</section>
 				<script src="<c:url value="/resources/js/cross.js" />"></script>
 			</article>
 			<aside>
-				<h3>Категории</h3>
+				<h3>РљР°С‚РµРіРѕСЂРёРё</h3>
 				<ul class="categories_ul">
 					<li><a href="/spring/articles/order/1">Usability</a></li>
-					<li><a href="/spring/articles/order/2">Веб-дизайн</a></li>
-					<li><a href="/spring/articles/order/3">Интерфейсы</a></li>
-					<li><a href="/spring/articles/order/4">События</a></li>
+					<li><a href="/spring/articles/order/2">Р’РµР±-РґРёР·Р°Р№РЅ</a></li>
+					<li><a href="/spring/articles/order/3">РРЅС‚РµСЂС„РµР№СЃС‹</a></li>
+					<li><a href="/spring/articles/order/4">РЎРѕР±С‹С‚РёСЏ</a></li>
 					<li><a href="/spring/articles/order/5">Accessibility</a></li>
-					<li id="categories_li_last"><a href="/spring/articles/order/6">Тестирование</a></li>
+					<li id="categories_li_last"><a href="/spring/articles/order/6">РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ</a></li>
 				</ul>
 				<div id="advertising">
 					<a href="#"><img
 						src="<c:url value="/resources/images/advert.png" />" width="230"
-						height="366" alt="Реклама"></a>
+						height="366" alt="Р РµРєР»Р°РјР°"></a>
 				</div>
 			</aside>
 		</div>
-		<footer class="footer_main"> Copyright ©2013 uZability. </footer>
+		<footer class="footer_main"> Copyright В©2013 uZability. </footer>
 		<div class="bottom_nav_div">
-			<a href="#" class="bottom_nav_a">О сайте</a>
+			<a href="#" class="bottom_nav_a">Рћ СЃР°Р№С‚Рµ</a>
 		</div>
 		<a href="#top" id="up_button"><img id="image_up_button"
 			src="<c:url value="/resources/images/arrow.png" />" width="70"
-			height="70"></a> <a href="#" id="feedback">Обратная связь</a>
+			height="70"></a> <a href="#" id="feedback">РћР±СЂР°С‚РЅР°СЏ СЃРІСЏР·СЊ</a>
 	</div>
 
 </body>

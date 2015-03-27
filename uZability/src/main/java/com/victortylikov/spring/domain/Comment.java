@@ -3,6 +3,7 @@ package com.victortylikov.spring.domain;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,13 +27,13 @@ public class Comment {
 	@Column(name = "comment_text")
 	private String commentText;
 	
-	@ManyToOne
-	@JoinTable(name = "id_user")
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="id_user")
 	private User user;
 	
-	@ManyToOne
-	@JoinTable(name = "id_article")
-	private Article article;
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="id_article")
+		private Article article;
 
 	public Integer getIdComment() {
 		return idComment;

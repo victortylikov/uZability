@@ -123,7 +123,6 @@ header #quote {
 	height: 70px;
 	width: 70px;
 	margin-top: 10px;
-
 	margin-right: 10px;
 }
 
@@ -210,8 +209,6 @@ header nav {
 	height: 37px;
 	padding-top: 9px;
 }
-
-
 
 header nav  ul {
 	margin: 0;
@@ -380,8 +377,6 @@ article {
 	position: relative;
 }
 
-
-
 .span_link {
 	
 }
@@ -409,6 +404,9 @@ article section {
 	margin-top: 10px;
 	margin-left: 5px;
 	padding-bottom: 5px;
+	border-bottom: 2px dotted grey;
+	padding-top: 0px;
+	padding-bottom: 10px;
 }
 
 article section header {
@@ -458,6 +456,7 @@ article section header h2 a {
 
 .section_new {
 	/* text-align: justify; */
+	
 }
 
 .new_read {
@@ -661,11 +660,11 @@ aside ul li a {
 	border-bottom: 2px solid #CB0000;
 }
 
-#id_remember_me{
+#id_remember_me {
 	visibility: hidden;
 }
 
-.list_decimal{
+.list_decimal {
 	list-style-type: decimal;
 	margin-top: 5px;
 }

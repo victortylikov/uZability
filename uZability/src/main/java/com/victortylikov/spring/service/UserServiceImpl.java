@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.victortylikov.spring.dao.UserDao;
+import com.victortylikov.spring.domain.Comment;
 import com.victortylikov.spring.domain.User;
 import com.victortylikov.spring.domain.UserDetail;
 
@@ -59,5 +60,13 @@ public class UserServiceImpl implements UserService {
 	public void saveAvatar(UserDetail userDetail,byte[] bytes){
 		userDao.saveAvatar(userDetail,bytes);
 	}
+
+	@Override
+	@Transactional
+	public void addUserComment(Comment comment) {
+		userDao.addUserComment(comment);
+		
+	}
+	
 
 }

@@ -2,8 +2,8 @@
 <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="security"%>
 <%@ page session="false"%>
-<%@ page language="java" contentType="text/html; charset=windows-1251"
-	pageEncoding="windows-1251"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <html>
 <head>
 <link href="<c:url value="/resources/css/reset.css" />" rel="stylesheet">
@@ -28,30 +28,30 @@
 			<h1 name="top">
 				<a href="/spring/"><img
 					src="<c:url value="/resources/images/logo2.png" />" width="239"
-					height="100" alt="Логотип"></a>
+					height="100" alt="Р›РѕРіРѕС‚РёРї"></a>
 			</h1>
 			<div id="quote">
-				<blockquote id="quote_sentence">Трудность создания
-					опыта взаимодействия состоит в необходимости понять потребности
-					пользователей лучше, чем они понимают их сами</blockquote>
-				<p id="quote_author">Джесс Гарретт</p>
+				<blockquote id="quote_sentence">РўСЂСѓРґРЅРѕСЃС‚СЊ СЃРѕР·РґР°РЅРёСЏ
+					РѕРїС‹С‚Р° РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёСЏ СЃРѕСЃС‚РѕРёС‚ РІ РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚Рё РїРѕРЅСЏС‚СЊ РїРѕС‚СЂРµР±РЅРѕСЃС‚Рё
+					РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ Р»СѓС‡С€Рµ, С‡РµРј РѕРЅРё РїРѕРЅРёРјР°СЋС‚ РёС… СЃР°РјРё</blockquote>
+				<p id="quote_author">Р”Р¶РµСЃСЃ Р“Р°СЂСЂРµС‚С‚</p>
 
 			</div>
 			<security:authorize access="isAnonymous()">
 				<form name="f" action="<c:url value='/j_spring_security_check'/>"
 					method="POST" id="login" class="login">
 					<p class="reg">
-						<a class="enter" href="/spring/login">Войти</a> или <a
-							class="enter" href="/spring/registration">Зарегистрироваться</a>
+						<a class="enter" href="/spring/login">Р’РѕР№С‚Рё</a> РёР»Рё <a
+							class="enter" href="/spring/registration">Р—Р°СЂРµРіРёСЃС‚СЂРёСЂРѕРІР°С‚СЊСЃСЏ</a>
 					</p>
 					<p class="field">
 						<input type="text" name="j_username" id="username"
-							class="text_login" placeholder="логин" required="required"
+							class="text_login" placeholder="Р»РѕРіРёРЅ" required="required"
 							autocomplete="off" maxlength="30" pattern="[A-Za-z0-9_.-]{3,30}" />
 					</p>
 					<p class="field">
 						<input type="password" name="j_password" id="password"
-							class="text_login" placeholder="пароль" required="required"
+							class="text_login" placeholder="РїР°СЂРѕР»СЊ" required="required"
 							maxlength="30" pattern="[A-Za-z0-9_.-]{3,30}" />
 					</p>
 					<p class="submit">
@@ -66,7 +66,7 @@
 							href="/spring/profile/<security:authentication property="principal.username" />"><img
 							src="/spring/profile/image/getAvatar" alt="" height=70 width=70 /></a>
 					</div>
-					<a href="<c:url value="/j_spring_security_logout"/>" id="logout">Выйти</a>
+					<a href="<c:url value="/j_spring_security_logout"/>" id="logout">Р’С‹Р№С‚Рё</a>
 					<div id="username_login">
 						<a
 							href="/spring/profile/<security:authentication property="principal.username" />"><security:authentication
@@ -76,16 +76,16 @@
 			</security:authorize>
 			<nav>
 				<ul class="main_ul">
-					<li><a id="a_glav" href="/spring/">Главная</a></li>
-					<li><a id="a_stat" href="/spring/articles">Статьи</a></li>
-					<li><a id="a_knigi" href="/spring/books">Книги</a></li>
-					<li><a id="a_gloss" href="/spring/glossary">Глоссарий</a></li>
+					<li><a id="a_glav" href="/spring/">Р“Р»Р°РІРЅР°СЏ</a></li>
+					<li><a id="a_stat" href="/spring/articles">РЎС‚Р°С‚СЊРё</a></li>
+					<li><a id="a_knigi" href="/spring/books">РљРЅРёРіРё</a></li>
+					<li><a id="a_gloss" href="/spring/glossary">Р“Р»РѕСЃСЃР°СЂРёР№</a></li>
 				</ul>
 				<form action="search_action" id="search" class="search"
 					enctype="text/plain">
 					<div class="search_div">
 						<input type="text" name="search_input" id="search_input"
-							class="search_input" placeholder="поиск" autofocus /> <input
+							class="search_input" placeholder="РїРѕРёСЃРє" autofocus /> <input
 							id="search_submit" type="submit" value="" />
 					</div>
 				</form>
@@ -96,65 +96,65 @@
 				<section class="section_article" id="post4">
 					<header id="header_withoutborder">
 						<h2>
-							<a class="a_section_link" href="/spring/articles/06_headhunter">Публичный
-								тест нового интерфейса HeadHunter</a>
+							<a class="a_section_link" href="/spring/articles/06_headhunter">РџСѓР±Р»РёС‡РЅС‹Р№
+								С‚РµСЃС‚ РЅРѕРІРѕРіРѕ РёРЅС‚РµСЂС„РµР№СЃР° HeadHunter</a>
 						</h2>
 						<div class="section_time">
-							<time>15 Январь 2015</time>
-							| тестирование веб-дизайн
+							<time>15 РЇРЅРІР°СЂСЊ 2015</time>
+							| С‚РµСЃС‚РёСЂРѕРІР°РЅРёРµ РІРµР±-РґРёР·Р°Р№РЅ
 						</div>
 					</header>
 					<p class="section_figure" id="post1_image">
 						<a href="/spring/articles/06_headhunter"> <img
 							src="<c:url value="/resources/images/headhunter1.png" />"
-							width="666" height="224" alt="Фотография">
+							width="666" height="224" alt="Р¤РѕС‚РѕРіСЂР°С„РёСЏ">
 						</a>
 					</p>
-					<p class="section_new">Некоторое время назад мы решили, что
-						пора многие вещи на hh.ru обновить, ведь с нынешней навигацией и
-						дизайном сайт существует уже много лет. Небольшие изменения
-						периодически происходили, но основной принцип взаимодействия с
-						пользователем не менялся давно. Закипела работа и сегодня мы
-						эксклюзивно для читателей Хабра хотим показать нашу новую
-						навигацию и меню.</p>
-					<p class="paragraph">Пока это тестирование, но если оно пройдет
-						успешно (в том числе, надеюсь, и с вашей помощью), то запустим на
-						100% пользователей. Обратите внимание на новый личный кабинет,
-						главное меню, поиск, который теперь есть на всех страницах,
-						резиновый дизайн и многое другое. Тест работает на hh.ru, поэтому
-						из других стран может не включиться.</p>
+					<p class="section_new">РќРµРєРѕС‚РѕСЂРѕРµ РІСЂРµРјСЏ РЅР°Р·Р°Рґ РјС‹ СЂРµС€РёР»Рё, С‡С‚Рѕ
+						РїРѕСЂР° РјРЅРѕРіРёРµ РІРµС‰Рё РЅР° hh.ru РѕР±РЅРѕРІРёС‚СЊ, РІРµРґСЊ СЃ РЅС‹РЅРµС€РЅРµР№ РЅР°РІРёРіР°С†РёРµР№ Рё
+						РґРёР·Р°Р№РЅРѕРј СЃР°Р№С‚ СЃСѓС‰РµСЃС‚РІСѓРµС‚ СѓР¶Рµ РјРЅРѕРіРѕ Р»РµС‚. РќРµР±РѕР»СЊС€РёРµ РёР·РјРµРЅРµРЅРёСЏ
+						РїРµСЂРёРѕРґРёС‡РµСЃРєРё РїСЂРѕРёСЃС…РѕРґРёР»Рё, РЅРѕ РѕСЃРЅРѕРІРЅРѕР№ РїСЂРёРЅС†РёРї РІР·Р°РёРјРѕРґРµР№СЃС‚РІРёСЏ СЃ
+						РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј РЅРµ РјРµРЅСЏР»СЃСЏ РґР°РІРЅРѕ. Р—Р°РєРёРїРµР»Р° СЂР°Р±РѕС‚Р° Рё СЃРµРіРѕРґРЅСЏ РјС‹
+						СЌРєСЃРєР»СЋР·РёРІРЅРѕ РґР»СЏ С‡РёС‚Р°С‚РµР»РµР№ РҐР°Р±СЂР° С…РѕС‚РёРј РїРѕРєР°Р·Р°С‚СЊ РЅР°С€Сѓ РЅРѕРІСѓСЋ
+						РЅР°РІРёРіР°С†РёСЋ Рё РјРµРЅСЋ.</p>
+					<p class="paragraph">РџРѕРєР° СЌС‚Рѕ С‚РµСЃС‚РёСЂРѕРІР°РЅРёРµ, РЅРѕ РµСЃР»Рё РѕРЅРѕ РїСЂРѕР№РґРµС‚
+						СѓСЃРїРµС€РЅРѕ (РІ С‚РѕРј С‡РёСЃР»Рµ, РЅР°РґРµСЋСЃСЊ, Рё СЃ РІР°С€РµР№ РїРѕРјРѕС‰СЊСЋ), С‚Рѕ Р·Р°РїСѓСЃС‚РёРј РЅР°
+						100% РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№. РћР±СЂР°С‚РёС‚Рµ РІРЅРёРјР°РЅРёРµ РЅР° РЅРѕРІС‹Р№ Р»РёС‡РЅС‹Р№ РєР°Р±РёРЅРµС‚,
+						РіР»Р°РІРЅРѕРµ РјРµРЅСЋ, РїРѕРёСЃРє, РєРѕС‚РѕСЂС‹Р№ С‚РµРїРµСЂСЊ РµСЃС‚СЊ РЅР° РІСЃРµС… СЃС‚СЂР°РЅРёС†Р°С…,
+						СЂРµР·РёРЅРѕРІС‹Р№ РґРёР·Р°Р№РЅ Рё РјРЅРѕРіРѕРµ РґСЂСѓРіРѕРµ. РўРµСЃС‚ СЂР°Р±РѕС‚Р°РµС‚ РЅР° hh.ru, РїРѕСЌС‚РѕРјСѓ
+						РёР· РґСЂСѓРіРёС… СЃС‚СЂР°РЅ РјРѕР¶РµС‚ РЅРµ РІРєР»СЋС‡РёС‚СЊСЃСЏ.</p>
 					<p class="paragraph">
-						Ну что, друзья, делайте скрин старого hh.ru, сохраняйте в архиве
-						для потомков и добро пожаловать на новый HeadHunter: <a
+						РќСѓ С‡С‚Рѕ, РґСЂСѓР·СЊСЏ, РґРµР»Р°Р№С‚Рµ СЃРєСЂРёРЅ СЃС‚Р°СЂРѕРіРѕ hh.ru, СЃРѕС…СЂР°РЅСЏР№С‚Рµ РІ Р°СЂС…РёРІРµ
+						РґР»СЏ РїРѕС‚РѕРјРєРѕРІ Рё РґРѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РЅР° РЅРѕРІС‹Р№ HeadHunter: <a
 							class="a_section_link" href="http://hh.ru/new_design">hh.ru/new_design</a>
 					</p>
 				</section>
 				<script src="<c:url value="/resources/js/cross.js" />"></script>
 			</article>
 			<aside>
-				<h3>Категории</h3>
+				<h3>РљР°С‚РµРіРѕСЂРёРё</h3>
 				<ul class="categories_ul">
 					<li><a href="/spring/articles/order/1">Usability</a></li>
-					<li><a href="/spring/articles/order/2">Веб-дизайн</a></li>
-					<li><a href="/spring/articles/order/3">Интерфейсы</a></li>
-					<li><a href="/spring/articles/order/4">События</a></li>
+					<li><a href="/spring/articles/order/2">Р’РµР±-РґРёР·Р°Р№РЅ</a></li>
+					<li><a href="/spring/articles/order/3">РРЅС‚РµСЂС„РµР№СЃС‹</a></li>
+					<li><a href="/spring/articles/order/4">РЎРѕР±С‹С‚РёСЏ</a></li>
 					<li><a href="/spring/articles/order/5">Accessibility</a></li>
-					<li id="categories_li_last"><a href="/spring/articles/order/6">Тестирование</a></li>
+					<li id="categories_li_last"><a href="/spring/articles/order/6">РўРµСЃС‚РёСЂРѕРІР°РЅРёРµ</a></li>
 				</ul>
 				<div id="advertising">
 					<a href="#"><img
 						src="<c:url value="/resources/images/advert.png" />" width="230"
-						height="366" alt="Реклама"></a>
+						height="366" alt="Р РµРєР»Р°РјР°"></a>
 				</div>
 			</aside>
 		</div>
-		<footer class="footer_main"> Copyright ©2013 uZability. </footer>
+		<footer class="footer_main"> Copyright В©2013 uZability. </footer>
 		<div class="bottom_nav_div">
-			<a href="#" class="bottom_nav_a">О сайте</a>
+			<a href="#" class="bottom_nav_a">Рћ СЃР°Р№С‚Рµ</a>
 		</div>
 		<a href="#top" id="up_button"><img id="image_up_button"
 			src="<c:url value="/resources/images/arrow.png" />" width="70"
-			height="70"></a> <a href="#" id="feedback">Обратная связь</a>
+			height="70"></a> <a href="#" id="feedback">РћР±СЂР°С‚РЅР°СЏ СЃРІСЏР·СЊ</a>
 	</div>
 </body>
 </html>
