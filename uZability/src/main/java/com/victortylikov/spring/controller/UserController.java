@@ -291,7 +291,7 @@ public class UserController {
 	
 	@RequestMapping(value = "/articles/addComment/{idArticle}", method = RequestMethod.POST)
 	public String addCommentPost(
-			@ModelAttribute(value = "comment") Comment comment,@PathVariable("idArticle") int idArticle,
+			@ModelAttribute(value = "comment") Comment comment,@PathVariable("idArticle") int idArticle,ModelMap model,
 			BindingResult result) {
 		if (result.hasErrors()) {
 			return "../index";
@@ -302,7 +302,8 @@ public class UserController {
 		comment.setUser(user);
 		userService.addUserComment(comment);
 		String href=article.getArticleHref().substring(7);
-		
+		Comment comment1=new Comment();
+		model.addAttribute("comment", comment1);
 		return href;
 	}
 	
