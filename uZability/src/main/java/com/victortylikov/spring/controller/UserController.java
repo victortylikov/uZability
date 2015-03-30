@@ -290,7 +290,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/articles/addComment/{idArticle}", method = RequestMethod.POST)
-	public String addComment(
+	public String addCommentPost(
 			@ModelAttribute(value = "comment") Comment comment,@PathVariable("idArticle") int idArticle,
 			BindingResult result) {
 		if (result.hasErrors()) {
@@ -301,12 +301,13 @@ public class UserController {
 		User user = getCurrentUser();
 		comment.setUser(user);
 		userService.addUserComment(comment);
+		String href=article.getArticleHref().substring(7);
 		
-		return "/articles/08_gamer";
+		return href;
 	}
 	
-	@RequestMapping(value = "/articles/08_gamer", method = RequestMethod.GET)
-	public void addComment1(ModelMap model) {
+	@RequestMapping(value = "/articles/*", method = RequestMethod.GET)
+	public void addCommentGet(ModelMap model) {
 		Comment comment=new Comment();
 		model.addAttribute("comment", comment);
 		
