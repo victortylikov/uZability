@@ -289,13 +289,15 @@ public class UserController {
 
 	}
 	
-	@RequestMapping(value = "/articles/addComment", method = RequestMethod.POST)
+	@RequestMapping(value = "/articles/addComment/{idArticle}", method = RequestMethod.POST)
 	public String addComment(
-			@ModelAttribute(value = "comment") Comment comment,
+			@ModelAttribute(value = "comment") Comment comment,@PathVariable("idArticle") int idArticle,
 			BindingResult result) {
 		if (result.hasErrors()) {
 			return "../index";
 		}
+		Article article=articleService.getArticleByID(idArticle);
+		comment.setArticle(article);
 		User user = getCurrentUser();
 		comment.setUser(user);
 		userService.addUserComment(comment);

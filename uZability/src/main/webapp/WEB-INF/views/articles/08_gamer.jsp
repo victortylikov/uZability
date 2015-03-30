@@ -191,7 +191,7 @@
 				</section>
 				<script src="<c:url value="/resources/js/cross.js" />"></script>
 				<div class="comment_form">
-					<form:form action="addComment" modelAttribute="comment"
+					<form:form action="addComment/8" modelAttribute="comment"
 						name="user_comment_form" method="POST">
 						<form:textarea id="comment" path="commentText"
 							class="comment_textarea" autocomplete="off" maxlength="2000" />
