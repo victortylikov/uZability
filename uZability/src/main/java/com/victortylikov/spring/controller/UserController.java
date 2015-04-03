@@ -288,7 +288,7 @@ public class UserController {
 		}
 
 	}
-	
+	//11
 	@RequestMapping(value = "/articles/addComment/{idArticle}", method = RequestMethod.POST)
 	public String addCommentPost(
 			@ModelAttribute(value = "comment") Comment comment,@PathVariable("idArticle") int idArticle,ModelMap model,
