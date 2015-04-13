@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.victortylikov.spring.domain.Article;
+import com.victortylikov.spring.domain.Comment;
 import com.victortylikov.spring.domain.User;
 
 @Repository
@@ -45,6 +46,8 @@ public class ArticleDaoImpl implements ArticleDao {
 
 		return articleList;
 	}
+	
+	
 
 	public SessionFactory getSessionFactory() {
 		return sessionFactory;
@@ -52,6 +55,15 @@ public class ArticleDaoImpl implements ArticleDao {
 
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
+	}
+
+	@Override
+	public List<Comment> getComments(Article article) {
+		String hql2 = "FROM Comment A WHERE A.article = :article";
+		Query query2 = sessionFactory.getCurrentSession().createSQLQuery(hql2);
+		query2.setParameter("article", article);
+		List<Comment> comments =  query2.list();
+		return comments;
 	}
 
 }

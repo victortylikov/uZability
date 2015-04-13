@@ -57,27 +57,28 @@ public class UserController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String homePage(ModelMap model) {
-		List <Article> articleList=articleService.getArticles();
-		//int numberOfArticles=articleList.size();
-		//List <Article> articleList2;
-		List <Article> articleList2=null;
+		List<Article> articleList = articleService.getArticles();
+		// int numberOfArticles=articleList.size();
+		// List <Article> articleList2;
+		List<Article> articleList2 = null;
 		model.addAttribute("listArticles", articleList);
 		return "../index";
 	}
 
 	@RequestMapping(value = "/articles", method = RequestMethod.GET)
-	public String articles(ModelMap model,HttpServletResponse response) {
-		List<Article> listArticles=articleService.getArticles();
+	public String articles(ModelMap model, HttpServletResponse response) {
+		List<Article> listArticles = articleService.getArticles();
 		model.addAttribute("listArticles", listArticles);
-						
+
 		return "articles";
 	}
-	
+
 	@RequestMapping(value = "/articles/order/{idTheme}", method = RequestMethod.GET)
-	public String orderBy(ModelMap model,@PathVariable("idTheme") int idTheme,HttpServletResponse response) {
-		List<Article> listArticles=articleService.getArticlesByTheme(idTheme);
+	public String orderBy(ModelMap model, @PathVariable("idTheme") int idTheme,
+			HttpServletResponse response) {
+		List<Article> listArticles = articleService.getArticlesByTheme(idTheme);
 		model.addAttribute("listArticles", listArticles);
-						
+
 		return "articles";
 	}
 
@@ -260,9 +261,10 @@ public class UserController {
 		}
 
 	}
-	
+
 	@RequestMapping(value = "/getArticleImage/{idArticle}")
-	public void getArticleImage(HttpServletResponse response,@PathVariable("idArticle") int idArticle) {
+	public void getArticleImage(HttpServletResponse response,
+			@PathVariable("idArticle") int idArticle) {
 		Blob blob = articleService.getArticleByID(idArticle).getArticleImage();
 		try {
 			InputStream image = blob.getBinaryStream();
@@ -288,30 +290,41 @@ public class UserController {
 		}
 
 	}
-	//11
+
+	// 11
 	@RequestMapping(value = "/articles/addComment/{idArticle}", method = RequestMethod.POST)
 	public String addCommentPost(
-			@ModelAttribute(value = "comment") Comment comment,@PathVariable("idArticle") int idArticle,ModelMap model,
+			@ModelAttribute(value = "comment") Comment comment,
+			@PathVariable("idArticle") int idArticle, ModelMap model,
 			BindingResult result) {
 		if (result.hasErrors()) {
 			return "../index";
 		}
-		Article article=articleService.getArticleByID(idArticle);
+		Article article = articleService.getArticleByID(idArticle);
 		comment.setArticle(article);
 		User user = getCurrentUser();
 		comment.setUser(user);
 		userService.addUserComment(comment);
-		String href=article.getArticleHref().substring(7);
-		Comment comment1=new Comment();
+		String href = article.getArticleHref().substring(7);
+		Comment comment1 = new Comment();
 		model.addAttribute("comment", comment1);
 		return href;
 	}
-	
+
 	@RequestMapping(value = "/articles/{idArticle:^\\d+}*", method = RequestMethod.GET)
-	public void addCommentGet(ModelMap model,@PathVariable("idArticle") int idArticle) {
-		System.out.println("------------------------------"+idArticle+"------------------------------");
-		Comment comment=new Comment();
+	public void addCommentGet(ModelMap model,
+			@PathVariable("idArticle") int idArticle) {
+		System.out.println();
+		System.out.println("------------------------------" + idArticle
+				+ "------------------------------");
+		System.out.println();
+		Comment comment = new Comment();
 		model.addAttribute("comment", comment);
-		
+		Article article2 = articleService.getArticleByID(idArticle);
+		List<Comment> comments = articleService.getComments(article2);
+		for(Comment x: comments){
+			System.out.println("----------------------------"+x.toString()+"----------------------------------------");
+		}
+
 	}
 }

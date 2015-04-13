@@ -33,7 +33,7 @@ public class Comment {
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="id_article")
-		private Article article;
+	private Article article;
 
 	public Integer getIdComment() {
 		return idComment;

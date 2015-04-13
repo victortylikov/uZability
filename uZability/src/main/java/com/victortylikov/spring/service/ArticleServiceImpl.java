@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.victortylikov.spring.dao.ArticleDao;
 import com.victortylikov.spring.dao.UserDao;
 import com.victortylikov.spring.domain.Article;
+import com.victortylikov.spring.domain.Comment;
 
 @Service
 public class ArticleServiceImpl implements ArticleService {
@@ -41,6 +42,12 @@ public class ArticleServiceImpl implements ArticleService {
 	@Transactional
 	public List<Article> getArticlesByTheme(int idTheme) {
 		return articleDao.getArticlesByTheme(idTheme);
+	}
+
+	@Override
+	@Transactional
+	public List<Comment> getComments(Article article) {
+		return articleDao.getComments(article);
 	}
 
 }
