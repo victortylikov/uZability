@@ -13,6 +13,6 @@ public interface ArticleService {
 
 	public List <Article>  getArticlesByTheme(int idTheme);
 	
-	public List <Comment> getComments(Article article);
+	public List <Comment> getComments(int idArticle);
 
 }

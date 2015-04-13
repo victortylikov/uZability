@@ -46,8 +46,8 @@ public class ArticleServiceImpl implements ArticleService {
 
 	@Override
 	@Transactional
-	public List<Comment> getComments(Article article) {
-		return articleDao.getComments(article);
+	public List<Comment> getComments(int idArticle) {
+		return articleDao.getComments(idArticle);
 	}
 
 }

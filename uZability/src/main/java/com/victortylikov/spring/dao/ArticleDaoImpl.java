@@ -57,13 +57,15 @@ public class ArticleDaoImpl implements ArticleDao {
 		this.sessionFactory = sessionFactory;
 	}
 
+	//need fixing
 	@Override
-	public List<Comment> getComments(Article article) {
-		String hql2 = "FROM Comment A WHERE A.article = :article";
-		Query query2 = sessionFactory.getCurrentSession().createSQLQuery(hql2);
-		query2.setParameter("article", article);
-		List<Comment> comments =  query2.list();
-		return comments;
+	public List<Comment> getComments(int idArticle) {
+		String hql2 = "FROM Comment A WHERE A.idArticle = :idArticle";
+		Query query2 = sessionFactory.getCurrentSession().createQuery(hql2);
+		query2.setParameter("article", idArticle);
+		Comment comments =  (Comment) query2.uniqueResult();
+		System.out.println("-----------------------------------------------------"+comments.getCommentText());
+		return null;
 	}
 
 }
