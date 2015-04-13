@@ -38,6 +38,7 @@ import com.victortylikov.spring.domain.Comment;
 import com.victortylikov.spring.domain.User;
 import com.victortylikov.spring.domain.UserDetail;
 import com.victortylikov.spring.service.AuthenticationUserDetails;
+import com.victortylikov.spring.service.CommentService;
 import com.victortylikov.spring.service.Password;
 import com.victortylikov.spring.service.UserService;
 import com.victortylikov.spring.service.ArticleService;
@@ -55,6 +56,9 @@ public class UserController {
 	@Autowired
 	private ArticleService articleService;
 
+	@Autowired
+	private CommentService commentService;
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String homePage(ModelMap model) {
 		List <Article> articleList=articleService.getArticles();
@@ -307,10 +311,14 @@ public class UserController {
 		return href;
 	}
 	
-	@RequestMapping(value = "/articles/*", method = RequestMethod.GET)
-	public void addCommentGet(ModelMap model) {
+	@RequestMapping(value = "/articles/{idArticle:^\\d+}*", method = RequestMethod.GET)
+	public void addCommentGet(ModelMap model,@PathVariable("idArticle") int idArticle) {
+		System.out.println("------------------------------"+idArticle+"------------------------------");
 		Comment comment=new Comment();
 		model.addAttribute("comment", comment);
-		
+		List <Comment> commentList=commentService.getComments(idArticle);
+		for(Comment x: commentList){
+			System.out.println(x.getCommentText());
+		}
 	}
 }
