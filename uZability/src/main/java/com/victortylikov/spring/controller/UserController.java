@@ -307,8 +307,9 @@ public class UserController {
 		return href;
 	}
 	
-	@RequestMapping(value = "/articles/*", method = RequestMethod.GET)
-	public void addCommentGet(ModelMap model) {
+	@RequestMapping(value = "/articles/{idArticle:^\\d+}*", method = RequestMethod.GET)
+	public void addCommentGet(ModelMap model,@PathVariable("idArticle") int idArticle) {
+		System.out.println("------------------------------"+idArticle+"------------------------------");
 		Comment comment=new Comment();
 		model.addAttribute("comment", comment);
 		
