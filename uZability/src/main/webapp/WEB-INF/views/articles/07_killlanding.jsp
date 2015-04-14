@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/security/tags"
 	prefix="security"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
@@ -328,6 +329,18 @@
 						суммарный эффект дизайна.</p>
 				</section>
 				<script src="<c:url value="/resources/js/cross.js" />"></script>
+				<div class="comment_form">
+					<form:form action="addComment/7" modelAttribute="comment"
+						name="user_comment_form" method="POST">
+						<form:textarea id="comment" path="commentText"
+							class="comment_textarea" autocomplete="off" maxlength="2000" />
+						<input class="comment_input" type="submit" value="Комментировать">
+					</form:form>
+				</div>
+			
+					<c:forEach items="${comments}" var="comment1">
+						<div>${comment1.commentText}</div>
+					</c:forEach>
 			</article>
 			<aside>
 				<h3>Категории</h3>

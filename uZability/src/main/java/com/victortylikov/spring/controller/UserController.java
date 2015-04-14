@@ -300,9 +300,9 @@ public class UserController {
 			@ModelAttribute(value = "comment") Comment comment,
 			@PathVariable("idArticle") int idArticle, ModelMap model,
 			BindingResult result) {
-		if (result.hasErrors()) {
+		/*if (result.hasErrors()) {
 			return "../index";
-		}
+		}*/
 		Article article = articleService.getArticleByID(idArticle);
 		comment.setArticle(article);
 		User user = getCurrentUser();
@@ -311,7 +311,9 @@ public class UserController {
 		String href = article.getArticleHref().substring(7);
 		Comment comment1 = new Comment();
 		model.addAttribute("comment", comment1);
-		return href;
+		//addCommentGet(model, idArticle);
+		//return href;
+		return "redirect:" + href;
 	}
 	
 	@RequestMapping(value = "/articles/{idArticle:^\\d+}*", method = RequestMethod.GET)
@@ -323,6 +325,7 @@ public class UserController {
 		for(Comment x: comments){
 			System.out.println("----------------------------"+x.getCommentText()+"----------------------------------------");
 		}
+		model.addAttribute("comments",comments);
 
 
 	}

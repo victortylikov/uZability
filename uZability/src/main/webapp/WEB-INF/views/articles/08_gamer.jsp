@@ -198,6 +198,11 @@
 						<input class="comment_input" type="submit" value="Комментировать">
 					</form:form>
 				</div>
+			
+					<c:forEach items="${comments}" var="comment1">
+						<div>${comment1.commentText}</div>
+					</c:forEach>
+				
 			</article>
 			<aside>
 				<h3>Категории</h3>
