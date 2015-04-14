@@ -60,12 +60,12 @@ public class ArticleDaoImpl implements ArticleDao {
 	//need fixing
 	@Override
 	public List<Comment> getComments(int idArticle) {
-		String hql2 = "FROM Comment A WHERE A.idArticle = :idArticle";
+		String hql2 = "FROM Comment c left join fetch c.article a WHERE a.idArticle = :idArticle";
 		Query query2 = sessionFactory.getCurrentSession().createQuery(hql2);
-		query2.setParameter("article", idArticle);
-		Comment comments =  (Comment) query2.uniqueResult();
-		System.out.println("-----------------------------------------------------"+comments.getCommentText());
-		return null;
+		query2.setParameter("idArticle", idArticle);
+		List <Comment> comments =  query2.list();
+		
+		return comments;
 	}
 
 }

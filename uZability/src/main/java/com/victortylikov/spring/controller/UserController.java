@@ -320,11 +320,11 @@ public class UserController {
 		System.out.println();
 		Comment comment = new Comment();
 		model.addAttribute("comment", comment);
+		//List<Comment> comments = articleService.getComments(idArticle);
 		List<Comment> comments = articleService.getComments(idArticle);
-		/*List<Comment> comments = articleService.getComments(idArticle);
 		for(Comment x: comments){
-			System.out.println("----------------------------"+x.toString()+"----------------------------------------");
-		}*/
+			System.out.println("----------------------------"+x.getCommentText()+"----------------------------------------");
+		}
 
 	}
 }
