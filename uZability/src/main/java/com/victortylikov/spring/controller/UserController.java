@@ -318,10 +318,7 @@ public class UserController {
 	public void addCommentGet(ModelMap model,@PathVariable("idArticle") int idArticle) {
 		System.out.println("------------------------------"+idArticle+"------------------------------");
 		Comment comment=new Comment();
-
 		model.addAttribute("comment", comment);
-
-		//List<Comment> comments = articleService.getComments(idArticle);
 		List<Comment> comments = articleService.getComments(idArticle);
 		for(Comment x: comments){
 			System.out.println("----------------------------"+x.getCommentText()+"----------------------------------------");
