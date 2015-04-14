@@ -38,6 +38,7 @@ import com.victortylikov.spring.domain.Comment;
 import com.victortylikov.spring.domain.User;
 import com.victortylikov.spring.domain.UserDetail;
 import com.victortylikov.spring.service.AuthenticationUserDetails;
+
 import com.victortylikov.spring.service.Password;
 import com.victortylikov.spring.service.UserService;
 import com.victortylikov.spring.service.ArticleService;
@@ -55,6 +56,8 @@ public class UserController {
 	@Autowired
 	private ArticleService articleService;
 
+
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String homePage(ModelMap model) {
 		List<Article> articleList = articleService.getArticles();
@@ -310,21 +313,20 @@ public class UserController {
 		model.addAttribute("comment", comment1);
 		return href;
 	}
-
+	
 	@RequestMapping(value = "/articles/{idArticle:^\\d+}*", method = RequestMethod.GET)
-	public void addCommentGet(ModelMap model,
-			@PathVariable("idArticle") int idArticle) {
-		System.out.println();
-		System.out.println("------------------------------" + idArticle
-				+ "------------------------------");
-		System.out.println();
-		Comment comment = new Comment();
+	public void addCommentGet(ModelMap model,@PathVariable("idArticle") int idArticle) {
+		System.out.println("------------------------------"+idArticle+"------------------------------");
+		Comment comment=new Comment();
+
 		model.addAttribute("comment", comment);
+
 		//List<Comment> comments = articleService.getComments(idArticle);
 		List<Comment> comments = articleService.getComments(idArticle);
 		for(Comment x: comments){
 			System.out.println("----------------------------"+x.getCommentText()+"----------------------------------------");
 		}
+
 
 	}
 }
