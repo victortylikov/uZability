@@ -30,8 +30,8 @@
 		rgba(0, 0, 0, 0);
 }
 
-#a_knigi:hover,#a_gloss:hover,#a_sait:hover,#a_obrat:hover,#a_shabl:hover,#a_stat:hover,#a_glav:hover
-	{
+#a_knigi:hover, #a_gloss:hover, #a_sait:hover, #a_obrat:hover, #a_shabl:hover,
+	#a_stat:hover, #a_glav:hover {
 	/* color: #FFCC99; */
 	border-bottom: 2px solid #CB0000;
 }
@@ -67,4 +67,46 @@
 	cursor: pointer;
 	background: linear-gradient(to top, #CB0000, red) repeat scroll 0 0
 		rgba(0, 0, 0, 0);
+}
+
+.ul_comment {
+	list-style-type: none;
+	margin-top: 10px;
+}
+
+.section_comment {
+	margin-top: 15px;
+}
+
+#div_comment_header {
+	height: 50PX;
+	/* background: rgb(202, 216, 230); */
+	border-bottom: 3px solid #003366;
+	border-left: 3px solid #003366;
+	border-radius: 0 0 0 20;
+}
+
+h4 {
+	padding-top: 15px;
+	margin-left: 40px;
+}
+
+.li_comment {
+	padding-bottom: 15px;
+	display: block;
+}
+
+.imag_avatar {
+	width: 70;
+	height: 70;
+	background: black;
+	float: left;
+}
+
+.comment_text {
+	float: left;
+}
+
+.comment_clear{
+	clear: both;
 }

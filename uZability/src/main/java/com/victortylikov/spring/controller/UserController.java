@@ -240,57 +240,14 @@ public class UserController {
 	@RequestMapping(value = "/profile/image/getAvatar")
 	public void getAvatar(HttpServletResponse response) {
 		Blob blob = getCurrentUser().getUserDetail().getPhoto();
-		try {
-			InputStream image = blob.getBinaryStream();
-			OutputStream out = response.getOutputStream();
-			response.setContentType("image/jpeg");
-			int length = (int) image.available();
-			int bufferSize = 1024;
-			byte[] buffer = new byte[bufferSize];
-			while ((length = image.read(buffer)) != -1) {
-				out.write(buffer, 0, length);
-			}
-			response.flushBuffer();
-			// image.close();
-			out.flush();
-			out.close();
-
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+		getImage(blob, response);
 	}
 
 	@RequestMapping(value = "/getArticleImage/{idArticle}")
 	public void getArticleImage(HttpServletResponse response,
 			@PathVariable("idArticle") int idArticle) {
 		Blob blob = articleService.getArticleByID(idArticle).getArticleImage();
-		try {
-			InputStream image = blob.getBinaryStream();
-			OutputStream out = response.getOutputStream();
-			response.setContentType("image/jpeg");
-			int length = (int) image.available();
-			int bufferSize = 1024;
-			byte[] buffer = new byte[bufferSize];
-			while ((length = image.read(buffer)) != -1) {
-				out.write(buffer, 0, length);
-			}
-			response.flushBuffer();
-			// image.close();
-			out.flush();
-			out.close();
-
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		getImage(blob, response);
 
 	}
 
@@ -300,9 +257,6 @@ public class UserController {
 			@ModelAttribute(value = "comment") Comment comment,
 			@PathVariable("idArticle") int idArticle, ModelMap model,
 			BindingResult result) {
-		/*if (result.hasErrors()) {
-			return "../index";
-		}*/
 		Article article = articleService.getArticleByID(idArticle);
 		comment.setArticle(article);
 		User user = getCurrentUser();
@@ -311,22 +265,45 @@ public class UserController {
 		String href = article.getArticleHref().substring(7);
 		Comment comment1 = new Comment();
 		model.addAttribute("comment", comment1);
-		//addCommentGet(model, idArticle);
-		//return href;
+
 		return "redirect:" + href;
 	}
 	
 	@RequestMapping(value = "/articles/{idArticle:^\\d+}*", method = RequestMethod.GET)
 	public void addCommentGet(ModelMap model,@PathVariable("idArticle") int idArticle) {
-		System.out.println("------------------------------"+idArticle+"------------------------------");
 		Comment comment=new Comment();
 		model.addAttribute("comment", comment);
 		List<Comment> comments = articleService.getComments(idArticle);
-		for(Comment x: comments){
-			System.out.println("----------------------------"+x.getCommentText()+"----------------------------------------");
-		}
 		model.addAttribute("comments",comments);
 
+	}
+	
+	public void getAvatarAndNameForComment(HttpServletResponse response) {
+		
+	}
+	
+	void getImage(Blob blob,HttpServletResponse response){
+		try {
+			InputStream image = blob.getBinaryStream();
+			OutputStream out = response.getOutputStream();
+			response.setContentType("image/jpeg");
+			int length = (int) image.available();
+			int bufferSize = 1024;
+			byte[] buffer = new byte[bufferSize];
+			while ((length = image.read(buffer)) != -1) {
+				out.write(buffer, 0, length);
+			}
+			response.flushBuffer();
+			// image.close();
+			out.flush();
+			out.close();
 
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

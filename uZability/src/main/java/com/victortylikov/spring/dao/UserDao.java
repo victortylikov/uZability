@@ -21,4 +21,6 @@ public interface UserDao {
 	void saveAvatar(UserDetail userDetail,byte[] bytes);
 
 	void addUserComment(Comment comment);
+	
+	User getUserById(int idUser);
 }

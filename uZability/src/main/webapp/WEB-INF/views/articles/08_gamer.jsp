@@ -198,11 +198,18 @@
 						<input class="comment_input" type="submit" value="Комментировать">
 					</form:form>
 				</div>
-			
-					<c:forEach items="${comments}" var="comment1">
-						<div>${comment1.commentText}</div>
-					</c:forEach>
-				
+				<div class="section_comment">
+					<div id="div_comment_header"><h4>Комментарии</h4></div>
+					<ul class="ul_comment">
+						<c:forEach items="${comments}" var="comment1">
+							<li class="li_comment">
+								<div class="imag_avatar"></div>
+								<div class="comment_text">${comment1.commentText}</div>
+								<div class="comment_clear"></div>
+							</li>
+						</c:forEach>
+					</ul>
+				</div>
 			</article>
 			<aside>
 				<h3>Категории</h3>

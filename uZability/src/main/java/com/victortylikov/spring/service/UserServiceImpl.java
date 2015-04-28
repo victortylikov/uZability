@@ -67,6 +67,12 @@ public class UserServiceImpl implements UserService {
 		userDao.addUserComment(comment);
 		
 	}
+
+	@Override
+	@Transactional
+	public User getUserById(int idUser) {
+		return userDao.getUserById(idUser);
+	}
 	
 
 }

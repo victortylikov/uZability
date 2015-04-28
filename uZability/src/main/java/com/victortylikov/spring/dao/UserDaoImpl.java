@@ -11,6 +11,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.victortylikov.spring.domain.Article;
 import com.victortylikov.spring.domain.Comment;
 import com.victortylikov.spring.domain.Role;
 import com.victortylikov.spring.domain.User;
@@ -94,6 +95,15 @@ public class UserDaoImpl implements UserDao {
 	public void addUserComment(Comment comment) {
 		sessionFactory.getCurrentSession().save(comment);
 		
+	}
+
+	@Override
+	public User getUserById(int idUser) {
+		String hql = "FROM User U WHERE U.idUser = :idUser";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		query.setParameter("idUser", idUser);
+		User user = (User) query.uniqueResult();
+		return user;
 	}
 	
 	
