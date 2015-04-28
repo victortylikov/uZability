@@ -76,6 +76,7 @@
 
 .section_comment {
 	margin-top: 15px;
+	padding-bottom: 15px;
 }
 
 #div_comment_header {
@@ -93,7 +94,13 @@ h4 {
 
 .li_comment {
 	padding-bottom: 15px;
+	padding-top: 15px;
 	display: block;
+	border-bottom: 1px solid grey;
+}
+
+.li_comment-of-type{
+	border-bottom: none;
 }
 
 .imag_avatar {
@@ -103,8 +110,17 @@ h4 {
 	float: left;
 }
 
-.comment_text {
+.comment_name_and_text{
 	float: left;
+	padding-left: 20px;
+}
+
+.comment_name{
+
+}
+
+.comment_text {
+width: 590px;
 }
 
 .comment_clear{

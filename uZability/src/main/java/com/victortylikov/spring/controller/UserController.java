@@ -278,8 +278,10 @@ public class UserController {
 
 	}
 	
-	public void getAvatarAndNameForComment(HttpServletResponse response) {
-		
+	@RequestMapping(value = "/getAvatarForComment/{idUser}")
+	public void getAvatarForComment(HttpServletResponse response,@PathVariable("idUser") int idUser) {
+		Blob blob = userService.getUserById(idUser).getUserDetail().getPhoto();
+		getImage(blob, response);
 	}
 	
 	void getImage(Blob blob,HttpServletResponse response){

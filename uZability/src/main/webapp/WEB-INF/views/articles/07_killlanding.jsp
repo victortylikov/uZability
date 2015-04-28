@@ -14,7 +14,8 @@
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/articles.css" />"
 	rel="stylesheet">
-	<link href="<c:url value="/resources/css/articles.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/articles.css" />"
+	rel="stylesheet">
 <title>uZability</title>
 <script src="<c:url value="/resources/js/quote.js" />"></script>
 <script src="<c:url value="/resources/js/changeNews.js" />"></script>
@@ -61,10 +62,16 @@
 			</security:authorize>
 			<security:authorize access="isAuthenticated()">
 				<div class="login">
-					<div class="photo_user"><a href="/spring/profile/<security:authentication property="principal.username" />"><img src="/spring/profile/image/getAvatar"  alt="" height=70 width=70/></a></div>
+					<div class="photo_user">
+						<a
+							href="/spring/profile/<security:authentication property="principal.username" />"><img
+							src="/spring/profile/image/getAvatar" alt="" height=70 width=70 /></a>
+					</div>
 					<a href="<c:url value="/j_spring_security_logout"/>" id="logout">Выйти</a>
 					<div id="username_login">
-						<a href="/spring/profile/<security:authentication property="principal.username" />"><security:authentication property="principal.username" /></a>
+						<a
+							href="/spring/profile/<security:authentication property="principal.username" />"><security:authentication
+								property="principal.username" /></a>
 					</div>
 				</div>
 			</security:authorize>
@@ -90,8 +97,8 @@
 				<section class="section_article" id="post4">
 					<header id="header_withoutborder">
 						<h2>
-							<a class="a_section_link"
-								href="/spring/articles/07_killlanding">5 убийц унылых лэндингов</a>
+							<a class="a_section_link" href="/spring/articles/07_killlanding">5
+								убийц унылых лэндингов</a>
 						</h2>
 						<div class="section_time">
 							<time>15 Январь 2015</time>
@@ -337,10 +344,25 @@
 						<input class="comment_input" type="submit" value="Комментировать">
 					</form:form>
 				</div>
-			
-					<c:forEach items="${comments}" var="comment1">
-						<div>${comment1.commentText}</div>
-					</c:forEach>
+				<div class="section_comment">
+					<div id="div_comment_header">
+						<h4>Комментарии</h4>
+					</div>
+					<ul class="ul_comment">
+						<c:forEach items="${comments}" var="comment1">
+							<li class="li_comment">
+								<div class="imag_avatar">
+									<!-- 									<img src="/spring/profile/image/getAvatar" /> -->
+								</div>
+								<div class="comment_name_and_text">
+									<div class="comment_name">${comment1.user.login}</div>
+									<div class="comment_text">${comment1.commentText}</div>
+								</div>
+								<div class="comment_clear"></div>
+							</li>
+						</c:forEach>
+					</ul>
+				</div>
 			</article>
 			<aside>
 				<h3>Категории</h3>

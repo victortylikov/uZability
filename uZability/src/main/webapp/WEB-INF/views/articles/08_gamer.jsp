@@ -203,12 +203,18 @@
 					<ul class="ul_comment">
 						<c:forEach items="${comments}" var="comment1">
 							<li class="li_comment">
-								<div class="imag_avatar"></div>
-								<div class="comment_text">${comment1.commentText}</div>
+								<div class="imag_avatar">
+									<img src="/spring/getAvatarForComment/${comment1.user.idUser}" height="70" width="70" /> 
+								</div>
+								<div class="comment_name_and_text">
+									<div class="comment_name">${comment1.user.login}</div>
+									<div class="comment_text">${comment1.commentText}</div>
+								</div>
 								<div class="comment_clear"></div>
 							</li>
 						</c:forEach>
 					</ul>
+					<a name="lastComment"></a>
 				</div>
 			</article>
 			<aside>
