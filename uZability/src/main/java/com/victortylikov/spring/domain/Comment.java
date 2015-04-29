@@ -2,8 +2,13 @@ package com.victortylikov.spring.domain;
 
 
 import java.sql.Timestamp;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Set;
+
+
 
 
 
@@ -75,17 +80,14 @@ public class Comment {
 		this.article = article;
 	}
 
-	public Timestamp getDateComment() {
-		return dateComment;
+	public String getDateComment() {
+		DateFormat df = new SimpleDateFormat("dd MMMM yyyy HH:mm",Locale.getDefault());
+		String text = df.format(dateComment);
+		return text;
 	}
 
 	public void setDateComment(Timestamp dateComment) {
 		this.dateComment = dateComment;
 	}
-
-
-
-
-	
 	
 }
