@@ -19,6 +19,9 @@
 <title>uZability</title>
 <script src="<c:url value="/resources/js/quote.js" />"></script>
 <script src="<c:url value="/resources/js/changeNews.js" />"></script>
+<script src="<c:url value="/resources/js/isEmptyTextArea.js" />"></script>
+<script src="<c:url value="/resources/js/jquery-1.2.6.js" />"></script>
+<script src="<c:url value="/resources/js/jquery.maskedinput.js" />"></script>
 <link rel="shortcut icon"
 	href="<c:url value="/resources/images/favicon.ico" />"
 	type="image/x-icon">
@@ -182,7 +185,7 @@
 							href="http://www.mediaaccess.org.au/digital-technology/gaming">странице
 							доступных игр.</a>
 					</p>
-					<p class="paragraph">
+					<p class="paragraph" >
 						(Оригинал <a
 							href="http://www.mediaaccess.org.au/latest_news/digital-technology/understanding-the-experience-of-gamers-with-disabilities">«Understanding
 							the experience of gamers with disabilities»</a>).
@@ -192,10 +195,10 @@
 				<script src="<c:url value="/resources/js/cross.js" />"></script>
 				<div class="comment_form">
 					<form:form action="addComment/8" modelAttribute="comment"
-						name="user_comment_form" method="POST">
-						<form:textarea id="comment" path="commentText"
-							class="comment_textarea" autocomplete="off" maxlength="2000" />
-						<input class="comment_input" type="submit" value="Комментировать">
+						name="user_comment_form" method="POST" onsubmit="return isEmptyForm()">
+						<form:textarea name="cm" id="comment" path="commentText"
+							class="comment_textarea" autocomplete="off" maxlength="2000"  />
+						<input id="comment_submit_button" class="comment_input" type="submit" value="Комментировать">
 					</form:form>
 				</div>
 				<div class="section_comment">
