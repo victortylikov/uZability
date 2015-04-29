@@ -130,6 +130,36 @@
 					</p>
 				</section>
 				<script src="<c:url value="/resources/js/cross.js" />"></script>
+				<div class="comment_form">
+					<form:form action="addComment/8" modelAttribute="comment"
+						name="user_comment_form" method="POST">
+						<form:textarea id="comment" path="commentText"
+							class="comment_textarea" autocomplete="off" maxlength="2000" />
+						<input class="comment_input" type="submit" value="Комментировать">
+					</form:form>
+				</div>
+				<div class="section_comment">
+					<div id="div_comment_header"><h4>Комментарии</h4></div>
+					<ul class="ul_comment">
+						<c:forEach items="${comments}" var="comment1">
+							<li class="li_comment">
+								<div class="imag_avatar">
+									<img src="/spring/getAvatarForComment/${comment1.user.idUser}" height="70" width="70" />
+								</div>
+								<div class="comment_name_and_text">
+									<div class="comment_header">
+										<div class="comment_name">${comment1.user.login}</div>
+										<time class="time_comment">${comment1.dateComment}</time>
+										<div class="comment_clear"></div> 
+									</div>
+									<div class="comment_text">${comment1.commentText}</div>
+								</div>
+								<div class="comment_clear"></div>
+							</li>
+						</c:forEach>
+					</ul>
+					<a name="lastComment"></a>
+				</div>
 			</article>
 			<aside>
 				<h3>Категории</h3>

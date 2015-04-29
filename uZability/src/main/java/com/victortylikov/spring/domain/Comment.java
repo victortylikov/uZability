@@ -1,7 +1,12 @@
 package com.victortylikov.spring.domain;
 
+
+import java.sql.Timestamp;
 import java.util.HashSet;
 import java.util.Set;
+
+
+
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -26,6 +31,9 @@ public class Comment {
 	
 	@Column(name = "comment_text")
 	private String commentText;
+	
+	@Column(name = "date_comment")
+	private Timestamp dateComment;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="id_user")
@@ -66,6 +74,18 @@ public class Comment {
 	public void setArticle(Article article) {
 		this.article = article;
 	}
+
+	public Timestamp getDateComment() {
+		return dateComment;
+	}
+
+	public void setDateComment(Timestamp dateComment) {
+		this.dateComment = dateComment;
+	}
+
+
+
+
 	
 	
 }
