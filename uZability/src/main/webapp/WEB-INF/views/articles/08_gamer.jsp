@@ -195,6 +195,12 @@
 				<script src="<c:url value="/resources/js/cross.js" />"></script>
 
 				<div class="comment_form">
+					<security:authorize access="isAnonymous()">
+						<p class="regisration_message">
+							Пожалуйста <a href="/spring/registration">зарегистрируйтесь</a>
+							чтобы оставить свой комментарий
+						</p>
+					</security:authorize>
 					<security:authorize access="isAuthenticated()">
 						<form:form action="addComment/8" modelAttribute="comment"
 							name="user_comment_form" method="POST"
