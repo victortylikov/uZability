@@ -136,3 +136,8 @@ h4 {
 	float: left;
 	font-size: 12px;
 }
+
+.comment_textarea::-webkit-input-placeholder {color:rgb(255, 0, 0);} 
+.comment_textarea::-moz-placeholder          {color:rgb(255, 0, 0);}
+.comment_textarea:-moz-placeholder           {color:rgb(255, 0, 0);} 
+.comment_textarea:-ms-input-placeholder      {color:rgb(255, 0, 0);} 

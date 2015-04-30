@@ -185,7 +185,7 @@
 							href="http://www.mediaaccess.org.au/digital-technology/gaming">странице
 							доступных игр.</a>
 					</p>
-					<p class="paragraph" >
+					<p class="paragraph">
 						(Оригинал <a
 							href="http://www.mediaaccess.org.au/latest_news/digital-technology/understanding-the-experience-of-gamers-with-disabilities">«Understanding
 							the experience of gamers with disabilities»</a>).
@@ -193,27 +193,36 @@
 
 				</section>
 				<script src="<c:url value="/resources/js/cross.js" />"></script>
+
 				<div class="comment_form">
-					<form:form action="addComment/8" modelAttribute="comment"
-						name="user_comment_form" method="POST" onsubmit="return isEmptyForm()">
-						<form:textarea name="cm" id="comment" path="commentText"
-							class="comment_textarea" autocomplete="off" maxlength="2000"  />
-						<input id="comment_submit_button" class="comment_input" type="submit" value="Комментировать">
-					</form:form>
+					<security:authorize access="isAuthenticated()">
+						<form:form action="addComment/8" modelAttribute="comment"
+							name="user_comment_form" method="POST"
+							onsubmit="return isEmptyForm()">
+							<form:textarea name="cm" id="comment" path="commentText"
+								class="comment_textarea" autocomplete="off" maxlength="2000" />
+							<input id="comment_submit_button" class="comment_input"
+								type="submit" value="Комментировать">
+						</form:form>
+					</security:authorize>
 				</div>
+
 				<div class="section_comment">
-					<div id="div_comment_header"><h4>Комментарии</h4></div>
+					<div id="div_comment_header">
+						<h4>Комментарии</h4>
+					</div>
 					<ul class="ul_comment">
 						<c:forEach items="${comments}" var="comment1">
 							<li class="li_comment">
 								<div class="imag_avatar">
-									<img src="/spring/getAvatarForComment/${comment1.user.idUser}" height="70" width="70" />
+									<img src="/spring/getAvatarForComment/${comment1.user.idUser}"
+										height="70" width="70" />
 								</div>
 								<div class="comment_name_and_text">
 									<div class="comment_header">
 										<div class="comment_name">${comment1.user.login}</div>
 										<time class="time_comment">${comment1.dateComment}</time>
-										<div class="comment_clear"></div> 
+										<div class="comment_clear"></div>
 									</div>
 									<div class="comment_text">${comment1.commentText}</div>
 								</div>
@@ -223,7 +232,7 @@
 					</ul>
 					<a name="lastComment"></a>
 				</div>
-				
+
 			</article>
 			<aside>
 				<h3>Категории</h3>
