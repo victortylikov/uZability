@@ -262,7 +262,7 @@ public class UserController {
 		User user = getCurrentUser();
 		comment.setUser(user);
 		userService.addUserComment(comment);
-		String href = article.getArticleHref().substring(7);
+		String href = article.getArticleHref().substring(7)+"#bottom";
 		Comment comment1 = new Comment();
 		model.addAttribute("comment", comment1);
 

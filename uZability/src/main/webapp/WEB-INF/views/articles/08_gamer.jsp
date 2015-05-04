@@ -235,11 +235,13 @@
 								<div class="comment_clear"></div>
 							</li>
 						</c:forEach>
+						
 					</ul>
-					<a name="lastComment"></a>
+					
 				</div>
-
+				
 			</article>
+			
 			<aside>
 				<h3>Категории</h3>
 				<ul class="categories_ul">
@@ -257,6 +259,7 @@
 				</div>
 			</aside>
 		</div>
+		<a name="bottom"></a>
 		<footer class="footer_main"> Copyright ©2013 uZability. </footer>
 		<div class="bottom_nav_div">
 			<a href="#" class="bottom_nav_a">О сайте</a>
