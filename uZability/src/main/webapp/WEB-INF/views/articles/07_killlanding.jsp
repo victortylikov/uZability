@@ -19,6 +19,9 @@
 <title>uZability</title>
 <script src="<c:url value="/resources/js/quote.js" />"></script>
 <script src="<c:url value="/resources/js/changeNews.js" />"></script>
+<script src="<c:url value="/resources/js/isEmptyTextArea.js" />"></script>
+<script src="<c:url value="/resources/js/jquery-1.2.6.js" />"></script>
+<script src="<c:url value="/resources/js/jquery.maskedinput.js" />"></script>
 <link rel="shortcut icon"
 	href="<c:url value="/resources/images/favicon.ico" />"
 	type="image/x-icon">
@@ -337,34 +340,49 @@
 				</section>
 				<script src="<c:url value="/resources/js/cross.js" />"></script>
 				<div class="comment_form">
-					<form:form action="addComment/7" modelAttribute="comment"
-						name="user_comment_form" method="POST">
-						<form:textarea id="comment" path="commentText"
-							class="comment_textarea" autocomplete="off" maxlength="2000" />
-						<input class="comment_input" type="submit" value="Комментировать">
-					</form:form>
+					<security:authorize access="isAnonymous()">
+						<p class="regisration_message">
+							Пожалуйста <a href="/spring/registration">зарегистрируйтесь</a>
+							чтобы оставить свой комментарий
+						</p>
+					</security:authorize>
+					<security:authorize access="isAuthenticated()">
+						<form:form action="addComment/7" modelAttribute="comment"
+							name="user_comment_form" method="POST"
+							onsubmit="return isEmptyForm()">
+							<form:textarea name="cm" id="comment" path="commentText"
+								class="comment_textarea" autocomplete="off" maxlength="2000" />
+							<input id="comment_submit_button" class="comment_input"
+								type="submit" value="Комментировать">
+						</form:form>
+					</security:authorize>
 				</div>
+
 				<div class="section_comment">
-					<div id="div_comment_header"><h4>Комментарии</h4></div>
+					<div id="div_comment_header">
+						<h4>Комментарии</h4>
+					</div>
 					<ul class="ul_comment">
 						<c:forEach items="${comments}" var="comment1">
 							<li class="li_comment">
 								<div class="imag_avatar">
-									<img src="/spring/getAvatarForComment/${comment1.user.idUser}" height="70" width="70" />
+									<img src="/spring/getAvatarForComment/${comment1.user.idUser}"
+										height="70" width="70" />
 								</div>
 								<div class="comment_name_and_text">
 									<div class="comment_header">
 										<div class="comment_name">${comment1.user.login}</div>
 										<time class="time_comment">${comment1.dateComment}</time>
-										<div class="comment_clear"></div> 
+										<div class="comment_clear"></div>
 									</div>
 									<div class="comment_text">${comment1.commentText}</div>
 								</div>
 								<div class="comment_clear"></div>
 							</li>
 						</c:forEach>
+						
 					</ul>
-					<a name="lastComment"></a>
+					
 				</div>
 			</article>
 			<aside>
@@ -384,6 +402,7 @@
 				</div>
 			</aside>
 		</div>
+		<a name="bottom"></a>
 		<footer class="footer_main"> Copyright ©2013 uZability. </footer>
 		<div class="bottom_nav_div">
 			<a href="#" class="bottom_nav_a">О сайте</a>

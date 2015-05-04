@@ -257,12 +257,13 @@ public class UserController {
 			@ModelAttribute(value = "comment") Comment comment,
 			@PathVariable("idArticle") int idArticle, ModelMap model,
 			BindingResult result) {
+		String href=null;
 		Article article = articleService.getArticleByID(idArticle);
 		comment.setArticle(article);
 		User user = getCurrentUser();
 		comment.setUser(user);
 		userService.addUserComment(comment);
-		String href = article.getArticleHref().substring(7)+"#bottom";
+		href = article.getArticleHref().substring(7)+"#bottom";
 		Comment comment1 = new Comment();
 		model.addAttribute("comment", comment1);
 
