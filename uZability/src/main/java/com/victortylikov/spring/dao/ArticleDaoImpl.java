@@ -2,6 +2,7 @@ package com.victortylikov.spring.dao;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.victortylikov.spring.domain.Article;
 import com.victortylikov.spring.domain.Comment;
+import com.victortylikov.spring.domain.Theme;
 import com.victortylikov.spring.domain.User;
 
 @Repository
@@ -39,11 +41,22 @@ public class ArticleDaoImpl implements ArticleDao {
 
 	@Override
 	public List<Article> getArticlesByTheme(int idTheme) {
-		String hql = "select distinct a from Article a right join fetch a.themes t where t.idTheme =:idTheme ORDER BY a.idArticle DESC";
+
+		String hql = "select distinct a from Article a left join fetch a.themes t where t.idTheme =:idTheme ORDER BY a.idArticle DESC";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		query.setParameter("idTheme", idTheme);
 		List<Article> articleList = query.list();
 
+		/*
+		 * String hql =
+		 * "select distinct a from Article a left join fetch a.themes t ORDER BY a.idArticle DESC"
+		 * ; Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		 * List<Article> articleList = query.list(); ListIterator<Article>
+		 * iterator = articleList.listIterator(); while (iterator.hasNext()) {
+		 * boolean del = true; Article art = iterator.next(); for (Theme th :
+		 * art.getThemes()) { if (th.getIdTheme() == idTheme) { del = false; } }
+		 * if (del == true) { iterator.remove(); } }
+		 */
 		return articleList;
 	}
 
