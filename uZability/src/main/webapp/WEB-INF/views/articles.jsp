@@ -13,7 +13,7 @@
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/articles.css" />"
 	rel="stylesheet">
-<title>uZability</title>
+<title>Articles | uZability</title>
 <script src="<c:url value="/resources/js/quote.js" />"></script>
 <script src="<c:url value="/resources/js/changeNews.js" />"></script>
 <link rel="shortcut icon"
