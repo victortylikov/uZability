@@ -63,7 +63,7 @@ public class UserController {
 		// List <Article> articleList2;
 		List<Article> articleList2 = null;
 		model.addAttribute("listArticles", articleList);
-		return "../index";
+		return "index";
 	}
 
 	@RequestMapping(value = "/articles", method = RequestMethod.GET)
