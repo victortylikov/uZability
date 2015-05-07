@@ -6,10 +6,10 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 	
-<footer>
-	<div class="footer_main">
+
+	<footer class="footer_main">
 		Copyright ©2013 uZability.
-		</div>
+		</footer>
 		<div class="bottom_nav_div">
 			<a href="#" class="bottom_nav_a">О сайте</a>
 		</div>
@@ -17,4 +17,3 @@
 			id="image_up_button"
 			src="<c:url value="/resources/images/arrow.png" />" width="70"
 			height="70"></a> <a href="#" id="feedback">Обратная связь</a>
-</footer>

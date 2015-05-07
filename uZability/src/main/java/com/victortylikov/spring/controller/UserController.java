@@ -82,6 +82,12 @@ public class UserController {
 
 		return "articles";
 	}
+	
+	@RequestMapping(value = "/books", method = RequestMethod.GET)
+	public String books(ModelMap model, HttpServletResponse response) {
+		
+		return "books";
+	}
 
 	@RequestMapping(value = "/registration", method = RequestMethod.GET)
 	public String addUserGet(ModelMap map) {
@@ -269,12 +275,13 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/articles/{idArticle:^\\d+}*", method = RequestMethod.GET)
-	public void addCommentGet(ModelMap model,
+	public String addCommentGet(ModelMap model,
 			@PathVariable("idArticle") int idArticle) {
 		Comment comment = new Comment();
 		model.addAttribute("comment", comment);
 		List<Comment> comments = articleService.getComments(idArticle);
 		model.addAttribute("comments", comments);
+		return "/articles/"+idArticle;
 
 	}
 

@@ -6,7 +6,23 @@
 
 <tiles-definitions>
 	<definition name="index" extends="DefaultTemplate">
-		<put-attribute name="body" value="/WEB-INF/views/index.jsp" />
+		<put-attribute name="body" value="/WEB-INF/index.jsp" />
+	</definition>
+
+	<definition name="articles" extends="DefaultTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/articles.jsp" />
+	</definition>
+
+	<definition name="books" extends="DefaultTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/books.jsp" />
+	</definition>
+	
+	<definition name="glossary" extends="DefaultTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/glossary.jsp" />
+	</definition>
+	
+		<definition name="/articles/8" extends="DefaultTemplate">
+		<put-attribute name="body" value="/WEB-INF/views/articles/08_gamer.jsp" />
 	</definition>
 
 </tiles-definitions>

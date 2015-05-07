@@ -10,6 +10,7 @@
 <link href="<c:url value="/resources/css/960_24_col.css" />"
 	rel="stylesheet">
 <link href="<c:url value="/resources/css/text.css" />" rel="stylesheet">
+<link href="<c:url value="/resources/css/glav.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/index.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/quote.js" />"></script>
