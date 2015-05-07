@@ -27,35 +27,17 @@
 		<tiles:insertAttribute name="header" />
 
 		<div class="main_part clearfix">
-		
+
 			<!-- Body Page -->
 			<tiles:insertAttribute name="body" />
-			
-			<aside>
-				<h3>Категории</h3>
-				<ul class="categories_ul">
-					<li><a href="/spring/articles/order/1">Usability</a></li>
-					<li><a href="/spring/articles/order/2">Веб-дизайн</a></li>
-					<li><a href="/spring/articles/order/3">Интерфейсы</a></li>
-					<li><a href="/spring/articles/order/4">События</a></li>
-					<li><a href="/spring/articles/order/5">Accessibility</a></li>
-					<li id="categories_li_last"><a href="/spring/articles/order/6">Тестирование</a></li>
-				</ul>
-				<div id="advertising">
-					<a href="#"><img
-						src="<c:url value="/resources/images/advert.png" />" width="230"
-						height="366" alt="Реклама"></a>
-				</div>
-			</aside>
+
+			<!-- Aside Page -->
+			<tiles:insertAttribute name="aside" />
 		</div>
-		<footer class="footer_main"> Copyright ©2013 uZability. </footer>
-		<div class="bottom_nav_div">
-			<a href="#" class="bottom_nav_a">О сайте</a>
-		</div>
-		<a href="#top" title="Вверх" id="up_button"><img
-			id="image_up_button"
-			src="<c:url value="/resources/images/arrow.png" />" width="70"
-			height="70"></a> <a href="#" id="feedback">Обратная связь</a>
+
+		<!-- Footer Page -->
+		<tiles:insertAttribute name="footer" />
+
 	</div>
 
 </body>
