@@ -12,6 +12,8 @@
 <link href="<c:url value="/resources/css/text.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/index.css" />" rel="stylesheet">
+<script src="<c:url value="/resources/js/jquery-1.2.6.js" />"></script>
+<script src="<c:url value="/resources/js/feedbackForm.js" />"></script>
 <title>uZability</title>
 <script src="<c:url value="/resources/js/quote.js" />"></script>
 
@@ -231,9 +233,9 @@
 			src="<c:url value="/resources/images/arrow.png" />" width="70"
 			height="70"></a>
 		<div id="wrapper_div_slider_feedback">
-			<div id="div_slider_feedback"></div> 
-			<div id="wrapper_feedback"><a href="#" id="feedback">Обратная связь</a></div>
+			<div id="wrapper_feedback"><a id="feedback">Обратная связь</a></div>
 		</div>
+		<div id="div_slider_feedback"></div> 
 	</div>
 
 </body>
