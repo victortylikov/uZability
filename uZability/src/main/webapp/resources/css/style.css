@@ -503,19 +503,19 @@ article section header h2 a {
  * article post slide
 ******************
 */
-#a_slide_1,#p_slide_1,#img_slide_1 {
+#a_slide_1, #p_slide_1, #img_slide_1 {
 	display: block;
 }
 
-#a_slide_2,#p_slide_2,#img_slide_2 {
+#a_slide_2, #p_slide_2, #img_slide_2 {
 	display: none;
 }
 
-#a_slide_3,#p_slide_3,#img_slide_3 {
+#a_slide_3, #p_slide_3, #img_slide_3 {
 	display: none;
 }
 
-#a_slide_4,#p_slide_4,#img_slide_4 {
+#a_slide_4, #p_slide_4, #img_slide_4 {
 	display: none;
 }
 /*
@@ -611,13 +611,8 @@ aside ul li a {
 }
 
 #feedback {
-	position: fixed; /* Фиксированное положение */
-	top: 45%; /* Расстояние сверху */
-	left: -2.9%;
-	-moz-transform: rotate(270deg);
-	-webkit-transform: rotate(270deg);
-	-ms-transform: rotate(270deg);
-	-o-transform: rotate(270deg);
+	/* 	position: fixed; Фиксированное положение */
+	/* 	top: 45%; Расстояние сверху 	left: -2.9%;*/
 	background: #003366;
 	width: 140px;
 	height: 30px;
@@ -625,7 +620,8 @@ aside ul li a {
 	text-align: center;
 	font-size: 16px;
 	text-decoration: none;
-	padding: 5px;
+	padding: 9px;
+	padding-top: 30px;
 	border-bottom-left-radius: 15px;
 	border-bottom-right-radius: 15px;
 }
@@ -667,4 +663,24 @@ aside ul li a {
 .list_decimal {
 	list-style-type: decimal;
 	margin-top: 5px;
+}
+
+#div_slider_feedback {
+
+}
+
+#wrapper_div_slider_feedback {
+	position: fixed;
+	top: 45%;
+	left: 0;
+
+}
+
+#wrapper_feedback {
+	-moz-transform: rotate(270deg);
+	-webkit-transform: rotate(270deg);
+	-ms-transform: rotate(270deg);
+	-o-transform: rotate(270deg);
+
+	margin-left: -47;
 }

@@ -229,7 +229,11 @@
 		<a href="#top" title="Вверх" id="up_button"><img
 			id="image_up_button"
 			src="<c:url value="/resources/images/arrow.png" />" width="70"
-			height="70"></a> <a href="#" id="feedback">Обратная связь</a>
+			height="70"></a>
+		<div id="wrapper_div_slider_feedback">
+			<div id="div_slider_feedback"></div> 
+			<div id="wrapper_feedback"><a href="#" id="feedback">Обратная связь</a></div>
+		</div>
 	</div>
 
 </body>
