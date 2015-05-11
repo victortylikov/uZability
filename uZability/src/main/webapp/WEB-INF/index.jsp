@@ -233,9 +233,13 @@
 			src="<c:url value="/resources/images/arrow.png" />" width="70"
 			height="70"></a>
 		<div id="wrapper_div_slider_feedback">
-			<div id="wrapper_feedback"><a id="feedback">Обратная связь</a></div>
+			<div id="wrapper_feedback"><input type="button" id="feedback" value="Обратная связь"/></div>
 		</div>
-		<div id="div_slider_feedback"></div> 
+		<div id="div_slider_feedback">	
+			<a title="Закрыть" class="close_button"><img id="close_image"
+			src="<c:url value="/resources/images/x_button1.png" />" width="20"
+			height="20"></a>	 
+		</div> 
 	</div>
 
 </body>

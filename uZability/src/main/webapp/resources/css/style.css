@@ -614,12 +614,12 @@ aside ul li a {
 	/* 	position: fixed; Фиксированное положение */
 	/* 	top: 45%; Расстояние сверху 	left: -2.9%;*/
 	background: #003366;
-	width: 140px;
+	width: 170px;
 	cursor: pointer;
-	height: 30px;
 	color: white;
 	text-align: center;
-	font-size: 16px;
+	border: none;
+	font-size: 18px;
 	text-decoration: none;
 	padding: 9px;
 	padding-top: 30px;
@@ -669,11 +669,15 @@ aside ul li a {
 #div_slider_feedback {
 	position: fixed;
 	height: 400px;
-	background: #003366;
+	background: white;
 	width: 80%;
 	top: 30%;
 	left: 0;
 	z-index: 5;
+	display: none;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+	border: 3px solid #808080;
 }
 
 #wrapper_div_slider_feedback {
@@ -687,5 +691,31 @@ aside ul li a {
 	-webkit-transform: rotate(270deg);
 	-ms-transform: rotate(270deg);
 	-o-transform: rotate(270deg);
-	margin-left: -47;
+	-moz-transform-origin: 10px;
+	-ms-transform-origin: 10px;
+	-o-transform-origin: 10px;
+	-webkit-transform-origin: 10px;
+	transform-origin: 10px;
+	margin-top: 80;
+}
+
+.close_button {
+	position: absolute;
+	float: right;
+	right: 20;
+	border-radius: 6;
+	padding: 4px;
+	top: 15;
+	background: #003366;
+	cursor: pointer;
+}
+
+.close_image {
+	color: transparent;
+	font-size: 0;
+	vertical-align: middle;
+}
+
+.close_button:HOVER {
+	background: #CB0000;
 }
