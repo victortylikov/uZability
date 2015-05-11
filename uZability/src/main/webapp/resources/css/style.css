@@ -704,10 +704,13 @@ aside ul li a {
 	float: right;
 	right: 20;
 	border-radius: 6;
+	-webkit-border-radius: 6px;
+	-moz-border-radius : 6px;
 	padding: 4px;
 	top: 15;
 	background: #003366;
 	cursor: pointer;
+	-moz-border-radius: 6px;
 }
 
 .close_image {
