@@ -39,6 +39,7 @@ import com.victortylikov.spring.domain.Theme;
 import com.victortylikov.spring.domain.User;
 import com.victortylikov.spring.domain.UserDetail;
 import com.victortylikov.spring.service.AuthenticationUserDetails;
+import com.victortylikov.spring.service.EmailFeedback;
 import com.victortylikov.spring.service.Password;
 import com.victortylikov.spring.service.UserService;
 import com.victortylikov.spring.service.ArticleService;
@@ -283,6 +284,12 @@ public class UserController {
 			@PathVariable("idUser") int idUser) {
 		Blob blob = userService.getUserById(idUser).getUserDetail().getPhoto();
 		getImage(blob, response);
+	}
+	
+	@RequestMapping(value = "*/sendEmailFeedback", method = RequestMethod.POST)
+	public String sendEmailFeedbackPost(){
+		
+		return null;
 	}
 
 	void getImage(Blob blob, HttpServletResponse response) {

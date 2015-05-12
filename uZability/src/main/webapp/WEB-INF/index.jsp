@@ -4,6 +4,7 @@
 <%@ page session="false"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <html>
 <head>
 <link href="<c:url value="/resources/css/reset.css" />" rel="stylesheet">
@@ -233,13 +234,24 @@
 			src="<c:url value="/resources/images/arrow.png" />" width="70"
 			height="70"></a>
 		<div id="wrapper_div_slider_feedback">
-			<div id="wrapper_feedback"><input type="button" id="feedback" value="Обратная связь"/></div>
+			<div id="wrapper_feedback">
+				<input type="button" id="feedback" value="Обратная связь" />
+			</div>
 		</div>
-		<div id="div_slider_feedback">	
+		<div id="div_slider_feedback">
 			<a title="Закрыть" class="close_button"><img id="close_image"
-			src="<c:url value="/resources/images/x_button1.png" />" width="20"
-			height="20"></a>	 
-		</div> 
+				src="<c:url value="/resources/images/x_button1.png" />" width="20"
+				height="20"></a>
+			<div id="wrapper_feedback_form">
+				<form action="sendEmailFeedback" class="form_feedback">
+				<p>	<input autocomplete="off" id="input_name" /></p>
+					<p>	 <input	autocomplete="off" id="input_email" /></p>
+					<p>	 <textarea id="textarea_message"></textarea></p>
+					<p>	 <input type="submit" value="Отправить" ></p>
+				</form>
+			</div>
+		</div>
+		<div class="feedback_background"></div>
 	</div>
 
 </body>

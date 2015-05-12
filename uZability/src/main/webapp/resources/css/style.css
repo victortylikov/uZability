@@ -673,7 +673,7 @@ aside ul li a {
 	width: 80%;
 	top: 30%;
 	left: 0;
-	z-index: 5;
+	z-index: 6;
 	display: none;
 	border-top-right-radius: 15px;
 	border-bottom-right-radius: 15px;
@@ -705,7 +705,7 @@ aside ul li a {
 	right: 20;
 	border-radius: 6;
 	-webkit-border-radius: 6px;
-	-moz-border-radius : 6px;
+	-moz-border-radius: 6px;
 	padding: 4px;
 	top: 15;
 	background: #003366;
@@ -721,4 +721,20 @@ aside ul li a {
 
 .close_button:HOVER {
 	background: #CB0000;
+}
+
+.feedback_background {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 5;
+	display: none;
+}
+
+#wrapper_feedback_form{
+	
 }
