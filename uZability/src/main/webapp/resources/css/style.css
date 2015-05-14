@@ -735,6 +735,47 @@ aside ul li a {
 	display: none;
 }
 
-#wrapper_feedback_form{
-	
+#wrapper_feedback_form {
+	float: right;
+	margin-right: 20%;
 }
+
+.wrapper_feedback_form_field {
+	margin: 20 0 20 0;
+}
+
+.wrapper_feedback_form_field label {
+	width: 100px;
+	float: left;
+	margin-right: 20;
+	font-size: 16;
+}
+
+#feedback_form_input_name {
+	width: 200px;
+}
+
+#feedback_form_input_email {
+	width: 350px;
+}
+
+#feedback_form_textarea_message {
+	width: 500;
+	height: 200;
+}
+
+#feedback_form_submit {
+	float: right;
+	background: #CB0000;
+color: white;
+font-weight: bold;
+border-radius: 7px;
+padding: 3px 7px;
+border: 1px solid #666;
+margin-top: 15px;
+}
+
+#feedback_form_submit:hover{
+cursor: pointer;
+background: linear-gradient(to top, #CB0000, red) repeat scroll 0 0
+ rgba(0, 0, 0, 0);}
