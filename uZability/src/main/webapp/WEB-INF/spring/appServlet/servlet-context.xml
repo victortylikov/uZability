@@ -39,13 +39,28 @@
 	<bean id="userDao" class="com.victortylikov.spring.dao.UserDaoImpl"></bean>
 	<bean id="userService" class="com.victortylikov.spring.service.UserServiceImpl"></bean>
 	<bean id="UserDetailsServiceImpl" class="com.victortylikov.spring.service.UserDetailsServiceImpl"></bean>
-		
+
 	<bean id="articleDao" class="com.victortylikov.spring.dao.ArticleDaoImpl"></bean>
 	<bean id="articleService" class="com.victortylikov.spring.service.ArticleServiceImpl"></bean>
-	
+
 	<bean id="propertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
 		p:location="/WEB-INF/spring/appServlet/jdbc.properties">
+	</bean>
+
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com" />
+		<property name="port" value="25" />
+		<property name="username" value="victortylikov@gmail.com" />
+		<property name="password" value="788009vv" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.transport.protocol">smtp</prop>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+				<prop key="mail.debug">true</prop>
+			</props>
+		</property>
 	</bean>
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
@@ -68,11 +83,11 @@
 			</props>
 		</property>
 	</bean>
-	
-	 <bean id="multipartResolver"
-        class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <!-- <property name="maxUploadSize" value="10000000" /> -->
-    </bean>
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- <property name="maxUploadSize" value="10000000" /> -->
+	</bean>
 
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
@@ -80,24 +95,35 @@
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	
-	<!-- <mvc:view-controller path="/articles"  view-name="/articles"/> -->
-	<mvc:view-controller path="/articles/01_uxpeople"  view-name="/articles/01_uxpeople"/>
-	<mvc:view-controller path="/articles/02_chinadesign"  view-name="/articles/02_chinadesign"/>
-	<mvc:view-controller path="/articles/03_flatdesign"  view-name="/articles/03_flatdesign"/>
-	<mvc:view-controller path="/articles/04_beautyindesign"  view-name="/articles/04_beautyindesign"/>
-	<mvc:view-controller path="/articles/05_blogdesign"  view-name="/articles/05_blogdesign"/>
-	<mvc:view-controller path="/articles/06_headhunter"  view-name="/articles/06_headhunter"/>
-	<!-- <mvc:view-controller path="/articles/07_killlanding"  view-name="/articles/07_killlanding"/> -->
-	<!-- <mvc:view-controller path="/articles/08_gamer"  view-name="/articles/08_gamer"/> -->
 
-	<mvc:view-controller path="/books"  view-name="/books"/>
-	<mvc:view-controller path="/books/01_infoArchitecture"  view-name="/books/01_infoArchitecture"/>
-	<mvc:view-controller path="/books/02_designWebInterface"  view-name="/books/02_designWebInterface"/>
-	<mvc:view-controller path="/books/03_designEverydayThings"  view-name="/books/03_designEverydayThings"/>
-	<mvc:view-controller path="/books/04_Nondesigner"  view-name="/books/04_Nondesigner"/>
-	
-	
-	<mvc:view-controller path="/glossary"  view-name="/glossary"/>
-	<mvc:view-controller path="/glossary/e_ergonomics"  view-name="/glossary/e_ergonomics"/>
+	<!-- <mvc:view-controller path="/articles" view-name="/articles"/> -->
+	<mvc:view-controller path="/articles/01_uxpeople"
+		view-name="/articles/01_uxpeople" />
+	<mvc:view-controller path="/articles/02_chinadesign"
+		view-name="/articles/02_chinadesign" />
+	<mvc:view-controller path="/articles/03_flatdesign"
+		view-name="/articles/03_flatdesign" />
+	<mvc:view-controller path="/articles/04_beautyindesign"
+		view-name="/articles/04_beautyindesign" />
+	<mvc:view-controller path="/articles/05_blogdesign"
+		view-name="/articles/05_blogdesign" />
+	<mvc:view-controller path="/articles/06_headhunter"
+		view-name="/articles/06_headhunter" />
+	<!-- <mvc:view-controller path="/articles/07_killlanding" view-name="/articles/07_killlanding"/> -->
+	<!-- <mvc:view-controller path="/articles/08_gamer" view-name="/articles/08_gamer"/> -->
+
+	<mvc:view-controller path="/books" view-name="/books" />
+	<mvc:view-controller path="/books/01_infoArchitecture"
+		view-name="/books/01_infoArchitecture" />
+	<mvc:view-controller path="/books/02_designWebInterface"
+		view-name="/books/02_designWebInterface" />
+	<mvc:view-controller path="/books/03_designEverydayThings"
+		view-name="/books/03_designEverydayThings" />
+	<mvc:view-controller path="/books/04_Nondesigner"
+		view-name="/books/04_Nondesigner" />
+
+
+	<mvc:view-controller path="/glossary" view-name="/glossary" />
+	<mvc:view-controller path="/glossary/e_ergonomics"
+		view-name="/glossary/e_ergonomics" />
 </beans>

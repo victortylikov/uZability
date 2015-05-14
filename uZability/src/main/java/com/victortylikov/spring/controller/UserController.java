@@ -285,11 +285,15 @@ public class UserController {
 		Blob blob = userService.getUserById(idUser).getUserDetail().getPhoto();
 		getImage(blob, response);
 	}
-	
-	@RequestMapping(value = "*/sendEmailFeedback", method = RequestMethod.POST)
-	public String sendEmailFeedbackPost(){
-		
-		return null;
+
+	@RequestMapping(value = "/sendEmailFeedback", method = RequestMethod.GET)
+	public String sendEmailFeedbackPost(ModelMap model,HttpServletRequest request,
+			@RequestParam("feedback_form_input_name") String name,
+			@RequestParam("feedback_form_input_email") String email,
+			@RequestParam("feedback_form_textarea_message") String message) {
+		System.out.println("----------------------------------------------------"+name);
+		String referer = request.getHeader("Referer");
+		return "redirect:"+referer;
 	}
 
 	void getImage(Blob blob, HttpServletResponse response) {
