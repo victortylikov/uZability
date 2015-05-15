@@ -42,6 +42,7 @@
 
 	<bean id="articleDao" class="com.victortylikov.spring.dao.ArticleDaoImpl"></bean>
 	<bean id="articleService" class="com.victortylikov.spring.service.ArticleServiceImpl"></bean>
+	<bean id="mailService" class="com.victortylikov.spring.service.MailService"></bean>
 
 	<bean id="propertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
@@ -50,7 +51,7 @@
 
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="smtp.gmail.com" />
-		<property name="port" value="25" />
+		<property name="port" value="587" />
 		<property name="username" value="victortylikov@gmail.com" />
 		<property name="password" value="788009vv" />
 		<property name="javaMailProperties">

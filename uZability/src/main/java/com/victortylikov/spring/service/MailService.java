@@ -10,6 +10,14 @@ public class MailService {
 	@Autowired
 	private MailSender mailSender;
 
-	@Autowired
-	private SimpleMailMessage preConfiguredMessage;
+	public void sendMail(String from, String to, String subject, String msg) {		      
+		            SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+		            simpleMailMessage.setFrom(from);
+		            simpleMailMessage.setTo(to);
+		            simpleMailMessage.setSubject(subject);
+		            simpleMailMessage.setText(msg);
+		            mailSender.send(simpleMailMessage);
+		        }
+
+	
 }

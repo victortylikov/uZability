@@ -39,7 +39,7 @@ import com.victortylikov.spring.domain.Theme;
 import com.victortylikov.spring.domain.User;
 import com.victortylikov.spring.domain.UserDetail;
 import com.victortylikov.spring.service.AuthenticationUserDetails;
-import com.victortylikov.spring.service.EmailFeedback;
+import com.victortylikov.spring.service.MailService;
 import com.victortylikov.spring.service.Password;
 import com.victortylikov.spring.service.UserService;
 import com.victortylikov.spring.service.ArticleService;
@@ -56,6 +56,9 @@ public class UserController {
 
 	@Autowired
 	private ArticleService articleService;
+	
+	@Autowired
+	private MailService mailService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String homePage(ModelMap model) {
@@ -292,6 +295,7 @@ public class UserController {
 			@RequestParam("feedback_form_input_email") String email,
 			@RequestParam("feedback_form_textarea_message") String message) {
 		System.out.println("----------------------------------------------------"+name);
+		mailService.sendMail(email, "victortylikov@gmail.com", name, message);
 		String referer = request.getHeader("Referer");
 		return "redirect:"+referer;
 	}
