@@ -294,7 +294,6 @@ public class UserController {
 			@RequestParam("feedback_form_input_name") String name,
 			@RequestParam("feedback_form_input_email") String email,
 			@RequestParam("feedback_form_textarea_message") String message) {
-		System.out.println("----------------------------------------------------"+name);
 		mailService.sendMail(name, email,message);
 		String referer = request.getHeader("Referer");
 		return "redirect:"+referer;
