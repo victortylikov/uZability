@@ -289,7 +289,7 @@ public class UserController {
 		getImage(blob, response);
 	}
 
-	@RequestMapping(value = "/sendEmailFeedback", method = RequestMethod.GET)
+	@RequestMapping(value = {"*/sendEmailFeedback","/sendEmailFeedback"}, method = RequestMethod.GET)
 	public String sendEmailFeedbackPost(ModelMap model,HttpServletRequest request,
 			@RequestParam("feedback_form_input_name") String name,
 			@RequestParam("feedback_form_input_email") String email,

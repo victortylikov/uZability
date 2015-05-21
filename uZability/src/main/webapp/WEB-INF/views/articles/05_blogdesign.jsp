@@ -23,6 +23,7 @@
 <script src="<c:url value="/resources/js/jquery-1.2.6.js" />"></script>
 <script src="<c:url value="/resources/js/jquery.maskedinput.js" />"></script>
 <script src="<c:url value="/resources/js/float_aside.js" />"></script>
+<script src="<c:url value="/resources/js/feedbackForm.js" />"></script>
 <link rel="shortcut icon"
 	href="<c:url value="/resources/images/favicon.ico" />"
 	type="image/x-icon">
@@ -321,9 +322,29 @@
 		<div class="bottom_nav_div">
 			<a href="#" class="bottom_nav_a">О сайте</a>
 		</div>
-		<a href="#top" id="up_button"><img id="image_up_button"
+		<a href="#top" title="Вверх" id="up_button"><img
+			id="image_up_button"
 			src="<c:url value="/resources/images/arrow.png" />" width="70"
-			height="70"></a> <a href="#" id="feedback">Обратная связь</a>
+			height="70"></a>
+		<div id="wrapper_div_slider_feedback">
+			<div id="wrapper_feedback">
+				<input type="button" id="feedback" value="Обратная связь" />
+			</div>
+		</div>
+		<div id="div_slider_feedback">
+			<a title="Закрыть" class="close_button"><img id="close_image"
+				src="<c:url value="/resources/images/x_button1.png" />" width="20"
+				height="20"></a>
+			<div id="wrapper_feedback_form">
+				<form action="sendEmailFeedback" class="form_feedback">
+					<p class="wrapper_feedback_form_field"><label for="feedback_form_input_name">Ваше имя:</label><input autocomplete="off" id="feedback_form_input_name" name='feedback_form_input_name'/></p>
+					<p class="wrapper_feedback_form_field"><label for="feedback_form_input_email">Ваш email:</label><input	autocomplete="off" id="feedback_form_input_email" name='feedback_form_input_email'/></p>
+					<p class="wrapper_feedback_form_field"><label for="feedback_form_textarea_message">Сообщение:</label><textarea id="feedback_form_textarea_message" name='feedback_form_textarea_message'></textarea></p>
+					<p class="wrapper_feedback_form_field"><input id="feedback_form_submit" type="submit" value="Отправить" ></p>
+				</form>
+			</div>
+		</div>
+		<div class="feedback_background"></div>
 	</div>
 </body>
 </html>
