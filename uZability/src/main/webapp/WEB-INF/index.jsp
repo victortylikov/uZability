@@ -15,6 +15,7 @@
 <link href="<c:url value="/resources/css/index.css" />" rel="stylesheet">
 <script src="<c:url value="/resources/js/jquery-1.2.6.js" />"></script>
 <script src="<c:url value="/resources/js/feedbackForm.js" />"></script>
+<script src="<c:url value="/resources/js/float_aside.js" />"></script>
 <title>uZability</title>
 <script src="<c:url value="/resources/js/quote.js" />"></script>
 
@@ -208,7 +209,7 @@
 				</c:forEach>
 				<script src="<c:url value="/resources/js/cross.js" />"></script>
 			</article>
-			<aside>
+			<aside id="aside">
 				<h3>Категории</h3>
 				<ul class="categories_ul">
 					<li><a href="/spring/articles/order/1">Usability</a></li>

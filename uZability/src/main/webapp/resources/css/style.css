@@ -711,7 +711,6 @@ aside ul li a {
 	top: 15;
 	background: #003366;
 	cursor: pointer;
-
 }
 
 .close_image {
@@ -769,18 +768,27 @@ aside ul li a {
 #feedback_form_submit {
 	float: right;
 	background: #CB0000;
-color: white;
-font-weight: bold;
-border-radius: 7px;
-padding: 3px 7px;
-border: 1px solid #666;
-margin-top: 15px;
+	color: white;
+	font-weight: bold;
+	border-radius: 7px;
+	padding: 3px 7px;
+	border: 1px solid #666;
+	margin-top: 15px;
 }
 
-#feedback_form_submit:hover{
-cursor: pointer;
-background: linear-gradient(to top, #CB0000, red) repeat scroll 0 0
- rgba(0, 0, 0, 0);}
- 
- .span_feedback_message_error{
+#feedback_form_submit:hover {
+	cursor: pointer;
+	background: linear-gradient(to top, #CB0000, red) repeat scroll 0 0
+		rgba(0, 0, 0, 0);
+}
+
+.span_feedback_message_error {
+	
+}
+
+aside.fixedAsidePanel {
+	position: fixed;
+	top: 0;
+	margin-left: 5px;
+}
 }

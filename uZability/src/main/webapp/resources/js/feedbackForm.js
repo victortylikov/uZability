@@ -31,8 +31,8 @@ $(document).ready(function(){
 			$("<span class='span_feedback_message_error'>Напишите сообщение</span>").css({'position': 'absolute','top':$("#feedback_form_textarea_message").position().top -19,'color':'red'}).fadeIn(2500).insertBefore("#feedback_form_input_email");
 		}
 		
-		$("<div class='div_feedback_message_success'>Спасибо, ваше сообщение отправлено администратарам сайта</div>").css({'position': 'absolute','top': '50%', 'margin-left': '10%','margin-right': '10%','padding': '10', 'border': '3px solid red',	'border-radius': '6','-webkit-border-radius': '6px',	'-moz-border-radius': '6px',		'-moz-border-radius': '6px'}).appendTo($("#wrapper_feedback_form"));
-
+		if(returnvar==true){$("<div class='div_feedback_message_success'>Спасибо, ваше сообщение отправлено администратарам сайта</div>").css({'position': 'absolute','top': '50%', 'margin-left': '10%','margin-right': '10%','padding': '10', 'border': '3px solid red',	'border-radius': '6','-webkit-border-radius': '6px',	'-moz-border-radius': '6px',		'-moz-border-radius': '6px'}).appendTo($("#wrapper_feedback_form"));
+		}
 		
 		
 		return returnvar;

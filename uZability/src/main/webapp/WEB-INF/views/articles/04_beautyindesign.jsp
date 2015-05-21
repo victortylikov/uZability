@@ -16,11 +16,13 @@
 	rel="stylesheet">
 	<link href="<c:url value="/resources/css/articles.css" />" rel="stylesheet">
 <title>uZability</title>
+<script src="<c:url value="/resources/js/jquery-1.2.6.js" />"></script>
 <script src="<c:url value="/resources/js/quote.js" />"></script>
 <script src="<c:url value="/resources/js/changeNews.js" />"></script>
 <script src="<c:url value="/resources/js/isEmptyTextArea.js" />"></script>
-<script src="<c:url value="/resources/js/jquery-1.2.6.js" />"></script>
+<script src="<c:url value="/resources/js/float_aside.js" />"></script>
 <script src="<c:url value="/resources/js/jquery.maskedinput.js" />"></script>
+
 <link rel="shortcut icon"
 	href="<c:url value="/resources/images/favicon.ico" />"
 	type="image/x-icon">
@@ -379,7 +381,7 @@
 					
 				</div>
 			</article>
-			<aside>
+			<aside id="aside">
 				<h3>Категории</h3>
 				<ul class="categories_ul">
 					<li><a href="/spring/articles/order/1">Usability</a></li>
