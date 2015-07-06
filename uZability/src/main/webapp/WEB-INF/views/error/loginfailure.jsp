@@ -13,7 +13,7 @@
 <link href="<c:url value="/resources/css/text.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/styleregistration.css" />"
 	rel="stylesheet">
-<title>uZability</title>
+<title>Login fail page</title>
 <link rel="shortcut icon"
 	href="<c:url value="/resources/images/favicon.ico" />"
 	type="image/x-icon">

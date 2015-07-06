@@ -46,6 +46,7 @@
 				</form:form>
 			</div>
 		</div>
+		
 		<a href="/spring/" title="Назад" id="left_button"><img
 			id="image_left_button"
 			src="<c:url value="/resources/images/arrowLeft.png" />" width="70"

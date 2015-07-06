@@ -12,7 +12,7 @@
 <link href="<c:url value="/resources/css/text.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 <link href="<c:url value="/resources/css/books.css" />" rel="stylesheet">
-<title>uZability</title>
+<title>Books | uZability</title>
 <script src="<c:url value="/resources/js/jquery-1.2.6.js" />"></script>
 <script src="<c:url value="/resources/js/quote.js" />"></script>
 <script src="<c:url value="/resources/js/changeNews.js" />"></script>
